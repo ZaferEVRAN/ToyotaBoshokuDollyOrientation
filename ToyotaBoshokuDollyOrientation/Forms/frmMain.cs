@@ -1,0 +1,755 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Net.NetworkInformation;
+using System.IO.Ports;
+
+namespace ToyotaBoshokuDollyOrientation
+{
+    public partial class frmMain : Form
+    {
+        public frmMain()
+        {
+            InitializeComponent();
+        }
+        /// <summary>
+        /// Sayfalar arası geçişte formdaki donmaları engeller.
+        /// </summary>
+        ///         
+        /// 
+        static AutoResetEvent _AREvt;
+        cParametreler parametre = new cParametreler();
+        barkodOkuyucu okuyucu = new barkodOkuyucu();
+        cLambaKontrol lambaKontrol = new cLambaKontrol();
+        KarkasIslem karkasIslem = new KarkasIslem();
+        barkodIslem urunBarkod = new barkodIslem();
+        cDollys dolly = new cDollys();
+        cistemciKontrol_StepMotor stepMotorIslemci= new cistemciKontrol_StepMotor();
+        cStatus status = new cStatus();
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+
+                cp.ExStyle |= 0x02000000;
+
+                return cp;
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            bool sonuc= cGenel.genelUyari("Çıkmak istediğinizden emin misiniz?",true);
+
+           // stepMotorIslemci.kilitMekanizmaSensorOku();
+
+            if (sonuc&&cGenel.motorRun==false)
+            {
+           
+                cUsers userlogin = new cUsers();
+                userlogin.userLogoutDatetime(cGenel._OpenSessionID);
+                cGenel._OpenSessionID = 0;
+                cGenel._OpenSessionUSERNAME = "";
+                cUserGrups grup = new cUserGrups();
+                grup.userGrupOnline(cGenel._OpenSessionGRUP, false);
+                Application.Exit();
+            }
+
+        }
+
+        private void btnAltSekme_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        uint openSensesionTimeCount;
+        cUsers user = new cUsers();
+        cUserGrups grup = new cUserGrups();
+        uint kilitTetikTimer;
+        uint OKAlarmTimer;
+        private void saat_Tick(object sender, EventArgs e)
+        {
+            if (cGenel.frmPickToLight.Visible)
+            {
+                txtBarkod.Focus();
+            }
+            lblSaat.Text = DateTime.Now.ToString();
+
+            openSensesionTimeCount++;
+            if (openSensesionTimeCount==10&& cGenel.frmMain.Visible==true)
+            {
+                user.userLoginDatetime(cGenel._OpenSessionID);
+                grup.userGrupOnline(cGenel._OpenSessionGRUP, true);
+                openSensesionTimeCount = 0;
+            }
+
+       
+
+
+            //karkas aktif pasif
+            if (cGenel.xByPass==true)
+            {
+                btnKarkasByPassAktif.Visible = false;
+                btnKarkasByPassPasif.Visible = true;
+                
+            }
+            else
+            {
+                btnKarkasByPassAktif.Visible = true;
+                btnKarkasByPassPasif.Visible = false;
+            }
+
+
+            NGbuzzerAlarmTimer++;
+
+        }
+        bool alarmTetik;
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            cGenel.genelUyari("Zafer EVRAN 0554 336 69 82 \n Onur BAYLAN 0545 224 65 48", false);
+        }
+
+        private void btnKlavye_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("osk.exe");
+        }
+
+
+        private void txtBarkodLH_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData)
+            {
+
+                case Keys.Enter:
+
+                    
+                    okuyucu.si_DataReceived(txtBarkod.Text);
+
+                    lblBarkod.Text = txtBarkod.Text;
+                    txtBarkod.Clear();
+                    e.SuppressKeyPress = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void ViewForm(Form _form)
+        {
+            formKapat();
+            _form.MdiParent = this;
+            _form.StartPosition = FormStartPosition.Manual;
+            _form.Dock = DockStyle.Fill;
+            _form.Left = 0;
+            _form.Top = 0;
+            _form.BringToFront();
+            _form.Show();
+
+            txtBarkod.Focus();
+        }
+
+
+
+        public void formKapat()
+        {
+
+            foreach (Form item in this.MdiChildren)
+            {
+                item.Visible = false;
+
+            }
+
+        }
+
+        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        {
+            ViewForm(cGenel.frmAnasayfa);
+        }
+
+        public void frmPickToLight()
+        {
+            ViewForm(cGenel.frmPickToLight);
+        }
+
+        public Task<bool> pingTest(string nameOrAddress)
+        {
+            return Task.Run<bool>(() =>
+            {
+                _AREvt = new AutoResetEvent(false);
+                while (true)
+                {
+                    try
+                    {
+                        _AREvt.WaitOne(100, true);
+                        Ping ping = new Ping();
+                        PingReply pingStatus = ping.Send(nameOrAddress, 1000);
+                        if (pingStatus.Status == IPStatus.Success)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        return false;
+                    }
+
+                }
+
+            });
+
+        }
+
+        public bool pingTestBool(string nameOrAddress)
+        {
+         
+             
+                    try
+                    {
+                        Ping ping = new Ping();
+                        PingReply pingStatus = ping.Send(nameOrAddress, 1000);
+                        if (pingStatus.Status == IPStatus.Success)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        return false;
+                    }
+
+               
+
+        }
+
+
+        uint NGbuzzerAlarmTimer;
+        public static bool X;
+        public static bool Y;
+        private async void modbus_Tick(object sender, EventArgs e)
+        {
+
+                try
+                {
+                    lblNowDeviceID.Text = cGenel.nowDeviceID.ToString();
+                    //lblModbusDeviceID.Text = cGenel.CommonDeviceID.ToString();
+
+                    lblIsikBaglantiAciklama.Text = cLambaKontrol.PLCDurumu.ToString();
+                    //lblLoop.Text = cGenel.loopInfoMain;
+
+                    lblIsikBaglantiAciklama.Text=cGenel.haberlesmeMesaj;
+                if (cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Connected)
+                {
+                    btnKilitMekanizmasıHazir.Visible = true;
+                    btnKilitMekanizmasıHazirDegil.Visible = false;
+                }
+                else
+                {
+                    btnKilitMekanizmasıHazir.Visible = false;
+                    btnKilitMekanizmasıHazirDegil.Visible = true;
+
+                }
+                //Işıkların cihazı
+                bool X = await pingTest(cGenel.conDXM_IP);
+
+                    if (X == false)////bağlantı yok
+                    {
+                        btnIsiklarHazirDegil.Visible = true;
+                        btnIsiklarHazir.Visible = false;
+
+                        try
+                        {
+                           // if (cLambaKontrol.client.Connected == false)
+                           // {
+                           //      btnIsiklarHazirDegil.Visible = false;
+                           //      btnIsiklarHazir.Visible = true;
+                           // }
+                        }
+                        catch (Exception)
+                        {
+                            btnIsiklarHazirDegil.Visible = true;
+                            btnIsiklarHazir.Visible = false;
+                        }
+
+                    }
+
+                     else/////bağlantı var.
+                   {
+                      
+                        btnIsiklarHazirDegil.Visible = false;
+                       btnIsiklarHazir.Visible = true;
+                  
+                       try
+                       {
+                          if (cLambaKontrol.client.Connected == false)
+                          {
+                            //istemci_LH.IstemciyiYenidenBaslat();
+                            btnIsiklarHazirDegil.Visible = false;
+                            btnIsiklarHazir.Visible = true;
+                        }
+           
+                     }
+                       catch (Exception)
+                       {
+
+                       // istemci_LH.IstemciyiYenidenBaslat();
+                        btnIsiklarHazirDegil.Visible = true;
+                        btnIsiklarHazir.Visible = false;
+
+                       }
+
+                    }
+
+
+                    //Server
+                    bool Y = await pingTest(cGenel.conServer_IP);
+
+                    if (Y == false)////bağlantı yok
+                {
+
+                    btnServerHazirDegil.Visible = true;
+                    btnServerHazir.Visible = false;
+
+
+                }
+
+                    else/////bağlantı var.
+                {
+
+
+                    btnServerHazirDegil.Visible = false;
+                    btnServerHazir.Visible = true;
+
+
+                }
+
+
+                    }
+                    catch (Exception)
+                    {
+              
+                    }
+
+
+             
+
+
+
+           
+
+
+        }
+        
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            lblUstBilgi.Text = string.Format("{0}-Line Doortrim Dolly Traceability System-{1}",cGenel.MAKINE_ADI,cGenel._OpenSessionGRUPNAME);
+             CheckForIllegalCrossThreadCalls = false;
+            _AREvt = new AutoResetEvent(false);
+            var t = Task.Run(() =>
+            {
+                while (true)
+                {
+                    _AREvt.WaitOne(100, true);
+                    Loop();
+                }
+            
+            });
+            //lambaKontrol.Connect();
+
+            stepMotorIslemci.stepMotorIstemciyiOlustur();
+
+            stepMotorIslemci.kilitMekanizmaSensorOku();
+            //okuyucu.barkodBaglanti();
+
+            parametre.parametreleriAta();
+
+            status.statusColorAta();
+
+            if (cGenel.xByPass==false&&cLambaKontrol.PLCDurumu==PLCDurumlari.UYGUN)
+            {
+                lambaKontrol.yarimKalanIsıklarGoster();
+            }
+
+            if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
+            {
+                KarkasIslem.LHDollyBarkod = karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._DOLLYNO.ToString();
+            }
+            else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+            {
+                KarkasIslem.RHDollyBarkod = karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._DOLLYNO.ToString();
+            }
+         }
+
+        log logOlustur = new log();
+        public static bool xKontrol;
+        public static bool xKontrolRing;
+        private void Loop()
+        {
+
+
+            while (KarkasIslem.xLOOP&& cGenel.xByPass==false)
+            {
+                _AREvt.WaitOne(100, true);
+
+                try
+                {
+                    if (xKontrol==false)
+                    {
+                        _AREvt.WaitOne(300, true);
+                        bool sonuc= lambaKontrol.lamba.lambaJobIlgiliIsikFlashYakKontrol(cGenel.nowDeviceID, cGenel.jobState1StatusAnimationID, cGenel.jobState1StatusColorID,cLambaKontrol.master);
+                        if (sonuc==true)
+                        {
+                            xKontrol = true;
+                            _AREvt.WaitOne(300, true);
+                            cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                        }
+                        else
+                        {
+                            _AREvt.WaitOne(300, true);
+                            lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
+                        }
+                    
+                    }
+                    if (cGenel.sensorSonucu==0&& xKontrol == true)
+                    {
+
+                        lambaKontrol.sensorOkuma(cGenel.nowDeviceID);
+                   
+                    }
+                    if (cGenel.sensorSonucu == 1)
+                    {
+                        _AREvt.WaitOne(300, true);
+                        lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
+                        _AREvt.WaitOne(300, true);
+                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID,cGenel.jobState2StatusAnimationID,cGenel.jobState2StatusColorID,cLambaKontrol.master))//deviceID
+                        {
+                      
+
+                            if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
+                            {
+                              
+                                uint gorevID = 0;
+
+                                gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+
+                                if (cGenel.urunBarkodKarkasDurum == true)
+                                {
+                                    urunBarkod.urunBarkodIslemTamamlandi_LH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.BarkodID);
+                                }
+                                else if (cGenel.urunBarkodKarkasDurum == false)
+                                {
+                                    urunBarkod.urunBarkodIslemTamamlandi_LH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde);
+
+                                }
+
+                                karkasIslem.urunBarkodDurumGuncelle_LH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+
+
+                                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
+
+
+
+
+
+
+
+
+                                uint barkodDurum = barkodIslem.barkod_FRL_RRL_Count();
+                                if (barkodDurum == 0)//durum||
+                                {
+                                    karkasIslem.gorevDurumTamamlandi_LH();
+
+
+                                    _AREvt.WaitOne(300, true);
+                                    lambaKontrol.lambaDurumDollyBaslangic();
+
+                                    cGenel.lockOnClick = true;
+                                    stepMotorIslemci.kilitMekanizmaDongusu();
+
+                                }
+                            }
+                            else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+                            {
+                             
+                                uint gorevID = 0;
+
+
+                                gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+
+                                if (cGenel.urunBarkodKarkasDurum == true)
+                                {
+                                    urunBarkod.urunBarkodIslemTamamlandi_RH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.BarkodID);
+                                }
+                                else if (cGenel.urunBarkodKarkasDurum == false)
+                                {
+                                    urunBarkod.urunBarkodIslemTamamlandi_RH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde);
+
+                                }
+
+                                karkasIslem.urunBarkodDurumGuncelle_RH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+
+
+                                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
+
+
+
+
+                                uint barkodDurum = barkodIslem.barkod_FRR_RRR_Count();
+                                if (barkodDurum == 0)
+                                {
+
+                                    karkasIslem.gorevDurumTamamlandi_RH();
+
+                                    _AREvt.WaitOne(300, true);
+                                    lambaKontrol.lambaDurumDollyBaslangic();
+                                    cGenel.lockOnClick = true;
+                                    stepMotorIslemci.kilitMekanizmaDongusu();
+                                }
+
+
+                            }
+
+                            if (true)
+                            {
+
+                               
+                            
+                                cGenel.sensorSonucu = 0;
+                                cGenel.nowDeviceID = 0;
+                                cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                                //cLambaKontrol.master.WriteSingleRegister(1, 499, 0);
+                                //cGenel.frmMain.ViewForm(cGenel.frmPickToLight); ///test
+                                cGenel.frmPickToLight.DurumIzleme();
+                                xKontrol = false;                   
+                                //lambaKontrol.buzzerRing(1);
+                                //xKontrolRing = true;
+                          //      _AREvt.WaitOne(300, true);
+                                OKAlarmTimer = 0;
+                                alarmTetik = true;
+                                //lambaKontrol.buzzerRing(1);
+                                KarkasIslem.xLOOP = false;
+                            }
+
+
+                        }
+
+                    }
+                    /*if (xKontrolRing==true)
+                    {
+                        _AREvt.WaitOne(300, true);
+                        lambaKontrol.buzzerRingKontrol();
+                        if (cLambaKontrol.ringKontol == 1)
+                        {
+                            KarkasIslem.xLOOP = false;
+                            xKontrolRing = false;
+                            OKAlarmTimer = 0;
+                            alarmTetik = true;
+                        }
+                        else
+                        {
+                            _AREvt.WaitOne(300,true);
+                            OKAlarmTimer = 0;
+                            alarmTetik = true;
+                            lambaKontrol.buzzerRing(1);
+                        }
+                    }*/
+                }
+                catch (Exception ex)
+                {
+                    cGenel.loopInfoMain = ex.Message;
+                }
+
+
+
+
+
+            }
+
+
+ 
+        }
+        barkodIslem barkodIslem = new barkodIslem();
+        TBTGALC_DOOR tbtgalcDoor = new TBTGALC_DOOR();
+        List<TBTGALC_DOOR> listTBTGalc_LH = new List<TBTGALC_DOOR>();
+        List<TBTGALC_DOOR> listTBTGalc_RH = new List<TBTGALC_DOOR>();
+
+        private void setlemeDongusu_Tick(object sender, EventArgs e)
+        {
+          
+        }
+  
+        public void setlemeDongusu()
+        {
+            if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
+            {
+                float lastTBTNO = tbtgalcDoor.TBTGalcLastTBTNO_Read_LH();
+
+                if (barkodIslem.barkod_FRL_RRL_Count() == 0 )
+                {
+                    listTBTGalc_LH.Clear();
+                    listTBTGalc_LH = tbtgalcDoor.TBTGalcDoorSpecRead_LH(lastTBTNO);
+                    if (listTBTGalc_LH.Count > 0)
+                    {
+                        lastTBTNO = listTBTGalc_LH[(listTBTGalc_LH.Count - 1)]._TBTNO;
+                        barkodIslem.barcodsNewAdd_LH(listTBTGalc_LH);
+                    }
+                    tbtgalcDoor.TBTGalcLastTBTNO_Write_LH(lastTBTNO);
+
+
+
+
+                }
+            }
+            else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+            {
+                float lastTBTNO = tbtgalcDoor.TBTGalcLastTBTNO_Read_RH();
+                if (barkodIslem.barkod_FRR_RRR_Count() == 0 )
+                {
+                    listTBTGalc_RH.Clear();
+                    listTBTGalc_RH = tbtgalcDoor.TBTGalcDoorSpecRead_RH(lastTBTNO);
+                    if (listTBTGalc_RH.Count > 0)
+                    {
+                        lastTBTNO = listTBTGalc_RH[(listTBTGalc_RH.Count - 1)]._TBTNO;
+                        barkodIslem.barcodsNewAdd_RH(listTBTGalc_RH);
+                    }
+                    tbtgalcDoor.TBTGalcLastTBTNO_Write_RH(lastTBTNO);
+
+
+
+
+                }
+            }
+        }
+
+        private void stepMotorRead_Tick(object sender, EventArgs e)
+        {
+
+
+            lblModbusRTUBilgi.Text = cGenel.haberlesmeMesajModbusRTU;
+
+            if (cGenel.lockOffSensor == true && cGenel.lockOnSensor == true)
+                {
+                    btnKilitAcik.Visible = true;
+                }
+                else
+                {
+                    btnKilitAcik.Visible = false;
+                }
+
+                if (cGenel.lockOffSensor ==false&& cGenel.lockOnSensor ==false)
+                {
+                    btnKilitKapali.Visible = true;
+                }
+                else
+                {
+                    btnKilitKapali.Visible = false;
+                }
+
+                if ((cGenel.deviceAlarmVar||cGenel.stepAlarmVar) &&cGenel.motorRun==false)
+                {
+                    btnHata.Visible = true;
+                }
+                else if(cGenel.deviceAlarmVar==false && cGenel.stepAlarmVar == false)
+                {
+                   btnHata.Visible=false;
+                }
+
+
+                   //Kilitleme
+                   if (cGenel.kilitKapatTetik == true)
+                   {
+                       kilitTetikTimer++;
+                       if (kilitTetikTimer >= cGenel.kilitKapatmaSuresi)
+                       {
+                            cGenel.lockOffClick = true;
+                            stepMotorIslemci.kilitMekanizmaDongusu();
+                           cGenel.kilitKapatTetik = false;
+                           kilitTetikTimer = 0;
+                       }
+                   }
+
+                   //Kilitleme
+                   if (cGenel.motorRun)
+                   {
+                       cGenel.timer++;
+                   }
+           
+        }
+        bool OKAlarm;
+        private void buzzer_Tick(object sender, EventArgs e)
+        {
+            if (cGenel.xBuzzerByPass==false&& cGenel.nowDeviceID > 0)
+            {
+                    lambaKontrol.buzzerDeviceIDRead();
+            }
+
+            if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
+             {
+                lambaKontrol.buzzerRing(1);
+                NGbuzzerAlarmTimer = 0;
+                cGenel.alarmVar = true;
+             }
+
+             if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
+             {
+                 lambaKontrol.buzzerRing(0);
+                cGenel.alarmVar = false;
+             }
+
+
+          
+            if (cGenel.xBuzzerByPass == false && alarmTetik ==true)
+            {
+                lambaKontrol.buzzerRing(1);
+
+                OKAlarmTimer++;
+                _AREvt.WaitOne(300,true);
+                lambaKontrol.buzzerRingKontrol();
+
+            }
+            
+
+            if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 5&& alarmTetik==true&&cLambaKontrol.ringKontol==1 )
+            {
+                
+                lambaKontrol.buzzerRing(0);
+                alarmTetik = false;
+      
+            }
+
+        }
+
+        private void lblUstBilgi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlAltBaslik_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnHata_Click(object sender, EventArgs e)
+        {
+            cGenel.genelUyari("Dollyi düzelterek tekrar kilit aç kapat yapınız.!", false);
+        }
+    }
+}
+
