@@ -235,6 +235,72 @@ namespace ToyotaBoshokuDollyOrientation
             return result;
         }
 
+        public bool gorevGuncelle_LH(uint dollyNo)
+        {
+            bool result = false;
+
+
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("update LH_KARKAS set DOLLYNO=@dollyNo where STATUS=1", con);
+            cmd.Parameters.Add("@DOLLYNO", SqlDbType.Int).Value = dollyNo;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                result = Convert.ToBoolean(cmd.ExecuteNonQuery());
+            }
+            catch (Exception ex)
+            {
+
+                mesajlar.hata(ex);
+            }
+            finally
+            {
+
+                con.Close();
+                con.Dispose();
+            }
+
+            return result;
+        }
+
+        public bool gorevGuncelle_RH(uint dollyNo)
+        {
+            bool result = false;
+
+
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("update RH_KARKAS set DOLLYNO=@dollyNo where STATUS=1", con);
+            cmd.Parameters.Add("@DOLLYNO", SqlDbType.Int).Value = dollyNo;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                result = Convert.ToBoolean(cmd.ExecuteNonQuery());
+            }
+            catch (Exception ex)
+            {
+
+                mesajlar.hata(ex);
+            }
+            finally
+            {
+
+                con.Close();
+                con.Dispose();
+            }
+
+            return result;
+        }
+
         public KarkasIslem gorevSorgula_LH(byte gorevDurum)
         {
             KarkasIslem gorevInfo = new KarkasIslem();

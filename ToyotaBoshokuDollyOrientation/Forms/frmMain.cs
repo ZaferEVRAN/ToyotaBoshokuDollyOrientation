@@ -395,11 +395,90 @@ namespace ToyotaBoshokuDollyOrientation
             {
                 KarkasIslem.RHDollyBarkod = karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._DOLLYNO.ToString();
             }
-         }
+
+            btn1.Click += new EventHandler(islem);
+            btn2.Click += new EventHandler(islem);
+            btn3.Click += new EventHandler(islem);
+            btn4.Click += new EventHandler(islem);
+            btn5.Click += new EventHandler(islem);
+            btn6.Click += new EventHandler(islem);
+            btn7.Click += new EventHandler(islem);
+            btn8.Click += new EventHandler(islem);
+            btn9.Click += new EventHandler(islem);
+            btn0.Click += new EventHandler(islem);
+        }
+        private void islem(Object sender, EventArgs e)
+        {
+
+            klavyeOlustur(sender, e, txtBarkod);
+
+        }
+
+        private void klavyeOlustur(Object sender, EventArgs e, TextBox txt)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            switch (btn.Name)
+            {
+                case "btn1":
+                    txt.Text += (1).ToString();
+                    break;
+                case "btn2":
+                    txt.Text += (2).ToString();
+                    break;
+                case "btn3":
+                    txt.Text += (3).ToString();
+                    break;
+                case "btn4":
+                    txt.Text += (4).ToString();
+                    break;
+                case "btn5":
+                    txt.Text += (5).ToString();
+                    break;
+                case "btn6":
+                    txt.Text += (6).ToString();
+                    break;
+                case "btn7":
+                    txt.Text += (7).ToString();
+                    break;
+                case "btn8":
+                    txt.Text += (8).ToString();
+                    break;
+                case "btn9":
+                    txt.Text += (9).ToString();
+                    break;
+                case "btn0":
+                    txt.Text += (0).ToString();
+                    break;
+
+
+                default:
+                    break;
+            }
+        }
 
         log logOlustur = new log();
         public static bool xKontrol;
         public static bool xKontrolRing;
+        public void globalLambaYakmaBarkodOkutulunca()
+        {
+            if (xKontrol == false)
+            {
+                _AREvt.WaitOne(300, true);
+                bool sonuc = lambaKontrol.lamba.lambaJobIlgiliIsikFlashYakKontrol(cGenel.nowDeviceID, cGenel.jobState1StatusAnimationID, cGenel.jobState1StatusColorID, cLambaKontrol.master);
+                if (sonuc == true)
+                {
+                    xKontrol = true;
+                    _AREvt.WaitOne(300, true);
+                    cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                }
+                else
+                {
+                    _AREvt.WaitOne(300, true);
+                    lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
+                }
+
+            }
+        }
         private void Loop()
         {
 
@@ -410,23 +489,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                 try
                 {
-                    if (xKontrol==false)
-                    {
-                        _AREvt.WaitOne(300, true);
-                        bool sonuc= lambaKontrol.lamba.lambaJobIlgiliIsikFlashYakKontrol(cGenel.nowDeviceID, cGenel.jobState1StatusAnimationID, cGenel.jobState1StatusColorID,cLambaKontrol.master);
-                        if (sonuc==true)
-                        {
-                            xKontrol = true;
-                            _AREvt.WaitOne(300, true);
-                            cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
-                        }
-                        else
-                        {
-                            _AREvt.WaitOne(300, true);
-                            lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
-                        }
-                    
-                    }
+                    globalLambaYakmaBarkodOkutulunca();
                     if (cGenel.sensorSonucu==0&& xKontrol == true)
                     {
 
@@ -438,7 +501,7 @@ namespace ToyotaBoshokuDollyOrientation
                         _AREvt.WaitOne(300, true);
                         lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
                         _AREvt.WaitOne(300, true);
-                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID,cGenel.jobState2StatusAnimationID,cGenel.jobState2StatusColorID,cLambaKontrol.master))//deviceID
+                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID,cGenel.jobState2StatusAnimationID,cGenel.jobState2StatusColorID,cLambaKontrol.master)||true)//deviceID
                         {
                       
 
@@ -461,7 +524,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                                 karkasIslem.urunBarkodDurumGuncelle_LH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
-
+                                KarkasIslem.LHDollyBarkod = "999";
                                 logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
 
 
@@ -474,12 +537,12 @@ namespace ToyotaBoshokuDollyOrientation
                                 uint barkodDurum = barkodIslem.barkod_FRL_RRL_Count();
                                 if (barkodDurum == 0)//durum||
                                 {
-                                    karkasIslem.gorevDurumTamamlandi_LH();
-
-
+                                    //karkasIslem.gorevDurumTamamlandi_LH();
+                                    pnlNumarator.Visible = true;
+                                    //setlemeDongusu();
                                     _AREvt.WaitOne(300, true);
                                     lambaKontrol.lambaDurumDollyBaslangic();
-
+                              
                                     cGenel.lockOnClick = true;
                                     stepMotorIslemci.kilitMekanizmaDongusu();
 
@@ -487,7 +550,7 @@ namespace ToyotaBoshokuDollyOrientation
                             }
                             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
                             {
-                             
+                              
                                 uint gorevID = 0;
 
 
@@ -505,7 +568,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                                 karkasIslem.urunBarkodDurumGuncelle_RH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
-
+                                KarkasIslem.RHDollyBarkod = "999";
                                 logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
 
 
@@ -515,11 +578,13 @@ namespace ToyotaBoshokuDollyOrientation
                                 if (barkodDurum == 0)
                                 {
 
-                                    karkasIslem.gorevDurumTamamlandi_RH();
-
+                                    //karkasIslem.gorevDurumTamamlandi_RH();
+                                    pnlNumarator.Visible = true;
+                                    //setlemeDongusu();
                                     _AREvt.WaitOne(300, true);
                                     lambaKontrol.lambaDurumDollyBaslangic();
                                     cGenel.lockOnClick = true;
+                             
                                     stepMotorIslemci.kilitMekanizmaDongusu();
                                 }
 
@@ -534,16 +599,12 @@ namespace ToyotaBoshokuDollyOrientation
                                 cGenel.sensorSonucu = 0;
                                 cGenel.nowDeviceID = 0;
                                 cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
-                                //cLambaKontrol.master.WriteSingleRegister(1, 499, 0);
-                                //cGenel.frmMain.ViewForm(cGenel.frmPickToLight); ///test
+                                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
                                 cGenel.frmPickToLight.DurumIzleme();
-                                xKontrol = false;                   
-                                //lambaKontrol.buzzerRing(1);
-                                //xKontrolRing = true;
-                          //      _AREvt.WaitOne(300, true);
+
+                                xKontrol = false;                             
                                 OKAlarmTimer = 0;
                                 alarmTetik = true;
-                                //lambaKontrol.buzzerRing(1);
                                 KarkasIslem.xLOOP = false;
                             }
 
@@ -551,25 +612,7 @@ namespace ToyotaBoshokuDollyOrientation
                         }
 
                     }
-                    /*if (xKontrolRing==true)
-                    {
-                        _AREvt.WaitOne(300, true);
-                        lambaKontrol.buzzerRingKontrol();
-                        if (cLambaKontrol.ringKontol == 1)
-                        {
-                            KarkasIslem.xLOOP = false;
-                            xKontrolRing = false;
-                            OKAlarmTimer = 0;
-                            alarmTetik = true;
-                        }
-                        else
-                        {
-                            _AREvt.WaitOne(300,true);
-                            OKAlarmTimer = 0;
-                            alarmTetik = true;
-                            lambaKontrol.buzzerRing(1);
-                        }
-                    }*/
+                    
                 }
                 catch (Exception ex)
                 {
@@ -590,10 +633,7 @@ namespace ToyotaBoshokuDollyOrientation
         List<TBTGALC_DOOR> listTBTGalc_LH = new List<TBTGALC_DOOR>();
         List<TBTGALC_DOOR> listTBTGalc_RH = new List<TBTGALC_DOOR>();
 
-        private void setlemeDongusu_Tick(object sender, EventArgs e)
-        {
-          
-        }
+    
   
         public void setlemeDongusu()
         {
@@ -612,8 +652,10 @@ namespace ToyotaBoshokuDollyOrientation
                     }
                     tbtgalcDoor.TBTGalcLastTBTNO_Write_LH(lastTBTNO);
 
-
-
+                    if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
+                    {
+                        karkasIslem.gorevOlustur_LH(999);//v2.0 
+                    }
 
                 }
             }
@@ -631,9 +673,10 @@ namespace ToyotaBoshokuDollyOrientation
                     }
                     tbtgalcDoor.TBTGalcLastTBTNO_Write_RH(lastTBTNO);
 
-
-
-
+                    if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
+                    {
+                        karkasIslem.gorevOlustur_RH(999);//v2.0
+                    }
                 }
             }
         }
@@ -749,6 +792,63 @@ namespace ToyotaBoshokuDollyOrientation
         private void btnHata_Click(object sender, EventArgs e)
         {
             cGenel.genelUyari("Dollyi düzelterek tekrar kilit aç kapat yapınız.!", false);
+        }
+
+        private void txtBarkod_Click(object sender, EventArgs e)
+        {
+            pnlNumarator.Visible = true;
+        }
+
+        private void btnNumaratorKapat_Click(object sender, EventArgs e)
+        {
+            pnlNumarator.Visible = false;
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            txtBarkod.Clear();
+        }
+
+        private void btnDollyNoGir_Click(object sender, EventArgs e)
+        {
+            string data = txtBarkod.Text;
+      
+            if (data == dolly.dollyBarkodInfo(data)._DollyBarkod)
+            {
+           
+                bool result1=false;
+                KarkasIslem.LHDollyBarkod = data;
+                uint dollyNo = dolly.dollyBarkodInfo(KarkasIslem.LHDollyBarkod)._DollyNo;
+                if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
+                {
+                     result1 = karkasIslem.gorevGuncelle_LH(dollyNo);
+                    if (result1)
+                    {
+                        karkasIslem.gorevDurumTamamlandi_LH();
+                        setlemeDongusu();
+                        cGenel.genelUyariAlarm("Dolly tanıtma başarılı!", false, true);
+                       // logOlustur.logDollyNoGuncelle_LH(dollyNO);
+                    }
+                }
+                else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+                {
+                    result1 = karkasIslem.gorevGuncelle_RH(dollyNo);
+                    if (result1)
+                    {
+                        karkasIslem.gorevDurumTamamlandi_RH();
+                        setlemeDongusu();
+                        cGenel.genelUyariAlarm("Dolly tanıtma başarılı!", false, true);
+                       // logOlustur.logDollyNoGuncelle_RH( dollyNO);
+                    }
+                }
+
+                
+            }  
+            else
+            {
+                cGenel.genelUyariAlarm("Tanımlı Dolly no giriniz!", false, true);
+
+            }
         }
     }
 }

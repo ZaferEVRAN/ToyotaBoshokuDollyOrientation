@@ -29,42 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Timer setlemeDongusu;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlBilgi = new System.Windows.Forms.Panel();
             this.txtBarkod = new System.Windows.Forms.TextBox();
             this.lblBarkod = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnAnaSayfa = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnInfo = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnAltSekme = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblSaat = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblUstBilgi = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnlAltBaslik = new System.Windows.Forms.Panel();
             this.btnHata = new System.Windows.Forms.Button();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnlAltBilgi = new System.Windows.Forms.Panel();
+            this.btnKlavye = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblModbusRTUBilgi = new System.Windows.Forms.Label();
             this.lblNowDeviceID = new System.Windows.Forms.Label();
-            this.lblIsikBaglantiAciklama = new System.Windows.Forms.Label();
-            this.saat = new System.Windows.Forms.Timer(this.components);
-            this.connection = new System.Windows.Forms.Timer(this.components);
-            this.stepMotor = new System.Windows.Forms.Timer(this.components);
-            this.buzzer = new System.Windows.Forms.Timer(this.components);
-            this.btnKlavye = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnKarkasByPassAktif = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnKarkasByPassPasif = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnKilitAcik = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnKilitKapali = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblIsikBaglantiAciklama = new System.Windows.Forms.Label();
             this.btnKilitMekanizmasıHazir = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnIsiklarHazir = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnServerHazir = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnServerHazirDegil = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnIsiklarHazirDegil = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnKilitMekanizmasıHazirDegil = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAnaSayfa = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnInfo = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnAltSekme = new Bunifu.Framework.UI.BunifuImageButton();
+            this.saat = new System.Windows.Forms.Timer(this.components);
+            this.connection = new System.Windows.Forms.Timer(this.components);
+            this.stepMotor = new System.Windows.Forms.Timer(this.components);
+            this.buzzer = new System.Windows.Forms.Timer(this.components);
             this.pnlNumarator = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDollyNoGir = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
@@ -77,24 +76,18 @@
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.btnNumaratorKapat = new Bunifu.Framework.UI.BunifuImageButton();
-            setlemeDongusu = new System.Windows.Forms.Timer(this.components);
             this.pnlBilgi.SuspendLayout();
-            this.pnlAltBaslik.SuspendLayout();
-            this.pnlAltBilgi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnKlavye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAnaSayfa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAltSekme)).BeginInit();
+            this.pnlAltBaslik.SuspendLayout();
+            this.pnlAltBilgi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnKlavye)).BeginInit();
             this.pnlNumarator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNumaratorKapat)).BeginInit();
             this.SuspendLayout();
-            // 
-            // setlemeDongusu
-            // 
-            setlemeDongusu.Interval = 1000;
-            setlemeDongusu.Tick += new System.EventHandler(this.setlemeDongusu_Tick);
             // 
             // pnlBilgi
             // 
@@ -123,6 +116,7 @@
             this.txtBarkod.Name = "txtBarkod";
             this.txtBarkod.Size = new System.Drawing.Size(244, 55);
             this.txtBarkod.TabIndex = 196;
+            this.txtBarkod.Click += new System.EventHandler(this.txtBarkod_Click);
             this.txtBarkod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodLH_KeyDown);
             // 
             // lblBarkod
@@ -137,6 +131,93 @@
             this.lblBarkod.Size = new System.Drawing.Size(63, 69);
             this.lblBarkod.TabIndex = 197;
             this.lblBarkod.Text = "?";
+            // 
+            // btnAnaSayfa
+            // 
+            this.btnAnaSayfa.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnaSayfa.ErrorImage = null;
+            this.btnAnaSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnAnaSayfa.Image")));
+            this.btnAnaSayfa.ImageActive = null;
+            this.btnAnaSayfa.Location = new System.Drawing.Point(10, 11);
+            this.btnAnaSayfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAnaSayfa.Name = "btnAnaSayfa";
+            this.btnAnaSayfa.Size = new System.Drawing.Size(196, 123);
+            this.btnAnaSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAnaSayfa.TabIndex = 37;
+            this.btnAnaSayfa.TabStop = false;
+            this.btnAnaSayfa.Zoom = 10;
+            this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.AccessibleDescription = "";
+            this.bunifuImageButton1.AccessibleName = "";
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.ErrorImage = null;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(483, 9);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(914, 125);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 36;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Tag = "";
+            this.bunifuImageButton1.Zoom = 0;
+            // 
+            // btnInfo
+            // 
+            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfo.ErrorImage = null;
+            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
+            this.btnInfo.ImageActive = null;
+            this.btnInfo.Location = new System.Drawing.Point(1624, 18);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnInfo.Name = "btnInfo";
+            this.btnInfo.Size = new System.Drawing.Size(99, 60);
+            this.btnInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnInfo.TabIndex = 35;
+            this.btnInfo.TabStop = false;
+            this.btnInfo.Zoom = 10;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.ErrorImage = null;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageActive = null;
+            this.btnExit.Location = new System.Drawing.Point(1822, 18);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(99, 60);
+            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnExit.TabIndex = 34;
+            this.btnExit.TabStop = false;
+            this.btnExit.Zoom = 10;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAltSekme
+            // 
+            this.btnAltSekme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAltSekme.BackColor = System.Drawing.Color.Transparent;
+            this.btnAltSekme.ErrorImage = null;
+            this.btnAltSekme.Image = ((System.Drawing.Image)(resources.GetObject("btnAltSekme.Image")));
+            this.btnAltSekme.ImageActive = null;
+            this.btnAltSekme.Location = new System.Drawing.Point(1732, 18);
+            this.btnAltSekme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAltSekme.Name = "btnAltSekme";
+            this.btnAltSekme.Size = new System.Drawing.Size(99, 60);
+            this.btnAltSekme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAltSekme.TabIndex = 33;
+            this.btnAltSekme.TabStop = false;
+            this.btnAltSekme.Zoom = 10;
+            this.btnAltSekme.Click += new System.EventHandler(this.btnAltSekme_Click);
             // 
             // lblSaat
             // 
@@ -233,6 +314,27 @@
             this.pnlAltBilgi.Size = new System.Drawing.Size(1940, 58);
             this.pnlAltBilgi.TabIndex = 42;
             // 
+            // btnKlavye
+            // 
+            this.btnKlavye.AccessibleDescription = "";
+            this.btnKlavye.AccessibleName = "";
+            this.btnKlavye.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKlavye.BackColor = System.Drawing.Color.Transparent;
+            this.btnKlavye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKlavye.ErrorImage = null;
+            this.btnKlavye.Image = ((System.Drawing.Image)(resources.GetObject("btnKlavye.Image")));
+            this.btnKlavye.ImageActive = null;
+            this.btnKlavye.Location = new System.Drawing.Point(1658, 0);
+            this.btnKlavye.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKlavye.Name = "btnKlavye";
+            this.btnKlavye.Size = new System.Drawing.Size(78, 52);
+            this.btnKlavye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnKlavye.TabIndex = 132;
+            this.btnKlavye.TabStop = false;
+            this.btnKlavye.Tag = "";
+            this.btnKlavye.Zoom = 10;
+            this.btnKlavye.Click += new System.EventHandler(this.btnKlavye_Click);
+            // 
             // lblModbusRTUBilgi
             // 
             this.lblModbusRTUBilgi.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -255,62 +357,6 @@
             this.lblNowDeviceID.TabIndex = 138;
             this.lblNowDeviceID.Text = "NowDeviceID";
             this.lblNowDeviceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblIsikBaglantiAciklama
-            // 
-            this.lblIsikBaglantiAciklama.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblIsikBaglantiAciklama.AutoSize = true;
-            this.lblIsikBaglantiAciklama.Location = new System.Drawing.Point(1022, 31);
-            this.lblIsikBaglantiAciklama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblIsikBaglantiAciklama.Name = "lblIsikBaglantiAciklama";
-            this.lblIsikBaglantiAciklama.Size = new System.Drawing.Size(91, 20);
-            this.lblIsikBaglantiAciklama.TabIndex = 131;
-            this.lblIsikBaglantiAciklama.Text = "IsikBaglanti";
-            // 
-            // saat
-            // 
-            this.saat.Enabled = true;
-            this.saat.Interval = 1000;
-            this.saat.Tick += new System.EventHandler(this.saat_Tick);
-            // 
-            // connection
-            // 
-            this.connection.Enabled = true;
-            this.connection.Interval = 1000;
-            this.connection.Tick += new System.EventHandler(this.modbus_Tick);
-            // 
-            // stepMotor
-            // 
-            this.stepMotor.Enabled = true;
-            this.stepMotor.Interval = 1000;
-            this.stepMotor.Tick += new System.EventHandler(this.stepMotorRead_Tick);
-            // 
-            // buzzer
-            // 
-            this.buzzer.Enabled = true;
-            this.buzzer.Interval = 300;
-            this.buzzer.Tick += new System.EventHandler(this.buzzer_Tick);
-            // 
-            // btnKlavye
-            // 
-            this.btnKlavye.AccessibleDescription = "";
-            this.btnKlavye.AccessibleName = "";
-            this.btnKlavye.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKlavye.BackColor = System.Drawing.Color.Transparent;
-            this.btnKlavye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKlavye.ErrorImage = null;
-            this.btnKlavye.Image = ((System.Drawing.Image)(resources.GetObject("btnKlavye.Image")));
-            this.btnKlavye.ImageActive = null;
-            this.btnKlavye.Location = new System.Drawing.Point(1658, 12);
-            this.btnKlavye.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnKlavye.Name = "btnKlavye";
-            this.btnKlavye.Size = new System.Drawing.Size(78, 40);
-            this.btnKlavye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnKlavye.TabIndex = 132;
-            this.btnKlavye.TabStop = false;
-            this.btnKlavye.Tag = "";
-            this.btnKlavye.Zoom = 10;
-            this.btnKlavye.Click += new System.EventHandler(this.btnKlavye_Click);
             // 
             // btnKarkasByPassAktif
             // 
@@ -419,6 +465,17 @@
             this.btnKilitKapali.TabIndex = 135;
             this.btnKilitKapali.Textcolor = System.Drawing.Color.White;
             this.btnKilitKapali.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // lblIsikBaglantiAciklama
+            // 
+            this.lblIsikBaglantiAciklama.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblIsikBaglantiAciklama.AutoSize = true;
+            this.lblIsikBaglantiAciklama.Location = new System.Drawing.Point(1022, 31);
+            this.lblIsikBaglantiAciklama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIsikBaglantiAciklama.Name = "lblIsikBaglantiAciklama";
+            this.lblIsikBaglantiAciklama.Size = new System.Drawing.Size(91, 20);
+            this.lblIsikBaglantiAciklama.TabIndex = 131;
+            this.lblIsikBaglantiAciklama.Text = "IsikBaglanti";
             // 
             // btnKilitMekanizmasıHazir
             // 
@@ -582,96 +639,33 @@
             this.btnKilitMekanizmasıHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnAnaSayfa
+            // saat
             // 
-            this.btnAnaSayfa.BackColor = System.Drawing.Color.Transparent;
-            this.btnAnaSayfa.ErrorImage = null;
-            this.btnAnaSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnAnaSayfa.Image")));
-            this.btnAnaSayfa.ImageActive = null;
-            this.btnAnaSayfa.Location = new System.Drawing.Point(10, 11);
-            this.btnAnaSayfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAnaSayfa.Name = "btnAnaSayfa";
-            this.btnAnaSayfa.Size = new System.Drawing.Size(196, 123);
-            this.btnAnaSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAnaSayfa.TabIndex = 37;
-            this.btnAnaSayfa.TabStop = false;
-            this.btnAnaSayfa.Zoom = 10;
-            this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
+            this.saat.Enabled = true;
+            this.saat.Interval = 1000;
+            this.saat.Tick += new System.EventHandler(this.saat_Tick);
             // 
-            // bunifuImageButton1
+            // connection
             // 
-            this.bunifuImageButton1.AccessibleDescription = "";
-            this.bunifuImageButton1.AccessibleName = "";
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.ErrorImage = null;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(483, 9);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(914, 125);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 36;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Tag = "";
-            this.bunifuImageButton1.Zoom = 0;
+            this.connection.Enabled = true;
+            this.connection.Interval = 1000;
+            this.connection.Tick += new System.EventHandler(this.modbus_Tick);
             // 
-            // btnInfo
+            // stepMotor
             // 
-            this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInfo.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfo.ErrorImage = null;
-            this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
-            this.btnInfo.ImageActive = null;
-            this.btnInfo.Location = new System.Drawing.Point(1624, 18);
-            this.btnInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(99, 60);
-            this.btnInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnInfo.TabIndex = 35;
-            this.btnInfo.TabStop = false;
-            this.btnInfo.Zoom = 10;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.stepMotor.Enabled = true;
+            this.stepMotor.Interval = 1000;
+            this.stepMotor.Tick += new System.EventHandler(this.stepMotorRead_Tick);
             // 
-            // btnExit
+            // buzzer
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.ErrorImage = null;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1822, 18);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(99, 60);
-            this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnExit.TabIndex = 34;
-            this.btnExit.TabStop = false;
-            this.btnExit.Zoom = 10;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAltSekme
-            // 
-            this.btnAltSekme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAltSekme.BackColor = System.Drawing.Color.Transparent;
-            this.btnAltSekme.ErrorImage = null;
-            this.btnAltSekme.Image = ((System.Drawing.Image)(resources.GetObject("btnAltSekme.Image")));
-            this.btnAltSekme.ImageActive = null;
-            this.btnAltSekme.Location = new System.Drawing.Point(1732, 18);
-            this.btnAltSekme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAltSekme.Name = "btnAltSekme";
-            this.btnAltSekme.Size = new System.Drawing.Size(99, 60);
-            this.btnAltSekme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAltSekme.TabIndex = 33;
-            this.btnAltSekme.TabStop = false;
-            this.btnAltSekme.Zoom = 10;
-            this.btnAltSekme.Click += new System.EventHandler(this.btnAltSekme_Click);
+            this.buzzer.Enabled = true;
+            this.buzzer.Interval = 300;
+            this.buzzer.Tick += new System.EventHandler(this.buzzer_Tick);
             // 
             // pnlNumarator
             // 
-            this.pnlNumarator.Controls.Add(this.button1);
+            this.pnlNumarator.Controls.Add(this.btnDollyNoGir);
             this.pnlNumarator.Controls.Add(this.btn0);
             this.pnlNumarator.Controls.Add(this.btn9);
             this.pnlNumarator.Controls.Add(this.btn8);
@@ -684,26 +678,27 @@
             this.pnlNumarator.Controls.Add(this.btn2);
             this.pnlNumarator.Controls.Add(this.btn1);
             this.pnlNumarator.Controls.Add(this.btnNumaratorKapat);
-            this.pnlNumarator.Location = new System.Drawing.Point(576, 242);
+            this.pnlNumarator.Location = new System.Drawing.Point(212, 232);
             this.pnlNumarator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlNumarator.Name = "pnlNumarator";
             this.pnlNumarator.Size = new System.Drawing.Size(391, 473);
             this.pnlNumarator.TabIndex = 209;
             this.pnlNumarator.Visible = false;
             // 
-            // button1
+            // btnDollyNoGir
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(32, 381);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(315, 60);
-            this.button1.TabIndex = 135;
-            this.button1.Text = "Dolly No Gir.";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDollyNoGir.BackColor = System.Drawing.Color.Green;
+            this.btnDollyNoGir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDollyNoGir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDollyNoGir.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDollyNoGir.Location = new System.Drawing.Point(32, 381);
+            this.btnDollyNoGir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyNoGir.Name = "btnDollyNoGir";
+            this.btnDollyNoGir.Size = new System.Drawing.Size(315, 60);
+            this.btnDollyNoGir.TabIndex = 135;
+            this.btnDollyNoGir.Text = "Dolly No Gir.";
+            this.btnDollyNoGir.UseVisualStyleBackColor = false;
+            this.btnDollyNoGir.Click += new System.EventHandler(this.btnDollyNoGir_Click);
             // 
             // btn0
             // 
@@ -788,6 +783,7 @@
             this.btnTemizle.TabIndex = 129;
             this.btnTemizle.Text = "Sil";
             this.btnTemizle.UseVisualStyleBackColor = false;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btn7
             // 
@@ -877,6 +873,7 @@
             this.btnNumaratorKapat.TabStop = false;
             this.btnNumaratorKapat.Tag = "";
             this.btnNumaratorKapat.Zoom = 10;
+            this.btnNumaratorKapat.Click += new System.EventHandler(this.btnNumaratorKapat_Click);
             // 
             // frmMain
             // 
@@ -903,16 +900,16 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlBilgi.ResumeLayout(false);
             this.pnlBilgi.PerformLayout();
-            this.pnlAltBaslik.ResumeLayout(false);
-            this.pnlAltBaslik.PerformLayout();
-            this.pnlAltBilgi.ResumeLayout(false);
-            this.pnlAltBilgi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnKlavye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAnaSayfa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAltSekme)).EndInit();
+            this.pnlAltBaslik.ResumeLayout(false);
+            this.pnlAltBaslik.PerformLayout();
+            this.pnlAltBilgi.ResumeLayout(false);
+            this.pnlAltBilgi.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnKlavye)).EndInit();
             this.pnlNumarator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnNumaratorKapat)).EndInit();
             this.ResumeLayout(false);
@@ -954,7 +951,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnAnaSayfa;
         private Bunifu.Framework.UI.BunifuImageButton btnKlavye;
         private System.Windows.Forms.Panel pnlNumarator;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDollyNoGir;
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button btn8;

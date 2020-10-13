@@ -33,13 +33,13 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.rbBuzzerByPassAktif = new System.Windows.Forms.RadioButton();
             this.rbBuzzerByPassPasif = new System.Windows.Forms.RadioButton();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel11 = new Bunifu.UI.WinForms.BunifuLabel();
             this.rbKilitMekanizmasiByPassAktif = new System.Windows.Forms.RadioButton();
             this.rbKilitMekanizmasiByPassPasif = new System.Windows.Forms.RadioButton();
             this.btnOncekiSayfa = new Bunifu.Framework.UI.BunifuImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnOncekiSayfa)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,38 +82,6 @@
             this.rbBuzzerByPassPasif.Text = "Pasif";
             this.rbBuzzerByPassPasif.UseVisualStyleBackColor = true;
             this.rbBuzzerByPassPasif.Click += new System.EventHandler(this.rbBuzzerByPassPasif_Click);
-            // 
-            // bunifuLabel2
-            // 
-            this.bunifuLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuLabel2.Location = new System.Drawing.Point(324, 183);
-            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(298, 48);
-            this.bunifuLabel2.TabIndex = 279;
-            this.bunifuLabel2.Text = "Buzzer By-Pass:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel11
-            // 
-            this.bunifuLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bunifuLabel11.AutoEllipsis = false;
-            this.bunifuLabel11.CursorType = null;
-            this.bunifuLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bunifuLabel11.Location = new System.Drawing.Point(141, 93);
-            this.bunifuLabel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuLabel11.Name = "bunifuLabel11";
-            this.bunifuLabel11.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel11.Size = new System.Drawing.Size(481, 48);
-            this.bunifuLabel11.TabIndex = 278;
-            this.bunifuLabel11.Text = "Kilit Mekanizması By-Pass:";
-            this.bunifuLabel11.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel11.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // rbKilitMekanizmasiByPassAktif
             // 
@@ -191,17 +159,41 @@
             this.groupBox2.TabIndex = 285;
             this.groupBox2.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.BackColor = System.Drawing.Color.PowderBlue;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button2.Location = new System.Drawing.Point(285, 181);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(339, 63);
+            this.button2.TabIndex = 298;
+            this.button2.Text = "Buzzer By-Pass:";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.PowderBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.button1.Location = new System.Drawing.Point(90, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(534, 63);
+            this.button1.TabIndex = 299;
+            this.button1.Text = "Kilit Mekanizması By-Pass:";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmParametreler2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1319, 753);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOncekiSayfa);
-            this.Controls.Add(this.bunifuLabel2);
-            this.Controls.Add(this.bunifuLabel11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmParametreler2";
             this.Text = "frmParametreler2";
@@ -212,7 +204,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -223,10 +214,10 @@
         private System.Windows.Forms.RadioButton rbKilitMekanizmasiByPassPasif;
         private System.Windows.Forms.RadioButton rbBuzzerByPassAktif;
         private System.Windows.Forms.RadioButton rbBuzzerByPassPasif;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel11;
         private Bunifu.Framework.UI.BunifuImageButton btnOncekiSayfa;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

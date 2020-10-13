@@ -28,21 +28,27 @@ namespace ToyotaBoshokuDollyOrientation.Forms
         }
         public void raporla()
         {
+            DateTime time = dateTimePicker1.Value;
             barkodIslem rapor = new barkodIslem();
             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
             {
-                lblTotalOK.Text = rapor.TotalOKCount_LH().ToString();
-                lblTotalRework.Text = rapor.TotalREWORKCount_LH().ToString();
-                lblManualIslemAdedi.Text = rapor.TotalMANUALCount_LH().ToString();
-                lblTotalUretim.Text = rapor.TotalURETIMCount_LH().ToString();
+                lblTotalOK.Text = rapor.TotalOKCount_LH(time).ToString();
+                lblTotalRework.Text = rapor.TotalREWORKCount_LH(time).ToString();
+                lblManualIslemAdedi.Text = rapor.TotalMANUALCount_LH(time).ToString();
+                lblTotalUretim.Text = rapor.TotalURETIMCount_LH(time).ToString();
             }
             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
             {
-                lblTotalOK.Text = rapor.TotalOKCount_RH().ToString();
-                lblTotalRework.Text = rapor.TotalREWORKCount_RH().ToString();
-                lblManualIslemAdedi.Text = rapor.TotalMANUALCount_RH().ToString();
-                lblTotalUretim.Text = rapor.TotalURETIMCount_RH().ToString();
+                lblTotalOK.Text = rapor.TotalOKCount_RH(time).ToString();
+                lblTotalRework.Text = rapor.TotalREWORKCount_RH(time).ToString();
+                lblManualIslemAdedi.Text = rapor.TotalMANUALCount_RH(time).ToString();
+                lblTotalUretim.Text = rapor.TotalURETIMCount_RH(time).ToString();
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            raporla();
         }
     }
 }

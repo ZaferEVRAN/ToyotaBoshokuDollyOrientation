@@ -48,7 +48,7 @@
             this.btnAdminPanel = new System.Windows.Forms.Button();
             this.btnOncekiSayfa = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnUretimKayitlari = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOperatorPanel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnOncekiSayfa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,22 +363,23 @@
             this.btnUretimKayitlari.UseVisualStyleBackColor = false;
             this.btnUretimKayitlari.Click += new System.EventHandler(this.btnUretimKayitlari_Click);
             // 
-            // button1
+            // btnOperatorPanel
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 5;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(48, 605);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(282, 137);
-            this.button1.TabIndex = 92;
-            this.button1.Text = "Operatör Panel";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnOperatorPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnOperatorPanel.BackColor = System.Drawing.Color.Red;
+            this.btnOperatorPanel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnOperatorPanel.FlatAppearance.BorderSize = 5;
+            this.btnOperatorPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOperatorPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.btnOperatorPanel.ForeColor = System.Drawing.Color.White;
+            this.btnOperatorPanel.Location = new System.Drawing.Point(48, 605);
+            this.btnOperatorPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOperatorPanel.Name = "btnOperatorPanel";
+            this.btnOperatorPanel.Size = new System.Drawing.Size(282, 137);
+            this.btnOperatorPanel.TabIndex = 92;
+            this.btnOperatorPanel.Text = "Operatör Panel";
+            this.btnOperatorPanel.UseVisualStyleBackColor = false;
+            this.btnOperatorPanel.Click += new System.EventHandler(this.btnOperatorPanel_Click);
             // 
             // frmManual
             // 
@@ -386,7 +387,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1604, 929);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOperatorPanel);
             this.Controls.Add(this.btnUretimKayitlari);
             this.Controls.Add(this.btnAdminPanel);
             this.Controls.Add(this.btnIsiklariYak);
@@ -435,6 +436,6 @@
         private System.Windows.Forms.Button btnIsiklariYak;
         private System.Windows.Forms.Button btnAdminPanel;
         private System.Windows.Forms.Button btnUretimKayitlari;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOperatorPanel;
     }
 }

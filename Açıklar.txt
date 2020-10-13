@@ -1,0 +1,2 @@
+-Ürün dollye bırakıldıktan sonra program patlıyor.
+-Rework işleminde sarı renk yanmıyor.

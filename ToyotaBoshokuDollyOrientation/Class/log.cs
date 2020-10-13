@@ -104,7 +104,65 @@ namespace ToyotaBoshokuDollyOrientation
        
         }
 
+        public bool logDollyNoGuncelle_LH(string dolly_no)
+        {
+            bool sonuc = false;
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("insert into LOG values (@BARKODSID,@LINE,@KARKASID,@TELEMAIL,@MODELKODU,@SPECKODU,@TYPE,@MODEL,@DOLLY_NO,@DOLLY_ADRESS,@DOLLY_ADRES_DIR,@SETCOUNT,@OK_REWORK,null,@TIME,@KARKAS_USER)", con);
 
+            cmd.Parameters.Add("@DOLLY_NO", SqlDbType.NVarChar).Value = dolly_no;
+ 
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                mesaj.hata(ex);
+            }
+            finally
+            {
+                con.Dispose();
+                con.Close();
+            }
+
+            return sonuc;
+        }
+
+        public bool logDollyNoGuncelle_RH(string dolly_no)
+        {
+            bool sonuc = false;
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("insert into LOG values (@BARKODSID,@LINE,@KARKASID,@TELEMAIL,@MODELKODU,@SPECKODU,@TYPE,@MODEL,@DOLLY_NO,@DOLLY_ADRESS,@DOLLY_ADRES_DIR,@SETCOUNT,@OK_REWORK,null,@TIME,@KARKAS_USER)", con);
+
+            cmd.Parameters.Add("@DOLLY_NO", SqlDbType.NVarChar).Value = dolly_no;
+
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                mesaj.hata(ex);
+            }
+            finally
+            {
+                con.Dispose();
+                con.Close();
+            }
+
+            return sonuc;
+        }
 
     }
 }

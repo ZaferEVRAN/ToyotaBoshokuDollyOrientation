@@ -1693,13 +1693,83 @@ namespace ToyotaBoshokuDollyOrientation
             return dt;
         }
 
-        public uint TotalOKCount_LH()
+        public uint TotalOKCount_LH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000",time.Date) ;
+            string zaman2 = string.Format("{0} 23:59:00.000", time.Date);
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=2 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con);
+            SqlDataReader dr = null;
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    sonuc = Convert.ToUInt16(dr[""]);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                mesajlar.hata(ex);
+
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+            }
+            SqlConnection con2 = new SqlConnection(gnl.conString);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            SqlDataReader dr2 = null;
+            cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
+            try
+            {
+                if (con2.State == ConnectionState.Closed)
+                {
+                    con2.Open();
+                }
+                dr2 = cmd2.ExecuteReader();
+                while (dr2.Read())
+                {
+                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                }
+                sonuc = sonuc + sonuc2;
+            }
+            catch (Exception ex)
+            {
+                mesajlar.hata(ex);
+
+            }
+            finally
+            {
+                con2.Close();
+                con2.Dispose();
+            }
+            return sonuc;
+        }
+
+        public uint TotalOKCount_RH(DateTime time)
+        {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
+            uint sonuc = 0;
+            uint sonuc2 = 0;
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {
@@ -1725,7 +1795,9 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
             SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=2 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con2);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr2 = null;
             try
             {
@@ -1753,73 +1825,17 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public uint TotalOKCount_RH()
+        public uint TotalREWORKCount_LH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=2 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE()); ", con);
-            SqlDataReader dr = null;
-            try
-            {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    sonuc = Convert.ToUInt16(dr[""]);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                mesajlar.hata(ex);
-
-            }
-            finally
-            {
-                con.Close();
-                con.Dispose();
-            }
-            SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=2 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con2);
-            SqlDataReader dr2 = null;
-            try
-            {
-                if (con2.State == ConnectionState.Closed)
-                {
-                    con2.Open();
-                }
-                dr2 = cmd2.ExecuteReader();
-                while (dr2.Read())
-                {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
-                }
-                sonuc = sonuc + sonuc2;
-            }
-            catch (Exception ex)
-            {
-                mesajlar.hata(ex);
-
-            }
-            finally
-            {
-                con2.Close();
-                con2.Dispose();
-            }
-            return sonuc;
-        }
-
-        public uint TotalREWORKCount_LH()
-        {
-            uint sonuc = 0;
-            uint sonuc2 = 0;
-            cGenel gnl = new cGenel();
-            SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LOG where LINE='LH' AND OK_REWORK='REWORK' AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LOG where LINE='LH' AND OK_REWORK='REWORK' AND TIME>@zaman1 AND TIME<=@zaman2", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {
@@ -1848,13 +1864,17 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public uint TotalREWORKCount_RH()
+        public uint TotalREWORKCount_RH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LOG where LINE='RH' AND OK_REWORK='REWORK' AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LOG where LINE='RH' AND OK_REWORK='REWORK' AND TIME>@zaman1 AND TIME<=@zaman2", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {
@@ -1883,13 +1903,17 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public uint TotalMANUALCount_LH()
+        public uint TotalMANUALCount_LH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=99 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE()); ", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2 ", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {
@@ -1915,7 +1939,9 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
             SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=99 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con2);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr2 = null;
             try
             {
@@ -1943,13 +1969,17 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public uint TotalMANUALCount_RH()
+        public uint TotalMANUALCount_RH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=99 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE()); ", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2 ", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {
@@ -1975,7 +2005,9 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
             SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=99 AND DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());", con2);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr2 = null;
             try
             {
@@ -2003,13 +2035,17 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public uint TotalURETIMCount_LH()
+        public uint TotalURETIMCount_LH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE());  ", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where  TIME>@zaman1 AND TIME<=@zaman2", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {
@@ -2038,13 +2074,17 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public uint TotalURETIMCount_RH()
+        public uint TotalURETIMCount_RH(DateTime time)
         {
+            string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where DAY(TIME) = DAY(GETDATE()) AND MONTH(TIME) = MONTH(GETDATE()) AND YEAR(TIME) = YEAR(GETDATE()) ", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where  TIME>@zaman1 AND TIME<=@zaman2", con);
+            cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
             try
             {

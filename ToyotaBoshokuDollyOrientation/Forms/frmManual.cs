@@ -238,5 +238,10 @@ namespace ToyotaBoshokuDollyOrientation
         {
             cGenel.frmMain.ViewForm(cGenel.frmUretimKaydi);
         }
+
+        private void btnOperatorPanel_Click(object sender, EventArgs e)
+        {
+            cGenel.frmMain.ViewForm(cGenel.frmOperatorPanel);
+        }
     }
 }

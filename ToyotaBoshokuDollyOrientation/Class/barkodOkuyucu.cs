@@ -167,7 +167,8 @@ namespace ToyotaBoshokuDollyOrientation
                             cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
                         }
                     }
-                    if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._ID == 0 )//(v1.0 -->urunBarkod.barkod_FRL_RRL_Count() > 0)
+
+                   /* if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._ID == 0 )//(v1.0 -->urunBarkod.barkod_FRL_RRL_Count() > 0)
                     {
 
                         if (data == dolly.dollyBarkodInfo(data)._DollyBarkod)
@@ -200,8 +201,11 @@ namespace ToyotaBoshokuDollyOrientation
                         }
 
                     }
-                    else if (cGenel.nowDeviceID == 0 && data.Length >= 7)
+                    else */
+
+                    if (cGenel.nowDeviceID == 0 && data.Length >= 7)
                     {
+                       
 
                         if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
                         {
@@ -211,10 +215,12 @@ namespace ToyotaBoshokuDollyOrientation
                                 if (cGenel.YonBilgisi == cGenel.FR_LH)
                                 {
                                     barkodPopupIslem_LH(DoorSpec);
+                                    cGenel.frmPopupIslem.globalOK();
                                 }
                                 else if (cGenel.YonBilgisi == cGenel.RR_LH)
                                 {
                                     barkodPopupIslem_LH(DoorSpec);
+                                    cGenel.frmPopupIslem.globalOK();
                                 }
                                 else
                                 {
@@ -294,7 +300,7 @@ namespace ToyotaBoshokuDollyOrientation
                         }
                     }
 
-                    if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
+                  /* if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
                     {
 
                         if (data == dolly.dollyBarkodInfo(data)._DollyBarkod)
@@ -327,7 +333,8 @@ namespace ToyotaBoshokuDollyOrientation
                         }
 
                     }
-                    else if (cGenel.nowDeviceID == 0 && data.Length >= 7)
+                   else */
+                   if (cGenel.nowDeviceID == 0 && data.Length >= 7)
                     {
                         if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
                         {
@@ -338,11 +345,14 @@ namespace ToyotaBoshokuDollyOrientation
                                 {
 
                                     barkodPopupIslem_RH(DoorSpec);
+                                   cGenel.frmPopupIslem.globalOK();
+                                   
                                 }
                                 else if (cGenel.YonBilgisi == cGenel.RR_RH)
                                 {
 
                                     barkodPopupIslem_RH(DoorSpec);
+                                    cGenel.frmPopupIslem.globalOK();
                                 }
                                 else
                                 {
@@ -357,11 +367,14 @@ namespace ToyotaBoshokuDollyOrientation
                         }
                         else
                         {
-                            cGenel.genelUyariAlarm("Okutulan barkod ataması yapılmamıştır!", false, true);
-                        }
+                            cGenel.genelUyariAlarm("Okutulan Telemail bulunamadı!", false, true);
+                        }   
+
+                        cGenel.frmMain.globalLambaYakmaBarkodOkutulunca();
                     }
                 }
 
+        
             }
 
 

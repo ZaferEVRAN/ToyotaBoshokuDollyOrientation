@@ -147,7 +147,7 @@ namespace ToyotaBoshokuDollyOrientation
             TBTGALC_DOOR info ;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conStringTBT);
-            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRL_BARCODE,S.RRL_BARCODE,S.BACKNO,S.TYPE  from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>@lastTBTNO ORDER BY T.TBTNO", con);
+            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRL_BARCODE,S.RRL_BARCODE,S.BACKNO,S.TYPE  from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>=@lastTBTNO ORDER BY T.TBTNO", con);
             cmd.Parameters.Add("@lastTBTNO", SqlDbType.Float).Value = lastTBTNO;
             SqlDataReader dr = null;
             try
@@ -193,7 +193,7 @@ namespace ToyotaBoshokuDollyOrientation
             TBTGALC_DOOR info;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conStringTBT);
-            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRR_BARCODE,S.RRR_BARCODE,S.BACKNO, S.TYPE from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>@lastTBTNO ORDER BY T.TBTNO", con);
+            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRR_BARCODE,S.RRR_BARCODE,S.BACKNO, S.TYPE from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>=@lastTBTNO ORDER BY T.TBTNO", con);
             cmd.Parameters.Add("@lastTBTNO", SqlDbType.Float).Value = lastTBTNO;
             SqlDataReader dr = null;
             try
@@ -233,5 +233,40 @@ namespace ToyotaBoshokuDollyOrientation
             return list;
         }
 
+        public float TelemailIleTBTNOBul(float telemail)
+        {
+            float sonuc = 0;
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conStringTBT);
+            SqlCommand cmd = new SqlCommand("SELECT TOP (1) TBTNO FROM TBTGALC where TRIMNO=@telemail order by TBTNO desc ", con);
+            cmd.Parameters.Add("@telemail", SqlDbType.Float).Value = telemail;
+            SqlDataReader dr = null;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    sonuc = Convert.ToInt32(dr["TBTNO"]);
+                  
+                }
+
+            }
+            catch (Exception ex)
+            {
+                mesaj.hata(ex);
+
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+            }
+            return sonuc;
+        }
     }
 }
