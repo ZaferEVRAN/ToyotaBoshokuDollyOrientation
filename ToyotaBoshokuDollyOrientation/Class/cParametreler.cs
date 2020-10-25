@@ -360,13 +360,18 @@ namespace ToyotaBoshokuDollyOrientation
             cGenel.kilitZamanAsimi = Convert.ToUInt32(parametreAraValue(parametreKilitZamanAsimi));
             cGenel.kilitKapatmaDenemeSayisi = Convert.ToUInt32(parametreAraValue(parametreKilitKapatmaDenemeSaiyisi));
             cGenel.buzzerMispickSuresi = Convert.ToUInt32(parametreAraValue(parametreBuzzerSuresi));
+
             if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
             {
                 cGenel.xByPass = Convert.ToBoolean(int.Parse(parametreAraValue(parametreLHKarkasAktifPasif)));
+                cGenel.xBuzzerByPass = Convert.ToBoolean(int.Parse(parametreAraValue(parametreLHBuzzerAktifPasif)));
+                cGenel.xKilitMekanizmasiByPass = Convert.ToBoolean(int.Parse(parametreAraValue(parametreLHKilitMekanizmasiAktifPasif)));
             }
             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
             {
                 cGenel.xByPass = Convert.ToBoolean(int.Parse(parametreAraValue(parametreRHKarkasAktifPasif)));
+                cGenel.xBuzzerByPass = Convert.ToBoolean(int.Parse(parametreAraValue(parametreRHBuzzerAktifPasif)));
+                cGenel.xKilitMekanizmasiByPass = Convert.ToBoolean(int.Parse(parametreAraValue(parametreRHKilitMekanizmasiAktifPasif)));
             }
         }
 

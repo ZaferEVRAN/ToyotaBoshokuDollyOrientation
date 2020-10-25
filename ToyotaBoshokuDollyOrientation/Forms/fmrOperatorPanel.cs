@@ -52,7 +52,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
             {
                 cGenel.genelUyari("Telemail numarasını 0 ile 999 arasında sayı giriniz.", false);
             }
-
+            txtTelemailNo.Clear();
         }
 
         private void btnAtananBarkodlariIPTALET_Click(object sender, EventArgs e)

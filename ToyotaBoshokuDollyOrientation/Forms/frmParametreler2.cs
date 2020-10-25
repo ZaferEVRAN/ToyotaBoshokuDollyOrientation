@@ -54,7 +54,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
                 bool sonuc = param.parametreGuncelle(cParametreler.parametreLHKilitMekanizmasiAktifPasif, "0");
                 if (sonuc)
                 {
-                    cGenel.genelUyari("LH Kilit Mekanizması Pasif", false);
+                    cGenel.genelUyari("LH Kilit Mekanizması By-Pass Pasif", false);
                     param.parametreleriAta();
                 }
                 else
@@ -67,7 +67,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
                 bool sonuc = param.parametreGuncelle(cParametreler.parametreRHKilitMekanizmasiAktifPasif, "0");
                 if (sonuc)
                 {
-                    cGenel.genelUyari("RH Kilit Mekanizması Pasif", false);
+                    cGenel.genelUyari("RH Kilit Mekanizması By-Pass Pasif", false);
                     param.parametreleriAta();
                 }
                 else
@@ -84,7 +84,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
                 bool sonuc = param.parametreGuncelle(cParametreler.parametreLHBuzzerAktifPasif, "1");
                 if (sonuc)
                 {
-                    cGenel.genelUyari("LH Buzzer Aktif", false);
+                    cGenel.genelUyari("LH Buzzer By-Pass Aktif", false);
                     param.parametreleriAta();
                 }
                 else
@@ -97,7 +97,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
                 bool sonuc = param.parametreGuncelle(cParametreler.parametreRHBuzzerAktifPasif, "1");
                 if (sonuc)
                 {
-                    cGenel.genelUyari("RH Buzzer Aktif", false);
+                    cGenel.genelUyari("RH Buzzer By-Pass Aktif", false);
                     param.parametreleriAta();
                 }
                 else
@@ -114,7 +114,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
                 bool sonuc = param.parametreGuncelle(cParametreler.parametreLHBuzzerAktifPasif, "0");
                 if (sonuc)
                 {
-                    cGenel.genelUyari("LH Buzzer Pasif", false);
+                    cGenel.genelUyari("LH Buzzer By-Pass Pasif", false);
                     param.parametreleriAta();
                 }
                 else
@@ -127,7 +127,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
                 bool sonuc = param.parametreGuncelle(cParametreler.parametreRHBuzzerAktifPasif, "0");
                 if (sonuc)
                 {
-                    cGenel.genelUyari("RH Buzzer Pasif", false);
+                    cGenel.genelUyari("RH Buzzer By-Pass Pasif", false);
                     param.parametreleriAta();
                 }
                 else

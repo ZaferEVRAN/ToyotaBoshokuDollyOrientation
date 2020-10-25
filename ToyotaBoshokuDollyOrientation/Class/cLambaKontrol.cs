@@ -281,16 +281,21 @@ namespace ToyotaBoshokuDollyOrientation
         {
             try
             {
-                master.WriteSingleRegister(1, 503, status);
+                 master.WriteSingleRegister(1, 503, status);
+                //cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.WriteSingleRegister(0, status);
             }
             catch (Exception ex)
             {
 
-                Connect();
+                 Connect();
+               //cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Disconnect();
+               //cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Connect();
             }
 
         }
+
         public static ushort ringKontol;
+
         public async void buzzerRingKontrol()
         {
 

@@ -77,7 +77,7 @@ namespace ToyotaBoshokuDollyOrientation
         uint OKAlarmTimer;
         private void saat_Tick(object sender, EventArgs e)
         {
-            if (cGenel.frmPickToLight.Visible)
+            if (cGenel.frmPickToLight.Visible||cGenel.frmPopupIslem.Visible)
             {
                 txtBarkod.Focus();
             }
@@ -501,7 +501,7 @@ namespace ToyotaBoshokuDollyOrientation
                         _AREvt.WaitOne(300, true);
                         lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
                         _AREvt.WaitOne(300, true);
-                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID,cGenel.jobState2StatusAnimationID,cGenel.jobState2StatusColorID,cLambaKontrol.master)||true)//deviceID
+                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID,cGenel.jobState2StatusAnimationID,cGenel.jobState2StatusColorID,cLambaKontrol.master))//deviceID
                         {
                       
 
@@ -540,11 +540,11 @@ namespace ToyotaBoshokuDollyOrientation
                                     //karkasIslem.gorevDurumTamamlandi_LH();
                                     pnlNumarator.Visible = true;
                                     //setlemeDongusu();
-                                    _AREvt.WaitOne(300, true);
-                                    lambaKontrol.lambaDurumDollyBaslangic();
+                                   // _AREvt.WaitOne(300, true);
+                                  //  lambaKontrol.lambaDurumDollyBaslangic();
                               
-                                    cGenel.lockOnClick = true;
-                                    stepMotorIslemci.kilitMekanizmaDongusu();
+                                 //   cGenel.lockOnClick = true;
+                                 //   stepMotorIslemci.kilitMekanizmaDongusu();
 
                                 }
                             }
@@ -581,32 +581,30 @@ namespace ToyotaBoshokuDollyOrientation
                                     //karkasIslem.gorevDurumTamamlandi_RH();
                                     pnlNumarator.Visible = true;
                                     //setlemeDongusu();
-                                    _AREvt.WaitOne(300, true);
-                                    lambaKontrol.lambaDurumDollyBaslangic();
-                                    cGenel.lockOnClick = true;
-                             
-                                    stepMotorIslemci.kilitMekanizmaDongusu();
+                                   // _AREvt.WaitOne(300, true);
+                                  // lambaKontrol.lambaDurumDollyBaslangic();
+                                  // cGenel.lockOnClick = true;
+                                  //
+                                  // stepMotorIslemci.kilitMekanizmaDongusu();
                                 }
 
 
                             }
 
-                            if (true)
-                            {
-
-                               
-                            
-                                cGenel.sensorSonucu = 0;
-                                cGenel.nowDeviceID = 0;
-                                cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
-                                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                                cGenel.frmPickToLight.DurumIzleme();
-
-                                xKontrol = false;                             
+                           
+                                xKontrol = false;
                                 OKAlarmTimer = 0;
                                 alarmTetik = true;
                                 KarkasIslem.xLOOP = false;
-                            }
+
+                                cGenel.sensorSonucu = 0;
+                                cGenel.nowDeviceID = 0;
+                                cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                               // cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                               // cGenel.frmPickToLight.DurumIzleme();
+
+                           
+                            
 
 
                         }
@@ -769,7 +767,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             
 
-            if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 5&& alarmTetik==true&&cLambaKontrol.ringKontol==1 )
+            if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4&& alarmTetik==true&&cLambaKontrol.ringKontol==1 )
             {
                 
                 lambaKontrol.buzzerRing(0);
@@ -841,8 +839,11 @@ namespace ToyotaBoshokuDollyOrientation
                        // logOlustur.logDollyNoGuncelle_RH( dollyNO);
                     }
                 }
+                lambaKontrol.lambaDurumDollyBaslangic();
+                cGenel.lockOnClick = true;
 
-                
+                stepMotorIslemci.kilitMekanizmaDongusu();
+                txtBarkod.Clear();
             }  
             else
             {

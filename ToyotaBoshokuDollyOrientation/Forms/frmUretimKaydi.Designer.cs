@@ -144,19 +144,20 @@
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.BackColor = System.Drawing.Color.PowderBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button4.Location = new System.Drawing.Point(39, 413);
+            this.button4.Location = new System.Drawing.Point(39, 491);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(696, 83);
             this.button4.TabIndex = 298;
             this.button4.Text = "Total Dolly Manual";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.BackColor = System.Drawing.Color.PowderBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button5.Location = new System.Drawing.Point(39, 544);
+            this.button5.Location = new System.Drawing.Point(39, 392);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(696, 83);
             this.button5.TabIndex = 299;
@@ -192,19 +193,20 @@
             this.lblManualIslemAdedi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblManualIslemAdedi.BackColor = System.Drawing.Color.PowderBlue;
             this.lblManualIslemAdedi.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblManualIslemAdedi.Location = new System.Drawing.Point(785, 414);
+            this.lblManualIslemAdedi.Location = new System.Drawing.Point(785, 492);
             this.lblManualIslemAdedi.Name = "lblManualIslemAdedi";
             this.lblManualIslemAdedi.Size = new System.Drawing.Size(696, 83);
             this.lblManualIslemAdedi.TabIndex = 302;
             this.lblManualIslemAdedi.Text = "?";
             this.lblManualIslemAdedi.UseVisualStyleBackColor = false;
+            this.lblManualIslemAdedi.Visible = false;
             // 
             // lblTotalUretim
             // 
             this.lblTotalUretim.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalUretim.BackColor = System.Drawing.Color.PowderBlue;
             this.lblTotalUretim.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblTotalUretim.Location = new System.Drawing.Point(785, 544);
+            this.lblTotalUretim.Location = new System.Drawing.Point(785, 392);
             this.lblTotalUretim.Name = "lblTotalUretim";
             this.lblTotalUretim.Size = new System.Drawing.Size(696, 83);
             this.lblTotalUretim.TabIndex = 303;
