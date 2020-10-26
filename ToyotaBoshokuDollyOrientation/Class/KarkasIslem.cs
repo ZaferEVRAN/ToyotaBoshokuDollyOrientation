@@ -242,7 +242,7 @@ namespace ToyotaBoshokuDollyOrientation
 
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update LH_KARKAS set DOLLYNO=@dollyNo where STATUS=1", con);
+            SqlCommand cmd = new SqlCommand("update LH_KARKAS set DOLLYNO=@dollyNo where (STATUS=1 OR STATUS=0)", con);
             cmd.Parameters.Add("@DOLLYNO", SqlDbType.Int).Value = dollyNo;
             try
             {
@@ -275,7 +275,7 @@ namespace ToyotaBoshokuDollyOrientation
 
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update RH_KARKAS set DOLLYNO=@dollyNo where STATUS=1", con);
+            SqlCommand cmd = new SqlCommand("update RH_KARKAS set DOLLYNO=@dollyNo where (STATUS=1 OR STATUS=0)", con);
             cmd.Parameters.Add("@DOLLYNO", SqlDbType.Int).Value = dollyNo;
             try
             {

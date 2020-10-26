@@ -537,14 +537,14 @@ namespace ToyotaBoshokuDollyOrientation
                                 uint barkodDurum = barkodIslem.barkod_FRL_RRL_Count();
                                 if (barkodDurum == 0)//durum||
                                 {
-                                    //karkasIslem.gorevDurumTamamlandi_LH();
-                                    pnlNumarator.Visible = true;
-                                    //setlemeDongusu();
-                                   // _AREvt.WaitOne(300, true);
-                                  //  lambaKontrol.lambaDurumDollyBaslangic();
+                                    karkasIslem.gorevDurumTamamlandi_LH();
+                                    //pnlNumarator.Visible = true;
+                                    setlemeDongusu();
+                                    _AREvt.WaitOne(300, true);
+                                    lambaKontrol.lambaDurumDollyBaslangic();
                               
-                                 //   cGenel.lockOnClick = true;
-                                 //   stepMotorIslemci.kilitMekanizmaDongusu();
+                                    cGenel.lockOnClick = true;
+                                    stepMotorIslemci.kilitMekanizmaDongusu();
 
                                 }
                             }
@@ -578,14 +578,16 @@ namespace ToyotaBoshokuDollyOrientation
                                 if (barkodDurum == 0)
                                 {
 
-                                    //karkasIslem.gorevDurumTamamlandi_RH();
-                                    pnlNumarator.Visible = true;
-                                    //setlemeDongusu();
-                                   // _AREvt.WaitOne(300, true);
-                                  // lambaKontrol.lambaDurumDollyBaslangic();
-                                  // cGenel.lockOnClick = true;
-                                  //
-                                  // stepMotorIslemci.kilitMekanizmaDongusu();
+                                    karkasIslem.gorevDurumTamamlandi_RH();
+                                    //pnlNumarator.Visible = true;
+                                    setlemeDongusu();
+                                    _AREvt.WaitOne(300, true);
+                                   lambaKontrol.lambaDurumDollyBaslangic();
+                                   cGenel.lockOnClick = true;
+                                  
+                                   stepMotorIslemci.kilitMekanizmaDongusu();
+
+
                                 }
 
 
@@ -822,8 +824,8 @@ namespace ToyotaBoshokuDollyOrientation
                      result1 = karkasIslem.gorevGuncelle_LH(dollyNo);
                     if (result1)
                     {
-                        karkasIslem.gorevDurumTamamlandi_LH();
-                        setlemeDongusu();
+                       // karkasIslem.gorevDurumTamamlandi_LH();
+                       // setlemeDongusu();
                         cGenel.genelUyariAlarm("Dolly tanıtma başarılı!", false, true);
                        // logOlustur.logDollyNoGuncelle_LH(dollyNO);
                     }
@@ -833,22 +835,37 @@ namespace ToyotaBoshokuDollyOrientation
                     result1 = karkasIslem.gorevGuncelle_RH(dollyNo);
                     if (result1)
                     {
-                        karkasIslem.gorevDurumTamamlandi_RH();
-                        setlemeDongusu();
+                      //  karkasIslem.gorevDurumTamamlandi_RH();
+                      //  setlemeDongusu();
                         cGenel.genelUyariAlarm("Dolly tanıtma başarılı!", false, true);
                        // logOlustur.logDollyNoGuncelle_RH( dollyNO);
                     }
                 }
-                lambaKontrol.lambaDurumDollyBaslangic();
-                cGenel.lockOnClick = true;
-
-                stepMotorIslemci.kilitMekanizmaDongusu();
+                // lambaKontrol.lambaDurumDollyBaslangic();
+                //  cGenel.lockOnClick = true;
+                cGenel.lockOffClick = true;
+                 stepMotorIslemci.kilitMekanizmaDongusu();
                 txtBarkod.Clear();
             }  
             else
             {
                 cGenel.genelUyariAlarm("Tanımlı Dolly no giriniz!", false, true);
 
+            }
+        }
+
+        private void btnDollyKilitKapat_Click(object sender, EventArgs e)
+        {
+            cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
+            step.kilitMekanizmaSensorOku();
+            if (cGenel.motorRun == false && cGenel.stepAlarmVar == false)
+            {
+                if (cGenel.lockOffSensor == true)
+                {
+                    cGenel.lockOffClick = true;
+
+                    step.kilitMekanizmaDongusu();
+                }
             }
         }
     }

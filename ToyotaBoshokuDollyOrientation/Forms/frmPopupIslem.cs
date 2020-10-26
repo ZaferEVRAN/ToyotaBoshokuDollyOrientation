@@ -82,7 +82,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                         if (cGenel.nowDeviceID==40)
                         {
-                            cGenel.kilitKapatTetik = true;
+                            //cGenel.kilitKapatTetik = true;
                         }
                     }
 
@@ -154,7 +154,7 @@ namespace ToyotaBoshokuDollyOrientation
                         KarkasIslem.xLOOP = true;
                         if (cGenel.nowDeviceID==31)
                         {
-                            cGenel.kilitKapatTetik = true;
+                          //  cGenel.kilitKapatTetik = true;
                         }
                     }
                 }

@@ -310,6 +310,7 @@
             // 
             this.btnAdminPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAdminPanel.BackColor = System.Drawing.Color.Red;
+            this.btnAdminPanel.Enabled = false;
             this.btnAdminPanel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnAdminPanel.FlatAppearance.BorderSize = 5;
             this.btnAdminPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
