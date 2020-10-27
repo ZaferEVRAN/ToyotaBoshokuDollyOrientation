@@ -207,12 +207,13 @@
             // btnSonTBTOku
             // 
             this.btnSonTBTOku.BackColor = System.Drawing.Color.Yellow;
-            this.btnSonTBTOku.Location = new System.Drawing.Point(54, 17);
+            this.btnSonTBTOku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSonTBTOku.Location = new System.Drawing.Point(54, 14);
             this.btnSonTBTOku.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSonTBTOku.Name = "btnSonTBTOku";
-            this.btnSonTBTOku.Size = new System.Drawing.Size(256, 55);
+            this.btnSonTBTOku.Size = new System.Drawing.Size(445, 58);
             this.btnSonTBTOku.TabIndex = 92;
-            this.btnSonTBTOku.Text = "EN SON GİRİLEN TELEMAİL NO:";
+            this.btnSonTBTOku.Text = "BAŞLANACAK TELEMAİL NO:";
             this.btnSonTBTOku.UseVisualStyleBackColor = false;
             // 
             // btnBaslat

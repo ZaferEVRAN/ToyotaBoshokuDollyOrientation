@@ -147,7 +147,7 @@ namespace ToyotaBoshokuDollyOrientation
             TBTGALC_DOOR info ;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conStringTBT);
-            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRL_BARCODE,S.RRL_BARCODE,S.BACKNO,S.TYPE  from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>@lastTBTNO ORDER BY T.TBTNO", con);
+            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRL_BARCODE,S.RRL_BARCODE,S.BACKNO,S.TYPE  from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>=@lastTBTNO ORDER BY T.TBTNO", con);
             cmd.Parameters.Add("@lastTBTNO", SqlDbType.Float).Value = lastTBTNO;
             SqlDataReader dr = null;
             try
@@ -193,7 +193,7 @@ namespace ToyotaBoshokuDollyOrientation
             TBTGALC_DOOR info;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conStringTBT);
-            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRR_BARCODE,S.RRR_BARCODE,S.BACKNO, S.TYPE from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>@lastTBTNO ORDER BY T.TBTNO", con);
+            SqlCommand cmd = new SqlCommand("select TOP 10 T.TBTNO, T.BODYNO,T.MODEL,T.TRIMNO,T.SEATSPEC,T.DOORSPEC,S.FRR_BARCODE,S.RRR_BARCODE,S.BACKNO, S.TYPE from TBTGALC AS T inner join   dbo.DOOR AS S  ON T.DOORSPEC=S.SPEC where T.TBTNO>=@lastTBTNO ORDER BY T.TBTNO", con);
             cmd.Parameters.Add("@lastTBTNO", SqlDbType.Float).Value = lastTBTNO;
             SqlDataReader dr = null;
             try

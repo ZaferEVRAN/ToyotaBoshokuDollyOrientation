@@ -651,7 +651,7 @@ namespace ToyotaBoshokuDollyOrientation
                         lastTBTNO = listTBTGalc_LH[(listTBTGalc_LH.Count - 1)]._TBTNO;
                         barkodIslem.barcodsNewAdd_LH(listTBTGalc_LH);
                     }
-                    tbtgalcDoor.TBTGalcLastTBTNO_Write_LH(lastTBTNO);
+                    tbtgalcDoor.TBTGalcLastTBTNO_Write_LH(lastTBTNO+1);
 
                     if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
                     {
@@ -672,7 +672,7 @@ namespace ToyotaBoshokuDollyOrientation
                         lastTBTNO = listTBTGalc_RH[(listTBTGalc_RH.Count - 1)]._TBTNO;
                         barkodIslem.barcodsNewAdd_RH(listTBTGalc_RH);
                     }
-                    tbtgalcDoor.TBTGalcLastTBTNO_Write_RH(lastTBTNO);
+                    tbtgalcDoor.TBTGalcLastTBTNO_Write_RH(lastTBTNO+1);
 
                     if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
                     {
