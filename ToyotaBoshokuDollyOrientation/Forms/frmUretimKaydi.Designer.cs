@@ -150,7 +150,6 @@
             this.button4.TabIndex = 298;
             this.button4.Text = "Total Dolly Manual";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
             // 
             // button5
             // 
@@ -199,7 +198,6 @@
             this.lblManualIslemAdedi.TabIndex = 302;
             this.lblManualIslemAdedi.Text = "?";
             this.lblManualIslemAdedi.UseVisualStyleBackColor = false;
-            this.lblManualIslemAdedi.Visible = false;
             // 
             // lblTotalUretim
             // 

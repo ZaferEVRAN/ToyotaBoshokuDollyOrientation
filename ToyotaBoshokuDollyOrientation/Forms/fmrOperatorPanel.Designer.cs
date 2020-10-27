@@ -206,23 +206,25 @@
             // 
             // btnSonTBTOku
             // 
+            this.btnSonTBTOku.BackColor = System.Drawing.Color.Yellow;
             this.btnSonTBTOku.Location = new System.Drawing.Point(54, 17);
             this.btnSonTBTOku.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSonTBTOku.Name = "btnSonTBTOku";
             this.btnSonTBTOku.Size = new System.Drawing.Size(256, 55);
             this.btnSonTBTOku.TabIndex = 92;
-            this.btnSonTBTOku.Text = "DEVAM EDİLECEK TELEMAİL NO:";
-            this.btnSonTBTOku.UseVisualStyleBackColor = true;
+            this.btnSonTBTOku.Text = "EN SON GİRİLEN TELEMAİL NO:";
+            this.btnSonTBTOku.UseVisualStyleBackColor = false;
             // 
             // btnBaslat
             // 
             this.btnBaslat.BackColor = System.Drawing.Color.Green;
+            this.btnBaslat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnBaslat.Location = new System.Drawing.Point(318, 78);
             this.btnBaslat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaslat.Name = "btnBaslat";
-            this.btnBaslat.Size = new System.Drawing.Size(140, 65);
+            this.btnBaslat.Size = new System.Drawing.Size(181, 65);
             this.btnBaslat.TabIndex = 86;
-            this.btnBaslat.Text = "Başlat";
+            this.btnBaslat.Text = "BAŞLAT";
             this.btnBaslat.UseVisualStyleBackColor = false;
             this.btnBaslat.Click += new System.EventHandler(this.btnBaslat_Click);
             // 

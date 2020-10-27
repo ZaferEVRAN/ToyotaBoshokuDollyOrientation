@@ -130,10 +130,10 @@ namespace ToyotaBoshokuDollyOrientation
 
                 case Keys.Enter:
 
-                    
-                    okuyucu.si_DataReceived(txtBarkod.Text);
+                    string _sTxtBarkod = txtBarkod.Text.ToUpper();
+                    okuyucu.si_DataReceived(_sTxtBarkod);
 
-                    lblBarkod.Text = txtBarkod.Text;
+                    lblBarkod.Text = _sTxtBarkod;
                     txtBarkod.Clear();
                     e.SuppressKeyPress = true;
                     break;
@@ -371,21 +371,13 @@ namespace ToyotaBoshokuDollyOrientation
                 }
             
             });
-            //lambaKontrol.Connect();
-
-            stepMotorIslemci.stepMotorIstemciyiOlustur();
-
-            stepMotorIslemci.kilitMekanizmaSensorOku();
-            //okuyucu.barkodBaglanti();
+  
 
             parametre.parametreleriAta();
 
             status.statusColorAta();
 
-            if (cGenel.xByPass==false&&cLambaKontrol.PLCDurumu==PLCDurumlari.UYGUN)
-            {
-                lambaKontrol.yarimKalanIsıklarGoster();
-            }
+        
 
             if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
             {
@@ -406,6 +398,15 @@ namespace ToyotaBoshokuDollyOrientation
             btn8.Click += new EventHandler(islem);
             btn9.Click += new EventHandler(islem);
             btn0.Click += new EventHandler(islem);
+
+            if (cGenel.xByPass == false && cLambaKontrol.PLCDurumu == PLCDurumlari.UYGUN)
+            {
+                lambaKontrol.yarimKalanIsıklarGoster();
+            }
+
+            stepMotorIslemci.stepMotorIstemciyiOlustur();
+
+            stepMotorIslemci.kilitMekanizmaSensorOku();
         }
         private void islem(Object sender, EventArgs e)
         {
@@ -483,7 +484,7 @@ namespace ToyotaBoshokuDollyOrientation
         {
 
 
-            while (KarkasIslem.xLOOP&& cGenel.xByPass==false)
+            while ( KarkasIslem.xLOOP&& cGenel.xByPass==false)
             {
                 _AREvt.WaitOne(100, true);
 
