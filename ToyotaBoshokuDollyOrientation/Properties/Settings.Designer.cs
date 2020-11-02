@@ -46,5 +46,17 @@ namespace ToyotaBoshokuDollyOrientation.Properties {
                 this["comPortStepMotor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OKBuzzer {
+            get {
+                return ((bool)(this["OKBuzzer"]));
+            }
+            set {
+                this["OKBuzzer"] = value;
+            }
+        }
     }
 }

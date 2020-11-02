@@ -102,19 +102,17 @@
             this.pnlBilgi.Controls.Add(this.lblSaat);
             this.pnlBilgi.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBilgi.Location = new System.Drawing.Point(0, 0);
-            this.pnlBilgi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlBilgi.Name = "pnlBilgi";
-            this.pnlBilgi.Size = new System.Drawing.Size(1940, 146);
+            this.pnlBilgi.Size = new System.Drawing.Size(1293, 95);
             this.pnlBilgi.TabIndex = 2;
             // 
             // txtBarkod
             // 
             this.txtBarkod.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.txtBarkod.Location = new System.Drawing.Point(228, 11);
-            this.txtBarkod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBarkod.Location = new System.Drawing.Point(152, 7);
             this.txtBarkod.Multiline = true;
             this.txtBarkod.Name = "txtBarkod";
-            this.txtBarkod.Size = new System.Drawing.Size(244, 55);
+            this.txtBarkod.Size = new System.Drawing.Size(164, 37);
             this.txtBarkod.TabIndex = 196;
             this.txtBarkod.Click += new System.EventHandler(this.txtBarkod_Click);
             this.txtBarkod.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarkodLH_KeyDown);
@@ -125,10 +123,9 @@
             this.lblBarkod.AutoSize = true;
             this.lblBarkod.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBarkod.ForeColor = System.Drawing.Color.White;
-            this.lblBarkod.Location = new System.Drawing.Point(214, 71);
-            this.lblBarkod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBarkod.Location = new System.Drawing.Point(143, 46);
             this.lblBarkod.Name = "lblBarkod";
-            this.lblBarkod.Size = new System.Drawing.Size(63, 69);
+            this.lblBarkod.Size = new System.Drawing.Size(42, 46);
             this.lblBarkod.TabIndex = 197;
             this.lblBarkod.Text = "?";
             // 
@@ -138,10 +135,9 @@
             this.btnAnaSayfa.ErrorImage = null;
             this.btnAnaSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnAnaSayfa.Image")));
             this.btnAnaSayfa.ImageActive = null;
-            this.btnAnaSayfa.Location = new System.Drawing.Point(10, 11);
-            this.btnAnaSayfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAnaSayfa.Location = new System.Drawing.Point(7, 7);
             this.btnAnaSayfa.Name = "btnAnaSayfa";
-            this.btnAnaSayfa.Size = new System.Drawing.Size(196, 123);
+            this.btnAnaSayfa.Size = new System.Drawing.Size(131, 80);
             this.btnAnaSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAnaSayfa.TabIndex = 37;
             this.btnAnaSayfa.TabStop = false;
@@ -158,10 +154,9 @@
             this.bunifuImageButton1.ErrorImage = null;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(483, 9);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(322, 6);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(914, 125);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(609, 81);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 36;
             this.bunifuImageButton1.TabStop = false;
@@ -175,10 +170,9 @@
             this.btnInfo.ErrorImage = null;
             this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
             this.btnInfo.ImageActive = null;
-            this.btnInfo.Location = new System.Drawing.Point(1624, 18);
-            this.btnInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnInfo.Location = new System.Drawing.Point(1083, 12);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(99, 60);
+            this.btnInfo.Size = new System.Drawing.Size(66, 39);
             this.btnInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnInfo.TabIndex = 35;
             this.btnInfo.TabStop = false;
@@ -192,10 +186,9 @@
             this.btnExit.ErrorImage = null;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageActive = null;
-            this.btnExit.Location = new System.Drawing.Point(1822, 18);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExit.Location = new System.Drawing.Point(1215, 12);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(99, 60);
+            this.btnExit.Size = new System.Drawing.Size(66, 39);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 34;
             this.btnExit.TabStop = false;
@@ -209,10 +202,9 @@
             this.btnAltSekme.ErrorImage = null;
             this.btnAltSekme.Image = ((System.Drawing.Image)(resources.GetObject("btnAltSekme.Image")));
             this.btnAltSekme.ImageActive = null;
-            this.btnAltSekme.Location = new System.Drawing.Point(1732, 18);
-            this.btnAltSekme.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAltSekme.Location = new System.Drawing.Point(1155, 12);
             this.btnAltSekme.Name = "btnAltSekme";
-            this.btnAltSekme.Size = new System.Drawing.Size(99, 60);
+            this.btnAltSekme.Size = new System.Drawing.Size(66, 39);
             this.btnAltSekme.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAltSekme.TabIndex = 33;
             this.btnAltSekme.TabStop = false;
@@ -225,10 +217,9 @@
             this.lblSaat.AutoSize = true;
             this.lblSaat.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblSaat.ForeColor = System.Drawing.Color.White;
-            this.lblSaat.Location = new System.Drawing.Point(1590, 91);
-            this.lblSaat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSaat.Location = new System.Drawing.Point(1060, 59);
             this.lblSaat.Name = "lblSaat";
-            this.lblSaat.Size = new System.Drawing.Size(71, 41);
+            this.lblSaat.Size = new System.Drawing.Size(47, 28);
             this.lblSaat.TabIndex = 32;
             this.lblSaat.Text = "saat";
             // 
@@ -238,10 +229,9 @@
             this.lblUstBilgi.AutoSize = true;
             this.lblUstBilgi.Font = new System.Drawing.Font("Segoe UI", 30F);
             this.lblUstBilgi.ForeColor = System.Drawing.Color.White;
-            this.lblUstBilgi.Location = new System.Drawing.Point(4, 0);
-            this.lblUstBilgi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUstBilgi.Location = new System.Drawing.Point(3, 0);
             this.lblUstBilgi.Name = "lblUstBilgi";
-            this.lblUstBilgi.Size = new System.Drawing.Size(944, 81);
+            this.lblUstBilgi.Size = new System.Drawing.Size(629, 54);
             this.lblUstBilgi.TabIndex = 3;
             this.lblUstBilgi.Text = "Doortrim Dolly Traceability System";
             this.lblUstBilgi.Click += new System.EventHandler(this.lblUstBilgi_Click);
@@ -252,10 +242,9 @@
             this.pnlAltBaslik.Controls.Add(this.btnHata);
             this.pnlAltBaslik.Controls.Add(this.lblUstBilgi);
             this.pnlAltBaslik.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAltBaslik.Location = new System.Drawing.Point(0, 146);
-            this.pnlAltBaslik.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlAltBaslik.Location = new System.Drawing.Point(0, 95);
             this.pnlAltBaslik.Name = "pnlAltBaslik";
-            this.pnlAltBaslik.Size = new System.Drawing.Size(1940, 86);
+            this.pnlAltBaslik.Size = new System.Drawing.Size(1293, 56);
             this.pnlAltBaslik.TabIndex = 3;
             this.pnlAltBaslik.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAltBaslik_Paint);
             // 
@@ -266,10 +255,9 @@
             this.btnHata.FlatAppearance.BorderSize = 3;
             this.btnHata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHata.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnHata.Location = new System.Drawing.Point(1690, 3);
-            this.btnHata.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHata.Location = new System.Drawing.Point(1127, 2);
             this.btnHata.Name = "btnHata";
-            this.btnHata.Size = new System.Drawing.Size(230, 82);
+            this.btnHata.Size = new System.Drawing.Size(153, 53);
             this.btnHata.TabIndex = 44;
             this.btnHata.Text = "Kilit Arıza!";
             this.btnHata.UseVisualStyleBackColor = false;
@@ -283,12 +271,11 @@
             this.bunifuCustomLabel12.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(1864, 14);
-            this.bunifuCustomLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(1243, 9);
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(56, 29);
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(38, 20);
             this.bunifuCustomLabel12.TabIndex = 47;
-            this.bunifuCustomLabel12.Text = "v2.1";
+            this.bunifuCustomLabel12.Text = "v2.2";
             // 
             // pnlAltBilgi
             // 
@@ -308,10 +295,9 @@
             this.pnlAltBilgi.Controls.Add(this.btnIsiklarHazirDegil);
             this.pnlAltBilgi.Controls.Add(this.btnKilitMekanizmasıHazirDegil);
             this.pnlAltBilgi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAltBilgi.Location = new System.Drawing.Point(0, 1042);
-            this.pnlAltBilgi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlAltBilgi.Location = new System.Drawing.Point(0, 677);
             this.pnlAltBilgi.Name = "pnlAltBilgi";
-            this.pnlAltBilgi.Size = new System.Drawing.Size(1940, 58);
+            this.pnlAltBilgi.Size = new System.Drawing.Size(1293, 38);
             this.pnlAltBilgi.TabIndex = 42;
             // 
             // btnKlavye
@@ -324,10 +310,9 @@
             this.btnKlavye.ErrorImage = null;
             this.btnKlavye.Image = ((System.Drawing.Image)(resources.GetObject("btnKlavye.Image")));
             this.btnKlavye.ImageActive = null;
-            this.btnKlavye.Location = new System.Drawing.Point(1658, 0);
-            this.btnKlavye.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKlavye.Location = new System.Drawing.Point(1105, 0);
             this.btnKlavye.Name = "btnKlavye";
-            this.btnKlavye.Size = new System.Drawing.Size(78, 52);
+            this.btnKlavye.Size = new System.Drawing.Size(52, 34);
             this.btnKlavye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnKlavye.TabIndex = 132;
             this.btnKlavye.TabStop = false;
@@ -339,10 +324,9 @@
             // 
             this.lblModbusRTUBilgi.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblModbusRTUBilgi.AutoSize = true;
-            this.lblModbusRTUBilgi.Location = new System.Drawing.Point(1023, 8);
-            this.lblModbusRTUBilgi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModbusRTUBilgi.Location = new System.Drawing.Point(682, 5);
             this.lblModbusRTUBilgi.Name = "lblModbusRTUBilgi";
-            this.lblModbusRTUBilgi.Size = new System.Drawing.Size(128, 20);
+            this.lblModbusRTUBilgi.Size = new System.Drawing.Size(87, 13);
             this.lblModbusRTUBilgi.TabIndex = 140;
             this.lblModbusRTUBilgi.Text = "ModbusRTUBilgi";
             // 
@@ -350,10 +334,9 @@
             // 
             this.lblNowDeviceID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblNowDeviceID.AutoSize = true;
-            this.lblNowDeviceID.Location = new System.Drawing.Point(1744, 22);
-            this.lblNowDeviceID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNowDeviceID.Location = new System.Drawing.Point(1163, 14);
             this.lblNowDeviceID.Name = "lblNowDeviceID";
-            this.lblNowDeviceID.Size = new System.Drawing.Size(105, 20);
+            this.lblNowDeviceID.Size = new System.Drawing.Size(74, 13);
             this.lblNowDeviceID.TabIndex = 138;
             this.lblNowDeviceID.Text = "NowDeviceID";
             this.lblNowDeviceID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -373,14 +356,14 @@
             this.btnKarkasByPassAktif.Iconimage_Selected = null;
             this.btnKarkasByPassAktif.IconZoom = 90D;
             this.btnKarkasByPassAktif.IsTab = false;
-            this.btnKarkasByPassAktif.Location = new System.Drawing.Point(810, 6);
-            this.btnKarkasByPassAktif.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnKarkasByPassAktif.Location = new System.Drawing.Point(540, 4);
+            this.btnKarkasByPassAktif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKarkasByPassAktif.Name = "btnKarkasByPassAktif";
             this.btnKarkasByPassAktif.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnKarkasByPassAktif.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnKarkasByPassAktif.OnHoverTextColor = System.Drawing.Color.White;
             this.btnKarkasByPassAktif.selected = false;
-            this.btnKarkasByPassAktif.Size = new System.Drawing.Size(190, 48);
+            this.btnKarkasByPassAktif.Size = new System.Drawing.Size(127, 31);
             this.btnKarkasByPassAktif.TabIndex = 136;
             this.btnKarkasByPassAktif.Textcolor = System.Drawing.Color.White;
             this.btnKarkasByPassAktif.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -400,14 +383,14 @@
             this.btnKarkasByPassPasif.Iconimage_Selected = null;
             this.btnKarkasByPassPasif.IconZoom = 90D;
             this.btnKarkasByPassPasif.IsTab = false;
-            this.btnKarkasByPassPasif.Location = new System.Drawing.Point(810, 8);
-            this.btnKarkasByPassPasif.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnKarkasByPassPasif.Location = new System.Drawing.Point(540, 5);
+            this.btnKarkasByPassPasif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKarkasByPassPasif.Name = "btnKarkasByPassPasif";
             this.btnKarkasByPassPasif.Normalcolor = System.Drawing.Color.Maroon;
             this.btnKarkasByPassPasif.OnHovercolor = System.Drawing.Color.Maroon;
             this.btnKarkasByPassPasif.OnHoverTextColor = System.Drawing.Color.White;
             this.btnKarkasByPassPasif.selected = false;
-            this.btnKarkasByPassPasif.Size = new System.Drawing.Size(190, 48);
+            this.btnKarkasByPassPasif.Size = new System.Drawing.Size(127, 31);
             this.btnKarkasByPassPasif.TabIndex = 137;
             this.btnKarkasByPassPasif.Textcolor = System.Drawing.Color.White;
             this.btnKarkasByPassPasif.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -427,14 +410,14 @@
             this.btnKilitAcik.Iconimage_Selected = null;
             this.btnKilitAcik.IconZoom = 90D;
             this.btnKilitAcik.IsTab = false;
-            this.btnKilitAcik.Location = new System.Drawing.Point(610, 6);
-            this.btnKilitAcik.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnKilitAcik.Location = new System.Drawing.Point(407, 4);
+            this.btnKilitAcik.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKilitAcik.Name = "btnKilitAcik";
             this.btnKilitAcik.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnKilitAcik.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnKilitAcik.OnHoverTextColor = System.Drawing.Color.White;
             this.btnKilitAcik.selected = false;
-            this.btnKilitAcik.Size = new System.Drawing.Size(190, 48);
+            this.btnKilitAcik.Size = new System.Drawing.Size(127, 31);
             this.btnKilitAcik.TabIndex = 134;
             this.btnKilitAcik.Textcolor = System.Drawing.Color.White;
             this.btnKilitAcik.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -454,14 +437,14 @@
             this.btnKilitKapali.Iconimage_Selected = null;
             this.btnKilitKapali.IconZoom = 90D;
             this.btnKilitKapali.IsTab = false;
-            this.btnKilitKapali.Location = new System.Drawing.Point(610, 6);
-            this.btnKilitKapali.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnKilitKapali.Location = new System.Drawing.Point(407, 4);
+            this.btnKilitKapali.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKilitKapali.Name = "btnKilitKapali";
             this.btnKilitKapali.Normalcolor = System.Drawing.Color.Maroon;
             this.btnKilitKapali.OnHovercolor = System.Drawing.Color.Maroon;
             this.btnKilitKapali.OnHoverTextColor = System.Drawing.Color.White;
             this.btnKilitKapali.selected = false;
-            this.btnKilitKapali.Size = new System.Drawing.Size(190, 48);
+            this.btnKilitKapali.Size = new System.Drawing.Size(127, 31);
             this.btnKilitKapali.TabIndex = 135;
             this.btnKilitKapali.Textcolor = System.Drawing.Color.White;
             this.btnKilitKapali.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -470,10 +453,9 @@
             // 
             this.lblIsikBaglantiAciklama.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblIsikBaglantiAciklama.AutoSize = true;
-            this.lblIsikBaglantiAciklama.Location = new System.Drawing.Point(1022, 31);
-            this.lblIsikBaglantiAciklama.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIsikBaglantiAciklama.Location = new System.Drawing.Point(681, 20);
             this.lblIsikBaglantiAciklama.Name = "lblIsikBaglantiAciklama";
-            this.lblIsikBaglantiAciklama.Size = new System.Drawing.Size(91, 20);
+            this.lblIsikBaglantiAciklama.Size = new System.Drawing.Size(61, 13);
             this.lblIsikBaglantiAciklama.TabIndex = 131;
             this.lblIsikBaglantiAciklama.Text = "IsikBaglanti";
             // 
@@ -492,14 +474,14 @@
             this.btnKilitMekanizmasıHazir.Iconimage_Selected = null;
             this.btnKilitMekanizmasıHazir.IconZoom = 90D;
             this.btnKilitMekanizmasıHazir.IsTab = false;
-            this.btnKilitMekanizmasıHazir.Location = new System.Drawing.Point(411, 5);
-            this.btnKilitMekanizmasıHazir.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnKilitMekanizmasıHazir.Location = new System.Drawing.Point(274, 3);
+            this.btnKilitMekanizmasıHazir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKilitMekanizmasıHazir.Name = "btnKilitMekanizmasıHazir";
             this.btnKilitMekanizmasıHazir.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnKilitMekanizmasıHazir.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnKilitMekanizmasıHazir.OnHoverTextColor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazir.selected = false;
-            this.btnKilitMekanizmasıHazir.Size = new System.Drawing.Size(190, 48);
+            this.btnKilitMekanizmasıHazir.Size = new System.Drawing.Size(127, 31);
             this.btnKilitMekanizmasıHazir.TabIndex = 132;
             this.btnKilitMekanizmasıHazir.Textcolor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -519,14 +501,14 @@
             this.btnIsiklarHazir.Iconimage_Selected = null;
             this.btnIsiklarHazir.IconZoom = 90D;
             this.btnIsiklarHazir.IsTab = false;
-            this.btnIsiklarHazir.Location = new System.Drawing.Point(212, 6);
-            this.btnIsiklarHazir.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnIsiklarHazir.Location = new System.Drawing.Point(141, 4);
+            this.btnIsiklarHazir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIsiklarHazir.Name = "btnIsiklarHazir";
             this.btnIsiklarHazir.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnIsiklarHazir.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnIsiklarHazir.OnHoverTextColor = System.Drawing.Color.White;
             this.btnIsiklarHazir.selected = false;
-            this.btnIsiklarHazir.Size = new System.Drawing.Size(190, 48);
+            this.btnIsiklarHazir.Size = new System.Drawing.Size(127, 31);
             this.btnIsiklarHazir.TabIndex = 125;
             this.btnIsiklarHazir.Textcolor = System.Drawing.Color.White;
             this.btnIsiklarHazir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -546,14 +528,14 @@
             this.btnServerHazir.Iconimage_Selected = null;
             this.btnServerHazir.IconZoom = 90D;
             this.btnServerHazir.IsTab = false;
-            this.btnServerHazir.Location = new System.Drawing.Point(12, 6);
-            this.btnServerHazir.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnServerHazir.Location = new System.Drawing.Point(8, 4);
+            this.btnServerHazir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnServerHazir.Name = "btnServerHazir";
             this.btnServerHazir.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnServerHazir.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnServerHazir.OnHoverTextColor = System.Drawing.Color.White;
             this.btnServerHazir.selected = false;
-            this.btnServerHazir.Size = new System.Drawing.Size(190, 48);
+            this.btnServerHazir.Size = new System.Drawing.Size(127, 31);
             this.btnServerHazir.TabIndex = 123;
             this.btnServerHazir.Textcolor = System.Drawing.Color.White;
             this.btnServerHazir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -573,14 +555,14 @@
             this.btnServerHazirDegil.Iconimage_Selected = null;
             this.btnServerHazirDegil.IconZoom = 90D;
             this.btnServerHazirDegil.IsTab = false;
-            this.btnServerHazirDegil.Location = new System.Drawing.Point(12, 5);
-            this.btnServerHazirDegil.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnServerHazirDegil.Location = new System.Drawing.Point(8, 3);
+            this.btnServerHazirDegil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnServerHazirDegil.Name = "btnServerHazirDegil";
             this.btnServerHazirDegil.Normalcolor = System.Drawing.Color.Maroon;
             this.btnServerHazirDegil.OnHovercolor = System.Drawing.Color.Maroon;
             this.btnServerHazirDegil.OnHoverTextColor = System.Drawing.Color.White;
             this.btnServerHazirDegil.selected = false;
-            this.btnServerHazirDegil.Size = new System.Drawing.Size(190, 48);
+            this.btnServerHazirDegil.Size = new System.Drawing.Size(127, 31);
             this.btnServerHazirDegil.TabIndex = 124;
             this.btnServerHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnServerHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -600,14 +582,14 @@
             this.btnIsiklarHazirDegil.Iconimage_Selected = null;
             this.btnIsiklarHazirDegil.IconZoom = 90D;
             this.btnIsiklarHazirDegil.IsTab = false;
-            this.btnIsiklarHazirDegil.Location = new System.Drawing.Point(212, 6);
-            this.btnIsiklarHazirDegil.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnIsiklarHazirDegil.Location = new System.Drawing.Point(141, 4);
+            this.btnIsiklarHazirDegil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIsiklarHazirDegil.Name = "btnIsiklarHazirDegil";
             this.btnIsiklarHazirDegil.Normalcolor = System.Drawing.Color.Maroon;
             this.btnIsiklarHazirDegil.OnHovercolor = System.Drawing.Color.Maroon;
             this.btnIsiklarHazirDegil.OnHoverTextColor = System.Drawing.Color.White;
             this.btnIsiklarHazirDegil.selected = false;
-            this.btnIsiklarHazirDegil.Size = new System.Drawing.Size(190, 48);
+            this.btnIsiklarHazirDegil.Size = new System.Drawing.Size(127, 31);
             this.btnIsiklarHazirDegil.TabIndex = 126;
             this.btnIsiklarHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnIsiklarHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -627,14 +609,14 @@
             this.btnKilitMekanizmasıHazirDegil.Iconimage_Selected = null;
             this.btnKilitMekanizmasıHazirDegil.IconZoom = 90D;
             this.btnKilitMekanizmasıHazirDegil.IsTab = false;
-            this.btnKilitMekanizmasıHazirDegil.Location = new System.Drawing.Point(411, 6);
-            this.btnKilitMekanizmasıHazirDegil.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnKilitMekanizmasıHazirDegil.Location = new System.Drawing.Point(274, 4);
+            this.btnKilitMekanizmasıHazirDegil.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKilitMekanizmasıHazirDegil.Name = "btnKilitMekanizmasıHazirDegil";
             this.btnKilitMekanizmasıHazirDegil.Normalcolor = System.Drawing.Color.Maroon;
             this.btnKilitMekanizmasıHazirDegil.OnHovercolor = System.Drawing.Color.Maroon;
             this.btnKilitMekanizmasıHazirDegil.OnHoverTextColor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazirDegil.selected = false;
-            this.btnKilitMekanizmasıHazirDegil.Size = new System.Drawing.Size(190, 48);
+            this.btnKilitMekanizmasıHazirDegil.Size = new System.Drawing.Size(127, 31);
             this.btnKilitMekanizmasıHazirDegil.TabIndex = 132;
             this.btnKilitMekanizmasıHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -678,10 +660,9 @@
             this.pnlNumarator.Controls.Add(this.btn2);
             this.pnlNumarator.Controls.Add(this.btn1);
             this.pnlNumarator.Controls.Add(this.btnNumaratorKapat);
-            this.pnlNumarator.Location = new System.Drawing.Point(212, 232);
-            this.pnlNumarator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlNumarator.Location = new System.Drawing.Point(141, 151);
             this.pnlNumarator.Name = "pnlNumarator";
-            this.pnlNumarator.Size = new System.Drawing.Size(391, 473);
+            this.pnlNumarator.Size = new System.Drawing.Size(261, 307);
             this.pnlNumarator.TabIndex = 209;
             this.pnlNumarator.Visible = false;
             // 
@@ -691,10 +672,9 @@
             this.btnDollyNoGir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDollyNoGir.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDollyNoGir.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDollyNoGir.Location = new System.Drawing.Point(32, 381);
-            this.btnDollyNoGir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyNoGir.Location = new System.Drawing.Point(21, 248);
             this.btnDollyNoGir.Name = "btnDollyNoGir";
-            this.btnDollyNoGir.Size = new System.Drawing.Size(315, 60);
+            this.btnDollyNoGir.Size = new System.Drawing.Size(210, 39);
             this.btnDollyNoGir.TabIndex = 135;
             this.btnDollyNoGir.Text = "Dolly No Gir.";
             this.btnDollyNoGir.UseVisualStyleBackColor = false;
@@ -706,10 +686,9 @@
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn0.ForeColor = System.Drawing.Color.White;
-            this.btn0.Location = new System.Drawing.Point(32, 310);
-            this.btn0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn0.Location = new System.Drawing.Point(21, 201);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(99, 60);
+            this.btn0.Size = new System.Drawing.Size(66, 39);
             this.btn0.TabIndex = 124;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
@@ -720,10 +699,9 @@
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn9.ForeColor = System.Drawing.Color.White;
-            this.btn9.Location = new System.Drawing.Point(248, 241);
-            this.btn9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn9.Location = new System.Drawing.Point(165, 157);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(99, 60);
+            this.btn9.Size = new System.Drawing.Size(66, 39);
             this.btn9.TabIndex = 125;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
@@ -734,10 +712,9 @@
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn8.ForeColor = System.Drawing.Color.White;
-            this.btn8.Location = new System.Drawing.Point(140, 241);
-            this.btn8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn8.Location = new System.Drawing.Point(93, 157);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(99, 60);
+            this.btn8.Size = new System.Drawing.Size(66, 39);
             this.btn8.TabIndex = 126;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
@@ -748,10 +725,9 @@
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn6.ForeColor = System.Drawing.Color.White;
-            this.btn6.Location = new System.Drawing.Point(248, 172);
-            this.btn6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn6.Location = new System.Drawing.Point(165, 112);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(99, 60);
+            this.btn6.Size = new System.Drawing.Size(66, 39);
             this.btn6.TabIndex = 127;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
@@ -762,10 +738,9 @@
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn5.ForeColor = System.Drawing.Color.White;
-            this.btn5.Location = new System.Drawing.Point(140, 172);
-            this.btn5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn5.Location = new System.Drawing.Point(93, 112);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(99, 60);
+            this.btn5.Size = new System.Drawing.Size(66, 39);
             this.btn5.TabIndex = 128;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
@@ -776,10 +751,9 @@
             this.btnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTemizle.ForeColor = System.Drawing.Color.White;
-            this.btnTemizle.Location = new System.Drawing.Point(140, 311);
-            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTemizle.Location = new System.Drawing.Point(93, 202);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(207, 60);
+            this.btnTemizle.Size = new System.Drawing.Size(138, 39);
             this.btnTemizle.TabIndex = 129;
             this.btnTemizle.Text = "Sil";
             this.btnTemizle.UseVisualStyleBackColor = false;
@@ -791,10 +765,9 @@
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn7.ForeColor = System.Drawing.Color.White;
-            this.btn7.Location = new System.Drawing.Point(32, 241);
-            this.btn7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn7.Location = new System.Drawing.Point(21, 157);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(99, 60);
+            this.btn7.Size = new System.Drawing.Size(66, 39);
             this.btn7.TabIndex = 130;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
@@ -805,10 +778,9 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(248, 103);
-            this.btn3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn3.Location = new System.Drawing.Point(165, 67);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(99, 60);
+            this.btn3.Size = new System.Drawing.Size(66, 39);
             this.btn3.TabIndex = 131;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
@@ -819,10 +791,9 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn4.ForeColor = System.Drawing.Color.White;
-            this.btn4.Location = new System.Drawing.Point(32, 172);
-            this.btn4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn4.Location = new System.Drawing.Point(21, 112);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(99, 60);
+            this.btn4.Size = new System.Drawing.Size(66, 39);
             this.btn4.TabIndex = 132;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
@@ -833,10 +804,9 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(140, 103);
-            this.btn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn2.Location = new System.Drawing.Point(93, 67);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(99, 60);
+            this.btn2.Size = new System.Drawing.Size(66, 39);
             this.btn2.TabIndex = 133;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
@@ -847,10 +817,9 @@
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn1.ForeColor = System.Drawing.Color.White;
-            this.btn1.Location = new System.Drawing.Point(32, 103);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn1.Location = new System.Drawing.Point(21, 67);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(99, 60);
+            this.btn1.Size = new System.Drawing.Size(66, 39);
             this.btn1.TabIndex = 134;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
@@ -864,10 +833,9 @@
             this.btnNumaratorKapat.ErrorImage = null;
             this.btnNumaratorKapat.Image = ((System.Drawing.Image)(resources.GetObject("btnNumaratorKapat.Image")));
             this.btnNumaratorKapat.ImageActive = null;
-            this.btnNumaratorKapat.Location = new System.Drawing.Point(296, 31);
-            this.btnNumaratorKapat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNumaratorKapat.Location = new System.Drawing.Point(197, 20);
             this.btnNumaratorKapat.Name = "btnNumaratorKapat";
-            this.btnNumaratorKapat.Size = new System.Drawing.Size(62, 58);
+            this.btnNumaratorKapat.Size = new System.Drawing.Size(41, 38);
             this.btnNumaratorKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNumaratorKapat.TabIndex = 123;
             this.btnNumaratorKapat.TabStop = false;
@@ -877,10 +845,10 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1940, 1100);
+            this.ClientSize = new System.Drawing.Size(1293, 715);
             this.Controls.Add(this.pnlNumarator);
             this.Controls.Add(this.pnlAltBilgi);
             this.Controls.Add(this.pnlAltBaslik);
@@ -888,7 +856,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";

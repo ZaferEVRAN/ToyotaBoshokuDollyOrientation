@@ -31,7 +31,7 @@ namespace ToyotaBoshokuDollyOrientation
         KarkasIslem karkasIslem = new KarkasIslem();
         barkodIslem urunBarkod = new barkodIslem();
         cDollys dolly = new cDollys();
-        cistemciKontrol_StepMotor stepMotorIslemci= new cistemciKontrol_StepMotor();
+        cistemciKontrol_StepMotor stepMotorIslemci = new cistemciKontrol_StepMotor();
         cStatus status = new cStatus();
         protected override CreateParams CreateParams
         {
@@ -47,13 +47,13 @@ namespace ToyotaBoshokuDollyOrientation
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            bool sonuc= cGenel.genelUyari("Çıkmak istediğinizden emin misiniz?",true);
+            bool sonuc = cGenel.genelUyari("Çıkmak istediğinizden emin misiniz?", true);
 
-           // stepMotorIslemci.kilitMekanizmaSensorOku();
+            // stepMotorIslemci.kilitMekanizmaSensorOku();
 
-            if (sonuc&&cGenel.motorRun==false)
+            if (sonuc && cGenel.motorRun == false)
             {
-           
+
                 cUsers userlogin = new cUsers();
                 userlogin.userLogoutDatetime(cGenel._OpenSessionID);
                 cGenel._OpenSessionID = 0;
@@ -77,29 +77,29 @@ namespace ToyotaBoshokuDollyOrientation
         uint OKAlarmTimer;
         private void saat_Tick(object sender, EventArgs e)
         {
-            if (cGenel.frmPickToLight.Visible||cGenel.frmPopupIslem.Visible)
+            if (cGenel.frmPickToLight.Visible || cGenel.frmPopupIslem.Visible)
             {
                 txtBarkod.Focus();
             }
             lblSaat.Text = DateTime.Now.ToString();
 
             openSensesionTimeCount++;
-            if (openSensesionTimeCount==10&& cGenel.frmMain.Visible==true)
+            if (openSensesionTimeCount == 10 && cGenel.frmMain.Visible == true)
             {
                 user.userLoginDatetime(cGenel._OpenSessionID);
                 grup.userGrupOnline(cGenel._OpenSessionGRUP, true);
                 openSensesionTimeCount = 0;
             }
 
-       
+
 
 
             //karkas aktif pasif
-            if (cGenel.xByPass==true)
+            if (cGenel.xByPass == true)
             {
                 btnKarkasByPassAktif.Visible = false;
                 btnKarkasByPassPasif.Visible = true;
-                
+
             }
             else
             {
@@ -214,28 +214,28 @@ namespace ToyotaBoshokuDollyOrientation
 
         public bool pingTestBool(string nameOrAddress)
         {
-         
-             
-                    try
-                    {
-                        Ping ping = new Ping();
-                        PingReply pingStatus = ping.Send(nameOrAddress, 1000);
-                        if (pingStatus.Status == IPStatus.Success)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    catch (Exception)
-                    {
 
-                        return false;
-                    }
 
-               
+            try
+            {
+                Ping ping = new Ping();
+                PingReply pingStatus = ping.Send(nameOrAddress, 1000);
+                if (pingStatus.Status == IPStatus.Success)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
+
 
         }
 
@@ -246,15 +246,15 @@ namespace ToyotaBoshokuDollyOrientation
         private async void modbus_Tick(object sender, EventArgs e)
         {
 
-                try
-                {
-                    lblNowDeviceID.Text = cGenel.nowDeviceID.ToString();
-                    //lblModbusDeviceID.Text = cGenel.CommonDeviceID.ToString();
+            try
+            {
+                lblNowDeviceID.Text = cGenel.nowDeviceID.ToString();
+                //lblModbusDeviceID.Text = cGenel.CommonDeviceID.ToString();
 
-                    lblIsikBaglantiAciklama.Text = cLambaKontrol.PLCDurumu.ToString();
-                    //lblLoop.Text = cGenel.loopInfoMain;
+                lblIsikBaglantiAciklama.Text = cLambaKontrol.PLCDurumu.ToString();
+                //lblLoop.Text = cGenel.loopInfoMain;
 
-                    lblIsikBaglantiAciklama.Text=cGenel.haberlesmeMesaj;
+                lblIsikBaglantiAciklama.Text = cGenel.haberlesmeMesaj;
                 if (cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Connected)
                 {
                     btnKilitMekanizmasıHazir.Visible = true;
@@ -269,59 +269,59 @@ namespace ToyotaBoshokuDollyOrientation
                 //Işıkların cihazı
                 bool X = await pingTest(cGenel.conDXM_IP);
 
-                    if (X == false)////bağlantı yok
+                if (X == false)////bağlantı yok
+                {
+                    btnIsiklarHazirDegil.Visible = true;
+                    btnIsiklarHazir.Visible = false;
+
+                    try
+                    {
+                        // if (cLambaKontrol.client.Connected == false)
+                        // {
+                        //      btnIsiklarHazirDegil.Visible = false;
+                        //      btnIsiklarHazir.Visible = true;
+                        // }
+                    }
+                    catch (Exception)
                     {
                         btnIsiklarHazirDegil.Visible = true;
                         btnIsiklarHazir.Visible = false;
-
-                        try
-                        {
-                           // if (cLambaKontrol.client.Connected == false)
-                           // {
-                           //      btnIsiklarHazirDegil.Visible = false;
-                           //      btnIsiklarHazir.Visible = true;
-                           // }
-                        }
-                        catch (Exception)
-                        {
-                            btnIsiklarHazirDegil.Visible = true;
-                            btnIsiklarHazir.Visible = false;
-                        }
-
                     }
 
-                     else/////bağlantı var.
-                   {
-                      
-                        btnIsiklarHazirDegil.Visible = false;
-                       btnIsiklarHazir.Visible = true;
-                  
-                       try
-                       {
-                          if (cLambaKontrol.client.Connected == false)
-                          {
+                }
+
+                else/////bağlantı var.
+                {
+
+                    btnIsiklarHazirDegil.Visible = false;
+                    btnIsiklarHazir.Visible = true;
+
+                    try
+                    {
+                        if (cLambaKontrol.client.Connected == false)
+                        {
                             //istemci_LH.IstemciyiYenidenBaslat();
                             btnIsiklarHazirDegil.Visible = false;
                             btnIsiklarHazir.Visible = true;
                         }
-           
-                     }
-                       catch (Exception)
-                       {
 
-                       // istemci_LH.IstemciyiYenidenBaslat();
+                    }
+                    catch (Exception)
+                    {
+
+                        // istemci_LH.IstemciyiYenidenBaslat();
                         btnIsiklarHazirDegil.Visible = true;
                         btnIsiklarHazir.Visible = false;
 
-                       }
-
                     }
 
+                }
 
-                    //Server
-                    bool Y = await pingTest(cGenel.conServer_IP);
 
-                    if (Y == false)////bağlantı yok
+                //Server
+                bool Y = await pingTest(cGenel.conServer_IP);
+
+                if (Y == false)////bağlantı yok
                 {
 
                     btnServerHazirDegil.Visible = true;
@@ -330,7 +330,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                 }
 
-                    else/////bağlantı var.
+                else/////bağlantı var.
                 {
 
 
@@ -341,26 +341,26 @@ namespace ToyotaBoshokuDollyOrientation
                 }
 
 
-                    }
-                    catch (Exception)
-                    {
-              
-                    }
+            }
+            catch (Exception)
+            {
 
-
-             
+            }
 
 
 
-           
+
+
+
+
 
 
         }
-        
+
         private void frmMain_Load(object sender, EventArgs e)
         {
-            lblUstBilgi.Text = string.Format("{0}-Line Doortrim Dolly Traceability System-{1}",cGenel.MAKINE_ADI,cGenel._OpenSessionGRUPNAME);
-             CheckForIllegalCrossThreadCalls = false;
+            lblUstBilgi.Text = string.Format("{0}-Line Doortrim Dolly Traceability System-{1}", cGenel.MAKINE_ADI, cGenel._OpenSessionGRUPNAME);
+            CheckForIllegalCrossThreadCalls = false;
             _AREvt = new AutoResetEvent(false);
             var t = Task.Run(() =>
             {
@@ -369,17 +369,17 @@ namespace ToyotaBoshokuDollyOrientation
                     _AREvt.WaitOne(100, true);
                     Loop();
                 }
-            
+
             });
-  
+
 
             parametre.parametreleriAta();
 
             status.statusColorAta();
 
-        
 
-            if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
+
+            if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
             {
                 KarkasIslem.LHDollyBarkod = karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._DOLLYNO.ToString();
             }
@@ -484,34 +484,34 @@ namespace ToyotaBoshokuDollyOrientation
         {
 
 
-            while ( KarkasIslem.xLOOP&& cGenel.xByPass==false)
+            while (KarkasIslem.xLOOP && cGenel.xByPass == false)
             {
                 _AREvt.WaitOne(100, true);
 
                 try
                 {
                     globalLambaYakmaBarkodOkutulunca();
-                    if (cGenel.sensorSonucu==0&& xKontrol == true)
+                    if (cGenel.sensorSonucu == 0 && xKontrol == true)
                     {
 
                         lambaKontrol.sensorOkuma(cGenel.nowDeviceID);
-                   
+
                     }
                     if (cGenel.sensorSonucu == 1)
                     {
                         _AREvt.WaitOne(300, true);
                         lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
                         _AREvt.WaitOne(300, true);
-                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID,cGenel.jobState2StatusAnimationID,cGenel.jobState2StatusColorID,cLambaKontrol.master))//deviceID
+                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID, cGenel.jobState2StatusAnimationID, cGenel.jobState2StatusColorID, cLambaKontrol.master))//deviceID
                         {
-                      
+
 
                             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
                             {
-                              
-                                uint gorevID = 0;
 
-                                gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+                               cGenel.gorevID = 0;
+
+                                cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
 
                                 if (cGenel.urunBarkodKarkasDurum == true)
                                 {
@@ -523,10 +523,10 @@ namespace ToyotaBoshokuDollyOrientation
 
                                 }
 
-                                karkasIslem.urunBarkodDurumGuncelle_LH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                                karkasIslem.urunBarkodDurumGuncelle_LH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
                                 KarkasIslem.LHDollyBarkod = "999";
-                                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
+                                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, cGenel.gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
 
 
 
@@ -543,7 +543,7 @@ namespace ToyotaBoshokuDollyOrientation
                                     setlemeDongusu();
                                     _AREvt.WaitOne(300, true);
                                     lambaKontrol.lambaDurumDollyBaslangic();
-                              
+
                                     cGenel.lockOnClick = true;
                                     stepMotorIslemci.kilitMekanizmaDongusu();
 
@@ -551,11 +551,11 @@ namespace ToyotaBoshokuDollyOrientation
                             }
                             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
                             {
-                              
-                                uint gorevID = 0;
+
+                                cGenel.gorevID = 0;
 
 
-                                gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+                                cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
 
                                 if (cGenel.urunBarkodKarkasDurum == true)
                                 {
@@ -567,10 +567,10 @@ namespace ToyotaBoshokuDollyOrientation
 
                                 }
 
-                                karkasIslem.urunBarkodDurumGuncelle_RH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                                karkasIslem.urunBarkodDurumGuncelle_RH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
                                 KarkasIslem.RHDollyBarkod = "999";
-                                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
+                                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, cGenel.gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, cGenel.dollyRafBilgisi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
 
 
 
@@ -583,10 +583,10 @@ namespace ToyotaBoshokuDollyOrientation
                                     //pnlNumarator.Visible = true;
                                     setlemeDongusu();
                                     _AREvt.WaitOne(300, true);
-                                   lambaKontrol.lambaDurumDollyBaslangic();
-                                   cGenel.lockOnClick = true;
-                                  
-                                   stepMotorIslemci.kilitMekanizmaDongusu();
+                                    lambaKontrol.lambaDurumDollyBaslangic();
+                                    cGenel.lockOnClick = true;
+
+                                    stepMotorIslemci.kilitMekanizmaDongusu();
 
 
                                 }
@@ -594,26 +594,30 @@ namespace ToyotaBoshokuDollyOrientation
 
                             }
 
-                           
-                                xKontrol = false;
-                                OKAlarmTimer = 0;
-                               // alarmTetik = true;
-                                KarkasIslem.xLOOP = false;
 
-                                cGenel.sensorSonucu = 0;
-                                cGenel.nowDeviceID = 0;
-                                cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
-                               // cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                               // cGenel.frmPickToLight.DurumIzleme();
+                            xKontrol = false;
+                            OKAlarmTimer = 0;
+                            if (Properties.Settings.Default.OKBuzzer==true)
+                            {
+                                alarmTetik = true;
+                            }
 
-                           
-                            
+                            KarkasIslem.xLOOP = false;
+
+                            cGenel.sensorSonucu = 0;
+                            cGenel.nowDeviceID = 0;
+                            cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                            // cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                            // cGenel.frmPickToLight.DurumIzleme();
+
+
+
 
 
                         }
 
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -627,22 +631,22 @@ namespace ToyotaBoshokuDollyOrientation
             }
 
 
- 
+
         }
         barkodIslem barkodIslem = new barkodIslem();
         TBTGALC_DOOR tbtgalcDoor = new TBTGALC_DOOR();
         List<TBTGALC_DOOR> listTBTGalc_LH = new List<TBTGALC_DOOR>();
         List<TBTGALC_DOOR> listTBTGalc_RH = new List<TBTGALC_DOOR>();
 
-    
-  
+
+
         public void setlemeDongusu()
         {
             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
             {
                 float lastTBTNO = tbtgalcDoor.TBTGalcLastTBTNO_Read_LH();
 
-                if (barkodIslem.barkod_FRL_RRL_Count() == 0 )
+                if (barkodIslem.barkod_FRL_RRL_Count() == 0)
                 {
                     listTBTGalc_LH.Clear();
                     listTBTGalc_LH = tbtgalcDoor.TBTGalcDoorSpecRead_LH(lastTBTNO);
@@ -651,7 +655,7 @@ namespace ToyotaBoshokuDollyOrientation
                         lastTBTNO = listTBTGalc_LH[(listTBTGalc_LH.Count - 1)]._TBTNO;
                         barkodIslem.barcodsNewAdd_LH(listTBTGalc_LH);
                     }
-                    tbtgalcDoor.TBTGalcLastTBTNO_Write_LH(lastTBTNO+1);
+                    tbtgalcDoor.TBTGalcLastTBTNO_Write_LH(lastTBTNO + 1);
 
                     if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
                     {
@@ -663,7 +667,7 @@ namespace ToyotaBoshokuDollyOrientation
             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
             {
                 float lastTBTNO = tbtgalcDoor.TBTGalcLastTBTNO_Read_RH();
-                if (barkodIslem.barkod_FRR_RRR_Count() == 0 )
+                if (barkodIslem.barkod_FRR_RRR_Count() == 0)
                 {
                     listTBTGalc_RH.Clear();
                     listTBTGalc_RH = tbtgalcDoor.TBTGalcDoorSpecRead_RH(lastTBTNO);
@@ -672,7 +676,7 @@ namespace ToyotaBoshokuDollyOrientation
                         lastTBTNO = listTBTGalc_RH[(listTBTGalc_RH.Count - 1)]._TBTNO;
                         barkodIslem.barcodsNewAdd_RH(listTBTGalc_RH);
                     }
-                    tbtgalcDoor.TBTGalcLastTBTNO_Write_RH(lastTBTNO+1);
+                    tbtgalcDoor.TBTGalcLastTBTNO_Write_RH(lastTBTNO + 1);
 
                     if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
                     {
@@ -689,93 +693,93 @@ namespace ToyotaBoshokuDollyOrientation
             lblModbusRTUBilgi.Text = cGenel.haberlesmeMesajModbusRTU;
 
             if (cGenel.lockOffSensor == true && cGenel.lockOnSensor == true)
-                {
-                    btnKilitAcik.Visible = true;
-                }
-                else
-                {
-                    btnKilitAcik.Visible = false;
-                }
+            {
+                btnKilitAcik.Visible = true;
+            }
+            else
+            {
+                btnKilitAcik.Visible = false;
+            }
 
-                if (cGenel.lockOffSensor ==false&& cGenel.lockOnSensor ==false)
-                {
-                    btnKilitKapali.Visible = true;
-                }
-                else
-                {
-                    btnKilitKapali.Visible = false;
-                }
+            if (cGenel.lockOffSensor == false && cGenel.lockOnSensor == false)
+            {
+                btnKilitKapali.Visible = true;
+            }
+            else
+            {
+                btnKilitKapali.Visible = false;
+            }
 
-                if ((cGenel.deviceAlarmVar||cGenel.stepAlarmVar) &&cGenel.motorRun==false)
+            if ((cGenel.deviceAlarmVar || cGenel.stepAlarmVar) && cGenel.motorRun == false)
+            {
+                btnHata.Visible = true;
+            }
+            else if (cGenel.deviceAlarmVar == false && cGenel.stepAlarmVar == false)
+            {
+                btnHata.Visible = false;
+            }
+
+
+            //Kilitleme
+            if (cGenel.kilitKapatTetik == true)
+            {
+                kilitTetikTimer++;
+                if (kilitTetikTimer >= cGenel.kilitKapatmaSuresi)
                 {
-                    btnHata.Visible = true;
+                    cGenel.lockOffClick = true;
+                    stepMotorIslemci.kilitMekanizmaDongusu();
+                    cGenel.kilitKapatTetik = false;
+                    kilitTetikTimer = 0;
                 }
-                else if(cGenel.deviceAlarmVar==false && cGenel.stepAlarmVar == false)
-                {
-                   btnHata.Visible=false;
-                }
+            }
 
+            //Kilitleme
+            if (cGenel.motorRun)
+            {
+                cGenel.timer++;
+            }
 
-                   //Kilitleme
-                   if (cGenel.kilitKapatTetik == true)
-                   {
-                       kilitTetikTimer++;
-                       if (kilitTetikTimer >= cGenel.kilitKapatmaSuresi)
-                       {
-                            cGenel.lockOffClick = true;
-                            stepMotorIslemci.kilitMekanizmaDongusu();
-                           cGenel.kilitKapatTetik = false;
-                           kilitTetikTimer = 0;
-                       }
-                   }
-
-                   //Kilitleme
-                   if (cGenel.motorRun)
-                   {
-                       cGenel.timer++;
-                   }
-           
         }
         bool OKAlarm;
         private void buzzer_Tick(object sender, EventArgs e)
         {
-            if (cGenel.xBuzzerByPass==false&& cGenel.nowDeviceID > 0)
+            if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
             {
-                    lambaKontrol.buzzerDeviceIDRead();
+                lambaKontrol.buzzerDeviceIDRead();
             }
 
             if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
-             {
+            {
                 lambaKontrol.buzzerRing(1);
                 NGbuzzerAlarmTimer = 0;
                 cGenel.alarmVar = true;
-             }
+            }
 
-             if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
-             {
-                 lambaKontrol.buzzerRing(0);
+            if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
+            {
+                lambaKontrol.buzzerRing(0);
                 cGenel.alarmVar = false;
-             }
+            }
 
 
-          
-            if (cGenel.xBuzzerByPass == false && alarmTetik ==true)
+
+            if (cGenel.xBuzzerByPass == false && alarmTetik == true)
             {
                 lambaKontrol.buzzerRing(1);
 
                 OKAlarmTimer++;
-                _AREvt.WaitOne(300,true);
+                _AREvt.WaitOne(300, true);
                 lambaKontrol.buzzerRingKontrol();
 
             }
-            
 
-            if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4&& alarmTetik==true&&cLambaKontrol.ringKontol==1 )
+
+            if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4 && alarmTetik == true && cLambaKontrol.ringKontol == 1)
             {
-                
+
                 lambaKontrol.buzzerRing(0);
                 alarmTetik = false;
-      
+
             }
 
         }
@@ -813,22 +817,22 @@ namespace ToyotaBoshokuDollyOrientation
         private void btnDollyNoGir_Click(object sender, EventArgs e)
         {
             string data = txtBarkod.Text;
-      
+
             if (data == dolly.dollyBarkodInfo(data)._DollyBarkod)
             {
-           
-                bool result1=false;
+
+                bool result1 = false;
                 KarkasIslem.LHDollyBarkod = data;
                 uint dollyNo = dolly.dollyBarkodInfo(KarkasIslem.LHDollyBarkod)._DollyNo;
-                if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
+                if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
                 {
-                     result1 = karkasIslem.gorevGuncelle_LH(dollyNo);
+                    result1 = karkasIslem.gorevGuncelle_LH(dollyNo);
                     if (result1)
                     {
-                       // karkasIslem.gorevDurumTamamlandi_LH();
-                       // setlemeDongusu();
+                        // karkasIslem.gorevDurumTamamlandi_LH();
+                        // setlemeDongusu();
                         cGenel.genelUyariAlarm("Dolly tanıtma başarılı!", false, true);
-                       // logOlustur.logDollyNoGuncelle_LH(dollyNO);
+                        // logOlustur.logDollyNoGuncelle_LH(dollyNO);
                     }
                 }
                 else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
@@ -836,18 +840,18 @@ namespace ToyotaBoshokuDollyOrientation
                     result1 = karkasIslem.gorevGuncelle_RH(dollyNo);
                     if (result1)
                     {
-                      //  karkasIslem.gorevDurumTamamlandi_RH();
-                      //  setlemeDongusu();
+                        //  karkasIslem.gorevDurumTamamlandi_RH();
+                        //  setlemeDongusu();
                         cGenel.genelUyariAlarm("Dolly tanıtma başarılı!", false, true);
-                       // logOlustur.logDollyNoGuncelle_RH( dollyNO);
+                        // logOlustur.logDollyNoGuncelle_RH( dollyNO);
                     }
                 }
                 // lambaKontrol.lambaDurumDollyBaslangic();
                 //  cGenel.lockOnClick = true;
                 cGenel.lockOffClick = true;
-                 stepMotorIslemci.kilitMekanizmaDongusu();
+                stepMotorIslemci.kilitMekanizmaDongusu();
                 txtBarkod.Clear();
-            }  
+            }
             else
             {
                 cGenel.genelUyariAlarm("Tanımlı Dolly no giriniz!", false, true);

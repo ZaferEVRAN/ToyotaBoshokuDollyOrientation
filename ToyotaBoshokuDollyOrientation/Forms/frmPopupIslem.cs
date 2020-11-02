@@ -67,10 +67,10 @@ namespace ToyotaBoshokuDollyOrientation
                 }
 
 
-                uint gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevIslemYok)._ID;
-                if (gorevID > 0)
+                cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevIslemYok)._ID;
+                if (cGenel.gorevID > 0)
                 {
-                    karkasIslem.gorevDurumGuncelle_LH(gorevID, (byte)gorevDurumlari.gorevYapiliyor);
+                    karkasIslem.gorevDurumGuncelle_LH(cGenel.gorevID, (byte)gorevDurumlari.gorevYapiliyor);
                 }
                 if (cGenel.xByPass == false)
                 {
@@ -91,9 +91,9 @@ namespace ToyotaBoshokuDollyOrientation
                 {
                     KarkasIslem karkasIslem = new KarkasIslem();
 
-                    gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+                    cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
 
-                    karkasIslem.urunBarkodDurumGuncelle_LH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                    karkasIslem.urunBarkodDurumGuncelle_LH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
                     if (cGenel.urunBarkodKarkasDurum == true)
                     {
@@ -139,10 +139,10 @@ namespace ToyotaBoshokuDollyOrientation
                 }
 
 
-                uint gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevIslemYok)._ID;
-                if (gorevID > 0)
+                cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevIslemYok)._ID;
+                if (cGenel.gorevID > 0)
                 {
-                    karkasIslem.gorevDurumGuncelle_RH(gorevID, (byte)gorevDurumlari.gorevYapiliyor);
+                    karkasIslem.gorevDurumGuncelle_RH(cGenel.gorevID, (byte)gorevDurumlari.gorevYapiliyor);
                 }
 
                 if (cGenel.xByPass == false)
@@ -161,7 +161,7 @@ namespace ToyotaBoshokuDollyOrientation
                 else if (cGenel.xByPass == true)
                 {
 
-                    gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+                    cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
 
                     if (cGenel.urunBarkodKarkasDurum == true)
                     {
@@ -174,7 +174,7 @@ namespace ToyotaBoshokuDollyOrientation
                         urunBarkod.urunBarkodIslemTamamlandi_RH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde);
                     }
 
-                    karkasIslem.urunBarkodDurumGuncelle_RH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                    karkasIslem.urunBarkodDurumGuncelle_RH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunDollyde, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
                    // logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "OK", cGenel._OpenSessionUSERNAME);
 
@@ -219,13 +219,13 @@ namespace ToyotaBoshokuDollyOrientation
 
                     cGenel.nowDeviceID = deviceID;//sensör kontrol
                 }
-                uint gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevIslemYok)._ID;
+                cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevIslemYok)._ID;
            
-                if (gorevID > 0)
+                if (cGenel.gorevID > 0)
                 {
-                    karkasIslem.gorevDurumGuncelle_LH(gorevID, (byte)gorevDurumlari.gorevYapiliyor);
+                    karkasIslem.gorevDurumGuncelle_LH(cGenel.gorevID, (byte)gorevDurumlari.gorevYapiliyor);
 
-                    karkasIslem.urunBarkodDurumGuncelle_LH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode,cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                    karkasIslem.urunBarkodDurumGuncelle_LH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode,cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
 
                     if (cGenel.urunBarkodKarkasDurum == true)
                     {
@@ -239,8 +239,8 @@ namespace ToyotaBoshokuDollyOrientation
                 }
                 else
                 {
-                    gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
-                    karkasIslem.urunBarkodDurumGuncelle_LH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                    cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+                    karkasIslem.urunBarkodDurumGuncelle_LH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
                     if (cGenel.urunBarkodKarkasDurum == true)
                     {
                         urunBarkod.urunBarkodIslemTamamlandi_LH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.BarkodID);
@@ -252,7 +252,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                 }
                 KarkasIslem.LHDollyBarkod = "999";
-                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "REWORK", cGenel._OpenSessionUSERNAME);
+                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, cGenel.gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "REWORK", cGenel._OpenSessionUSERNAME);
 
                 KarkasIslem.xLOOP = false;
                 _AREvt.WaitOne(300, true);
@@ -285,14 +285,14 @@ namespace ToyotaBoshokuDollyOrientation
 
                     cGenel.nowDeviceID = deviceID;//sensör kontrol
                 }
- 
-                uint gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevIslemYok)._ID;
+
+                cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevIslemYok)._ID;
              
-                if (gorevID > 0)
+                if (cGenel.gorevID > 0)
                 {
-                     karkasIslem.gorevDurumGuncelle_RH(gorevID, (byte)gorevDurumlari.gorevYapiliyor);
+                     karkasIslem.gorevDurumGuncelle_RH(cGenel.gorevID, (byte)gorevDurumlari.gorevYapiliyor);
                     
-                    karkasIslem.urunBarkodDurumGuncelle_RH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                    karkasIslem.urunBarkodDurumGuncelle_RH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
   
                     if (urunBarkodDurum == true)
                     {
@@ -305,8 +305,8 @@ namespace ToyotaBoshokuDollyOrientation
                 }
                 else
                 {
-                    gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
-                    karkasIslem.urunBarkodDurumGuncelle_RH(gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
+                    cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
+                    karkasIslem.urunBarkodDurumGuncelle_RH(cGenel.gorevID, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.DoorBarcode, cGenel.BarkodID, cGenel.nowDeviceID, cGenel.YonBilgisi);
                     if (urunBarkodDurum == true)
                     {
                         urunBarkod.urunBarkodIslemTamamlandi_RH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi, (byte)urunBarkodDurumlari.barkodIslemDurumUrunRework, cGenel.BarkodID);
@@ -318,7 +318,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                 }
                 KarkasIslem.RHDollyBarkod = "999";
-                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "REWORK", cGenel._OpenSessionUSERNAME);
+                logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, cGenel.gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "REWORK", cGenel._OpenSessionUSERNAME);
                 KarkasIslem.xLOOP = false;
                 _AREvt.WaitOne(300, true);
                 bool sonuc2 = lambaKontrol.lambaJobIlgiliIsikSteadyYakSariRework(cGenel.nowDeviceID);

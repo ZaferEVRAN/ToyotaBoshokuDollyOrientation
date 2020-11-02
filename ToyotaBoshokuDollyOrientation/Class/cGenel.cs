@@ -387,5 +387,7 @@ namespace ToyotaBoshokuDollyOrientation
         public static string haberlesmeMesajModbusRTU;
 
         public static string loopInfoMain;
+
+        public static uint gorevID;
     }
 }
