@@ -98,10 +98,9 @@
             this.btnOncekiSayfa.ErrorImage = null;
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageActive = null;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(965, 602);
-            this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(605, 388);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
-            this.btnOncekiSayfa.Size = new System.Drawing.Size(153, 103);
+            this.btnOncekiSayfa.Size = new System.Drawing.Size(102, 67);
             this.btnOncekiSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnOncekiSayfa.TabIndex = 65;
             this.btnOncekiSayfa.TabStop = false;
@@ -116,10 +115,9 @@
             this.bunifuCustomLabel10.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(353, 14);
-            this.bunifuCustomLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(215, 9);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(657, 69);
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(445, 46);
             this.bunifuCustomLabel10.TabIndex = 85;
             this.bunifuCustomLabel10.Text = "Manual  / Parametreler";
             // 
@@ -133,10 +131,9 @@
             this.btnDollyKilitlemeZamanSuresiDefault.ErrorImage = null;
             this.btnDollyKilitlemeZamanSuresiDefault.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeZamanSuresiDefault.Image")));
             this.btnDollyKilitlemeZamanSuresiDefault.ImageActive = null;
-            this.btnDollyKilitlemeZamanSuresiDefault.Location = new System.Drawing.Point(938, 230);
-            this.btnDollyKilitlemeZamanSuresiDefault.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeZamanSuresiDefault.Location = new System.Drawing.Point(645, 149);
             this.btnDollyKilitlemeZamanSuresiDefault.Name = "btnDollyKilitlemeZamanSuresiDefault";
-            this.btnDollyKilitlemeZamanSuresiDefault.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeZamanSuresiDefault.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeZamanSuresiDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeZamanSuresiDefault.TabIndex = 252;
             this.btnDollyKilitlemeZamanSuresiDefault.TabStop = false;
@@ -154,10 +151,9 @@
             this.btnDollyKilitlemeZamanSuresiGuncelle.ErrorImage = null;
             this.btnDollyKilitlemeZamanSuresiGuncelle.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeZamanSuresiGuncelle.Image")));
             this.btnDollyKilitlemeZamanSuresiGuncelle.ImageActive = null;
-            this.btnDollyKilitlemeZamanSuresiGuncelle.Location = new System.Drawing.Point(813, 230);
-            this.btnDollyKilitlemeZamanSuresiGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeZamanSuresiGuncelle.Location = new System.Drawing.Point(562, 149);
             this.btnDollyKilitlemeZamanSuresiGuncelle.Name = "btnDollyKilitlemeZamanSuresiGuncelle";
-            this.btnDollyKilitlemeZamanSuresiGuncelle.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeZamanSuresiGuncelle.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeZamanSuresiGuncelle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeZamanSuresiGuncelle.TabIndex = 248;
             this.btnDollyKilitlemeZamanSuresiGuncelle.TabStop = false;
@@ -172,10 +168,9 @@
             this.btnKlavye.ErrorImage = null;
             this.btnKlavye.Image = ((System.Drawing.Image)(resources.GetObject("btnKlavye.Image")));
             this.btnKlavye.ImageActive = null;
-            this.btnKlavye.Location = new System.Drawing.Point(804, 601);
-            this.btnKlavye.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKlavye.Location = new System.Drawing.Point(498, 388);
             this.btnKlavye.Name = "btnKlavye";
-            this.btnKlavye.Size = new System.Drawing.Size(153, 103);
+            this.btnKlavye.Size = new System.Drawing.Size(102, 67);
             this.btnKlavye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnKlavye.TabIndex = 246;
             this.btnKlavye.TabStop = false;
@@ -188,10 +183,9 @@
             this.rbDublicateIslemAcik.FlatAppearance.BorderSize = 3;
             this.rbDublicateIslemAcik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbDublicateIslemAcik.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.rbDublicateIslemAcik.Location = new System.Drawing.Point(13, 16);
-            this.rbDublicateIslemAcik.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbDublicateIslemAcik.Location = new System.Drawing.Point(9, 10);
             this.rbDublicateIslemAcik.Name = "rbDublicateIslemAcik";
-            this.rbDublicateIslemAcik.Size = new System.Drawing.Size(153, 50);
+            this.rbDublicateIslemAcik.Size = new System.Drawing.Size(102, 32);
             this.rbDublicateIslemAcik.TabIndex = 253;
             this.rbDublicateIslemAcik.TabStop = true;
             this.rbDublicateIslemAcik.Text = "Açık";
@@ -206,10 +200,9 @@
             this.rbDublicateIslemKapali.FlatAppearance.BorderSize = 3;
             this.rbDublicateIslemKapali.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbDublicateIslemKapali.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.rbDublicateIslemKapali.Location = new System.Drawing.Point(200, 16);
-            this.rbDublicateIslemKapali.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbDublicateIslemKapali.Location = new System.Drawing.Point(133, 10);
             this.rbDublicateIslemKapali.Name = "rbDublicateIslemKapali";
-            this.rbDublicateIslemKapali.Size = new System.Drawing.Size(153, 50);
+            this.rbDublicateIslemKapali.Size = new System.Drawing.Size(106, 35);
             this.rbDublicateIslemKapali.TabIndex = 254;
             this.rbDublicateIslemKapali.TabStop = true;
             this.rbDublicateIslemKapali.Text = "Kapalı";
@@ -223,7 +216,7 @@
             this.cbDollyKilitletemeZamanSuresi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDollyKilitletemeZamanSuresi.FormattingEnabled = true;
             this.cbDollyKilitletemeZamanSuresi.IntegralHeight = false;
-            this.cbDollyKilitletemeZamanSuresi.ItemHeight = 55;
+            this.cbDollyKilitletemeZamanSuresi.ItemHeight = 37;
             this.cbDollyKilitletemeZamanSuresi.Items.AddRange(new object[] {
             "1",
             "2",
@@ -234,10 +227,9 @@
             "7",
             "8",
             "9"});
-            this.cbDollyKilitletemeZamanSuresi.Location = new System.Drawing.Point(641, 230);
-            this.cbDollyKilitletemeZamanSuresi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbDollyKilitletemeZamanSuresi.Location = new System.Drawing.Point(445, 149);
             this.cbDollyKilitletemeZamanSuresi.Name = "cbDollyKilitletemeZamanSuresi";
-            this.cbDollyKilitletemeZamanSuresi.Size = new System.Drawing.Size(164, 63);
+            this.cbDollyKilitletemeZamanSuresi.Size = new System.Drawing.Size(111, 45);
             this.cbDollyKilitletemeZamanSuresi.TabIndex = 256;
             // 
             // rbKarkasBypassPasif
@@ -247,10 +239,9 @@
             this.rbKarkasBypassPasif.FlatAppearance.BorderSize = 3;
             this.rbKarkasBypassPasif.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbKarkasBypassPasif.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.rbKarkasBypassPasif.Location = new System.Drawing.Point(210, 19);
-            this.rbKarkasBypassPasif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbKarkasBypassPasif.Location = new System.Drawing.Point(140, 12);
             this.rbKarkasBypassPasif.Name = "rbKarkasBypassPasif";
-            this.rbKarkasBypassPasif.Size = new System.Drawing.Size(132, 50);
+            this.rbKarkasBypassPasif.Size = new System.Drawing.Size(92, 35);
             this.rbKarkasBypassPasif.TabIndex = 259;
             this.rbKarkasBypassPasif.TabStop = true;
             this.rbKarkasBypassPasif.Text = "Pasif";
@@ -264,10 +255,9 @@
             this.rbKarkasBypassAktif.FlatAppearance.BorderSize = 3;
             this.rbKarkasBypassAktif.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbKarkasBypassAktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.rbKarkasBypassAktif.Location = new System.Drawing.Point(13, 16);
-            this.rbKarkasBypassAktif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbKarkasBypassAktif.Location = new System.Drawing.Point(9, 10);
             this.rbKarkasBypassAktif.Name = "rbKarkasBypassAktif";
-            this.rbKarkasBypassAktif.Size = new System.Drawing.Size(153, 50);
+            this.rbKarkasBypassAktif.Size = new System.Drawing.Size(102, 32);
             this.rbKarkasBypassAktif.TabIndex = 258;
             this.rbKarkasBypassAktif.TabStop = true;
             this.rbKarkasBypassAktif.Text = "Aktif";
@@ -280,7 +270,7 @@
             this.cbDollyKilitletemeDenemeSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDollyKilitletemeDenemeSayisi.FormattingEnabled = true;
             this.cbDollyKilitletemeDenemeSayisi.IntegralHeight = false;
-            this.cbDollyKilitletemeDenemeSayisi.ItemHeight = 55;
+            this.cbDollyKilitletemeDenemeSayisi.ItemHeight = 37;
             this.cbDollyKilitletemeDenemeSayisi.Items.AddRange(new object[] {
             "1",
             "2",
@@ -291,10 +281,9 @@
             "7",
             "8",
             "9"});
-            this.cbDollyKilitletemeDenemeSayisi.Location = new System.Drawing.Point(641, 299);
-            this.cbDollyKilitletemeDenemeSayisi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbDollyKilitletemeDenemeSayisi.Location = new System.Drawing.Point(445, 194);
             this.cbDollyKilitletemeDenemeSayisi.Name = "cbDollyKilitletemeDenemeSayisi";
-            this.cbDollyKilitletemeDenemeSayisi.Size = new System.Drawing.Size(166, 63);
+            this.cbDollyKilitletemeDenemeSayisi.Size = new System.Drawing.Size(112, 45);
             this.cbDollyKilitletemeDenemeSayisi.TabIndex = 263;
             // 
             // btnDollyKilitlemeDenemeSayisiDefaault
@@ -307,10 +296,9 @@
             this.btnDollyKilitlemeDenemeSayisiDefaault.ErrorImage = null;
             this.btnDollyKilitlemeDenemeSayisiDefaault.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeDenemeSayisiDefaault.Image")));
             this.btnDollyKilitlemeDenemeSayisiDefaault.ImageActive = null;
-            this.btnDollyKilitlemeDenemeSayisiDefaault.Location = new System.Drawing.Point(941, 300);
-            this.btnDollyKilitlemeDenemeSayisiDefaault.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeDenemeSayisiDefaault.Location = new System.Drawing.Point(645, 195);
             this.btnDollyKilitlemeDenemeSayisiDefaault.Name = "btnDollyKilitlemeDenemeSayisiDefaault";
-            this.btnDollyKilitlemeDenemeSayisiDefaault.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeDenemeSayisiDefaault.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeDenemeSayisiDefaault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeDenemeSayisiDefaault.TabIndex = 261;
             this.btnDollyKilitlemeDenemeSayisiDefaault.TabStop = false;
@@ -328,10 +316,9 @@
             this.btnDollyKilitlemeDenemeSayisiGuncelle.ErrorImage = null;
             this.btnDollyKilitlemeDenemeSayisiGuncelle.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeDenemeSayisiGuncelle.Image")));
             this.btnDollyKilitlemeDenemeSayisiGuncelle.ImageActive = null;
-            this.btnDollyKilitlemeDenemeSayisiGuncelle.Location = new System.Drawing.Point(816, 299);
-            this.btnDollyKilitlemeDenemeSayisiGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeDenemeSayisiGuncelle.Location = new System.Drawing.Point(562, 194);
             this.btnDollyKilitlemeDenemeSayisiGuncelle.Name = "btnDollyKilitlemeDenemeSayisiGuncelle";
-            this.btnDollyKilitlemeDenemeSayisiGuncelle.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeDenemeSayisiGuncelle.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeDenemeSayisiGuncelle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeDenemeSayisiGuncelle.TabIndex = 260;
             this.btnDollyKilitlemeDenemeSayisiGuncelle.TabStop = false;
@@ -345,7 +332,7 @@
             this.cbDollyKilitletemeZamanAsimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDollyKilitletemeZamanAsimi.FormattingEnabled = true;
             this.cbDollyKilitletemeZamanAsimi.IntegralHeight = false;
-            this.cbDollyKilitletemeZamanAsimi.ItemHeight = 55;
+            this.cbDollyKilitletemeZamanAsimi.ItemHeight = 37;
             this.cbDollyKilitletemeZamanAsimi.Items.AddRange(new object[] {
             "1",
             "2",
@@ -356,10 +343,9 @@
             "7",
             "8",
             "9"});
-            this.cbDollyKilitletemeZamanAsimi.Location = new System.Drawing.Point(641, 369);
-            this.cbDollyKilitletemeZamanAsimi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbDollyKilitletemeZamanAsimi.Location = new System.Drawing.Point(445, 240);
             this.cbDollyKilitletemeZamanAsimi.Name = "cbDollyKilitletemeZamanAsimi";
-            this.cbDollyKilitletemeZamanAsimi.Size = new System.Drawing.Size(164, 63);
+            this.cbDollyKilitletemeZamanAsimi.Size = new System.Drawing.Size(111, 45);
             this.cbDollyKilitletemeZamanAsimi.TabIndex = 267;
             // 
             // btnDollyKilitlemeZamanAsimiDefault
@@ -372,10 +358,9 @@
             this.btnDollyKilitlemeZamanAsimiDefault.ErrorImage = null;
             this.btnDollyKilitlemeZamanAsimiDefault.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeZamanAsimiDefault.Image")));
             this.btnDollyKilitlemeZamanAsimiDefault.ImageActive = null;
-            this.btnDollyKilitlemeZamanAsimiDefault.Location = new System.Drawing.Point(941, 371);
-            this.btnDollyKilitlemeZamanAsimiDefault.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeZamanAsimiDefault.Location = new System.Drawing.Point(645, 241);
             this.btnDollyKilitlemeZamanAsimiDefault.Name = "btnDollyKilitlemeZamanAsimiDefault";
-            this.btnDollyKilitlemeZamanAsimiDefault.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeZamanAsimiDefault.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeZamanAsimiDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeZamanAsimiDefault.TabIndex = 265;
             this.btnDollyKilitlemeZamanAsimiDefault.TabStop = false;
@@ -393,10 +378,9 @@
             this.btnDollyKilitlemeZamanAsimiGuncelle.ErrorImage = null;
             this.btnDollyKilitlemeZamanAsimiGuncelle.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeZamanAsimiGuncelle.Image")));
             this.btnDollyKilitlemeZamanAsimiGuncelle.ImageActive = null;
-            this.btnDollyKilitlemeZamanAsimiGuncelle.Location = new System.Drawing.Point(816, 369);
-            this.btnDollyKilitlemeZamanAsimiGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeZamanAsimiGuncelle.Location = new System.Drawing.Point(562, 240);
             this.btnDollyKilitlemeZamanAsimiGuncelle.Name = "btnDollyKilitlemeZamanAsimiGuncelle";
-            this.btnDollyKilitlemeZamanAsimiGuncelle.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeZamanAsimiGuncelle.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeZamanAsimiGuncelle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeZamanAsimiGuncelle.TabIndex = 264;
             this.btnDollyKilitlemeZamanAsimiGuncelle.TabStop = false;
@@ -414,10 +398,9 @@
             this.btnDollyKilitlemeZamanAsimiInfo.ErrorImage = null;
             this.btnDollyKilitlemeZamanAsimiInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeZamanAsimiInfo.Image")));
             this.btnDollyKilitlemeZamanAsimiInfo.ImageActive = null;
-            this.btnDollyKilitlemeZamanAsimiInfo.Location = new System.Drawing.Point(1065, 371);
-            this.btnDollyKilitlemeZamanAsimiInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeZamanAsimiInfo.Location = new System.Drawing.Point(728, 241);
             this.btnDollyKilitlemeZamanAsimiInfo.Name = "btnDollyKilitlemeZamanAsimiInfo";
-            this.btnDollyKilitlemeZamanAsimiInfo.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeZamanAsimiInfo.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeZamanAsimiInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeZamanAsimiInfo.TabIndex = 270;
             this.btnDollyKilitlemeZamanAsimiInfo.TabStop = false;
@@ -435,10 +418,9 @@
             this.btnDollyKilitlemeDenemeSayisiInfo.ErrorImage = null;
             this.btnDollyKilitlemeDenemeSayisiInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeDenemeSayisiInfo.Image")));
             this.btnDollyKilitlemeDenemeSayisiInfo.ImageActive = null;
-            this.btnDollyKilitlemeDenemeSayisiInfo.Location = new System.Drawing.Point(1065, 300);
-            this.btnDollyKilitlemeDenemeSayisiInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeDenemeSayisiInfo.Location = new System.Drawing.Point(728, 195);
             this.btnDollyKilitlemeDenemeSayisiInfo.Name = "btnDollyKilitlemeDenemeSayisiInfo";
-            this.btnDollyKilitlemeDenemeSayisiInfo.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeDenemeSayisiInfo.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeDenemeSayisiInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeDenemeSayisiInfo.TabIndex = 269;
             this.btnDollyKilitlemeDenemeSayisiInfo.TabStop = false;
@@ -456,10 +438,9 @@
             this.btnDollyKilitlemeZamanSuresiInfo.ErrorImage = null;
             this.btnDollyKilitlemeZamanSuresiInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyKilitlemeZamanSuresiInfo.Image")));
             this.btnDollyKilitlemeZamanSuresiInfo.ImageActive = null;
-            this.btnDollyKilitlemeZamanSuresiInfo.Location = new System.Drawing.Point(1062, 228);
-            this.btnDollyKilitlemeZamanSuresiInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDollyKilitlemeZamanSuresiInfo.Location = new System.Drawing.Point(728, 149);
             this.btnDollyKilitlemeZamanSuresiInfo.Name = "btnDollyKilitlemeZamanSuresiInfo";
-            this.btnDollyKilitlemeZamanSuresiInfo.Size = new System.Drawing.Size(116, 63);
+            this.btnDollyKilitlemeZamanSuresiInfo.Size = new System.Drawing.Size(77, 41);
             this.btnDollyKilitlemeZamanSuresiInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDollyKilitlemeZamanSuresiInfo.TabIndex = 268;
             this.btnDollyKilitlemeZamanSuresiInfo.TabStop = false;
@@ -477,10 +458,9 @@
             this.btnBuzzerMispickSuresiInfo.ErrorImage = null;
             this.btnBuzzerMispickSuresiInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnBuzzerMispickSuresiInfo.Image")));
             this.btnBuzzerMispickSuresiInfo.ImageActive = null;
-            this.btnBuzzerMispickSuresiInfo.Location = new System.Drawing.Point(1065, 441);
-            this.btnBuzzerMispickSuresiInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuzzerMispickSuresiInfo.Location = new System.Drawing.Point(728, 287);
             this.btnBuzzerMispickSuresiInfo.Name = "btnBuzzerMispickSuresiInfo";
-            this.btnBuzzerMispickSuresiInfo.Size = new System.Drawing.Size(116, 63);
+            this.btnBuzzerMispickSuresiInfo.Size = new System.Drawing.Size(77, 41);
             this.btnBuzzerMispickSuresiInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBuzzerMispickSuresiInfo.TabIndex = 275;
             this.btnBuzzerMispickSuresiInfo.TabStop = false;
@@ -494,7 +474,7 @@
             this.cbMispickBuzzerSuresi.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMispickBuzzerSuresi.FormattingEnabled = true;
             this.cbMispickBuzzerSuresi.IntegralHeight = false;
-            this.cbMispickBuzzerSuresi.ItemHeight = 55;
+            this.cbMispickBuzzerSuresi.ItemHeight = 37;
             this.cbMispickBuzzerSuresi.Items.AddRange(new object[] {
             "1",
             "2",
@@ -505,10 +485,9 @@
             "7",
             "8",
             "9"});
-            this.cbMispickBuzzerSuresi.Location = new System.Drawing.Point(641, 440);
-            this.cbMispickBuzzerSuresi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbMispickBuzzerSuresi.Location = new System.Drawing.Point(445, 286);
             this.cbMispickBuzzerSuresi.Name = "cbMispickBuzzerSuresi";
-            this.cbMispickBuzzerSuresi.Size = new System.Drawing.Size(166, 63);
+            this.cbMispickBuzzerSuresi.Size = new System.Drawing.Size(112, 45);
             this.cbMispickBuzzerSuresi.TabIndex = 274;
             // 
             // btnBuzzerMispickSuresiDefault
@@ -521,10 +500,9 @@
             this.btnBuzzerMispickSuresiDefault.ErrorImage = null;
             this.btnBuzzerMispickSuresiDefault.Image = ((System.Drawing.Image)(resources.GetObject("btnBuzzerMispickSuresiDefault.Image")));
             this.btnBuzzerMispickSuresiDefault.ImageActive = null;
-            this.btnBuzzerMispickSuresiDefault.Location = new System.Drawing.Point(941, 441);
-            this.btnBuzzerMispickSuresiDefault.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuzzerMispickSuresiDefault.Location = new System.Drawing.Point(645, 287);
             this.btnBuzzerMispickSuresiDefault.Name = "btnBuzzerMispickSuresiDefault";
-            this.btnBuzzerMispickSuresiDefault.Size = new System.Drawing.Size(116, 63);
+            this.btnBuzzerMispickSuresiDefault.Size = new System.Drawing.Size(77, 41);
             this.btnBuzzerMispickSuresiDefault.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBuzzerMispickSuresiDefault.TabIndex = 272;
             this.btnBuzzerMispickSuresiDefault.TabStop = false;
@@ -542,10 +520,9 @@
             this.btnBuzzerMispickSuresiGuncelle.ErrorImage = null;
             this.btnBuzzerMispickSuresiGuncelle.Image = ((System.Drawing.Image)(resources.GetObject("btnBuzzerMispickSuresiGuncelle.Image")));
             this.btnBuzzerMispickSuresiGuncelle.ImageActive = null;
-            this.btnBuzzerMispickSuresiGuncelle.Location = new System.Drawing.Point(816, 440);
-            this.btnBuzzerMispickSuresiGuncelle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuzzerMispickSuresiGuncelle.Location = new System.Drawing.Point(562, 286);
             this.btnBuzzerMispickSuresiGuncelle.Name = "btnBuzzerMispickSuresiGuncelle";
-            this.btnBuzzerMispickSuresiGuncelle.Size = new System.Drawing.Size(116, 63);
+            this.btnBuzzerMispickSuresiGuncelle.Size = new System.Drawing.Size(77, 41);
             this.btnBuzzerMispickSuresiGuncelle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBuzzerMispickSuresiGuncelle.TabIndex = 271;
             this.btnBuzzerMispickSuresiGuncelle.TabStop = false;
@@ -563,10 +540,9 @@
             this.btnSonrakiSayfa.ErrorImage = null;
             this.btnSonrakiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnSonrakiSayfa.Image")));
             this.btnSonrakiSayfa.ImageActive = null;
-            this.btnSonrakiSayfa.Location = new System.Drawing.Point(1134, 602);
-            this.btnSonrakiSayfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSonrakiSayfa.Location = new System.Drawing.Point(718, 388);
             this.btnSonrakiSayfa.Name = "btnSonrakiSayfa";
-            this.btnSonrakiSayfa.Size = new System.Drawing.Size(153, 103);
+            this.btnSonrakiSayfa.Size = new System.Drawing.Size(102, 67);
             this.btnSonrakiSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSonrakiSayfa.TabIndex = 278;
             this.btnSonrakiSayfa.TabStop = false;
@@ -579,9 +555,11 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.rbDublicateIslemAcik);
             this.groupBox1.Controls.Add(this.rbDublicateIslemKapali);
-            this.groupBox1.Location = new System.Drawing.Point(354, 79);
+            this.groupBox1.Location = new System.Drawing.Point(254, 51);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 63);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(253, 41);
             this.groupBox1.TabIndex = 279;
             this.groupBox1.TabStop = false;
             // 
@@ -595,9 +573,11 @@
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.rbKarkasBypassAktif);
             this.groupBox2.Controls.Add(this.rbKarkasBypassPasif);
-            this.groupBox2.Location = new System.Drawing.Point(354, 159);
+            this.groupBox2.Location = new System.Drawing.Point(254, 103);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(380, 63);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(253, 41);
             this.groupBox2.TabIndex = 280;
             this.groupBox2.TabStop = false;
             // 
@@ -606,9 +586,10 @@
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.BackColor = System.Drawing.Color.PowderBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button2.Location = new System.Drawing.Point(9, 79);
+            this.button2.Location = new System.Drawing.Point(24, 51);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(339, 63);
+            this.button2.Size = new System.Drawing.Size(226, 41);
             this.button2.TabIndex = 297;
             this.button2.Text = "Dublicate İşlem";
             this.button2.UseVisualStyleBackColor = false;
@@ -618,9 +599,10 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.PowderBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button1.Location = new System.Drawing.Point(9, 159);
+            this.button1.Location = new System.Drawing.Point(24, 103);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(339, 63);
+            this.button1.Size = new System.Drawing.Size(226, 41);
             this.button1.TabIndex = 298;
             this.button1.Text = "Karkas By-pass";
             this.button1.UseVisualStyleBackColor = false;
@@ -630,9 +612,10 @@
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.BackColor = System.Drawing.Color.PowderBlue;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button3.Location = new System.Drawing.Point(9, 228);
+            this.button3.Location = new System.Drawing.Point(24, 148);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(628, 65);
+            this.button3.Size = new System.Drawing.Size(419, 42);
             this.button3.TabIndex = 299;
             this.button3.Text = "Dolly Kilitleme Zaman Süresi(sn.)";
             this.button3.UseVisualStyleBackColor = false;
@@ -642,9 +625,10 @@
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.BackColor = System.Drawing.Color.PowderBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button4.Location = new System.Drawing.Point(9, 299);
+            this.button4.Location = new System.Drawing.Point(24, 194);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(628, 65);
+            this.button4.Size = new System.Drawing.Size(419, 42);
             this.button4.TabIndex = 300;
             this.button4.Text = "Dolly Kilitleme Deneme Sayısı";
             this.button4.UseVisualStyleBackColor = false;
@@ -654,9 +638,10 @@
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.BackColor = System.Drawing.Color.PowderBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button5.Location = new System.Drawing.Point(9, 370);
+            this.button5.Location = new System.Drawing.Point(24, 240);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(628, 65);
+            this.button5.Size = new System.Drawing.Size(419, 42);
             this.button5.TabIndex = 301;
             this.button5.Text = "Dolly Kilitleme Zaman Aşımı(sn.)";
             this.button5.UseVisualStyleBackColor = false;
@@ -666,19 +651,20 @@
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button6.BackColor = System.Drawing.Color.PowderBlue;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button6.Location = new System.Drawing.Point(9, 441);
+            this.button6.Location = new System.Drawing.Point(24, 287);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(628, 65);
+            this.button6.Size = new System.Drawing.Size(419, 42);
             this.button6.TabIndex = 302;
             this.button6.Text = "Yanlış işlem buzzer süresi(sn.)";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // frmParametreler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1305, 718);
+            this.ClientSize = new System.Drawing.Size(831, 467);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -708,7 +694,6 @@
             this.Controls.Add(this.bunifuCustomLabel10);
             this.Controls.Add(this.btnOncekiSayfa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmParametreler";
             this.Text = "frmParametreler";
             this.Load += new System.EventHandler(this.frmParametreler_Load);

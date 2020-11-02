@@ -266,12 +266,13 @@
             this.pictureBox1.BackColor = System.Drawing.Color.PowderBlue;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 86);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1044, 613);
+            this.pictureBox1.Size = new System.Drawing.Size(1044, 527);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmPopupIslem
             // 
@@ -284,10 +285,10 @@
             this.Controls.Add(this.btnRework);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPopupIslem";
             this.ShowInTaskbar = false;

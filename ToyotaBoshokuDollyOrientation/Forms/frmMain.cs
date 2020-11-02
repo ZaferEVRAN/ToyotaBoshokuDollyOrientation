@@ -597,7 +597,7 @@ namespace ToyotaBoshokuDollyOrientation
                            
                                 xKontrol = false;
                                 OKAlarmTimer = 0;
-                                alarmTetik = true;
+                               // alarmTetik = true;
                                 KarkasIslem.xLOOP = false;
 
                                 cGenel.sensorSonucu = 0;
