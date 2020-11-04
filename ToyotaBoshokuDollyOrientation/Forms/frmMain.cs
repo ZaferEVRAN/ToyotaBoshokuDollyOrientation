@@ -597,11 +597,11 @@ namespace ToyotaBoshokuDollyOrientation
 
                             xKontrol = false;
                          
-                            if (Properties.Settings.Default.OKBuzzer==true)
-                            {
-                                alarmTetik = true;
-                                OKAlarmTimer = 0;
-                            }
+                           // if (Properties.Settings.Default.OKBuzzer==true)
+                           // {
+                           //     alarmTetik = true;
+                           //     OKAlarmTimer = 0;
+                           // }
 
                             KarkasIslem.xLOOP = false;
 
