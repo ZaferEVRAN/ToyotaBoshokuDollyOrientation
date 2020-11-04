@@ -93,6 +93,7 @@ namespace ToyotaBoshokuDollyOrientation
                         urunBarkod.urunBarkodStatusUpdate_FR_LH_99();
                         urunBarkod.urunBarkodStatusUpdate_RR_LH_99();
                         karkasIslem.gorevDurumTamamlandi_LH();
+                        cGenel.frmMain.setlemeDongusu();
                         cLambaKontrol lamba = new cLambaKontrol();
                         lamba.lambaDurumDollyBaslangic();
                     }
@@ -130,6 +131,7 @@ namespace ToyotaBoshokuDollyOrientation
                         urunBarkod.urunBarkodStatusUpdate_FR_RH_99();
                         urunBarkod.urunBarkodStatusUpdate_RR_RH_99();
                         karkasIslem.gorevDurumTamamlandi_RH();
+                        cGenel.frmMain.setlemeDongusu();
                         cLambaKontrol lamba = new cLambaKontrol();
                         lamba.lambaDurumDollyBaslangic();
                     }

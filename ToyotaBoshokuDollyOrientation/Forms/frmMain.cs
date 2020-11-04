@@ -509,7 +509,7 @@ namespace ToyotaBoshokuDollyOrientation
                             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
                             {
 
-                               cGenel.gorevID = 0;
+                             
 
                                 cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
 
@@ -552,7 +552,7 @@ namespace ToyotaBoshokuDollyOrientation
                             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
                             {
 
-                                cGenel.gorevID = 0;
+                            
 
 
                                 cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
@@ -596,10 +596,11 @@ namespace ToyotaBoshokuDollyOrientation
 
 
                             xKontrol = false;
-                            OKAlarmTimer = 0;
+                         
                             if (Properties.Settings.Default.OKBuzzer==true)
                             {
                                 alarmTetik = true;
+                                OKAlarmTimer = 0;
                             }
 
                             KarkasIslem.xLOOP = false;
@@ -740,7 +741,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
 
         }
-        bool OKAlarm;
+   
         private void buzzer_Tick(object sender, EventArgs e)
         {
             if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)

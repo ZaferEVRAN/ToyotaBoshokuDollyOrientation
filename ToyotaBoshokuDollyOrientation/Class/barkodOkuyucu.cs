@@ -73,12 +73,7 @@ namespace ToyotaBoshokuDollyOrientation
             ///100AX417
             if (data.Trim() != null && cGenel.nowDeviceID == 0)
             {
-                data = data.Trim();
-                // data = data.Substring(0, data.Length - 1);
-                //if (barkodOkuyucu==true)
-                //{
-                //    data = data.Substring(0, data.Length-1);
-                //}
+                data = data.Trim();           
                 cGenel.frmMain.lblBarkod.Text = data;
                 float TeleMail = 0;
                 string DoorSpec = "";//X467
@@ -168,40 +163,6 @@ namespace ToyotaBoshokuDollyOrientation
                         }
                     }
 
-                   /* if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyLH()._ID == 0 )//(v1.0 -->urunBarkod.barkod_FRL_RRL_Count() > 0)
-                    {
-
-                        if (data == dolly.dollyBarkodInfo(data)._DollyBarkod)
-                        {
-                            KarkasIslem.LHDollyBarkod = data;
-                            uint dollyNo = dolly.dollyBarkodInfo(KarkasIslem.LHDollyBarkod)._DollyNo;
-                            bool result1 = karkasIslem.gorevOlustur_LH(dollyNo);//Dolly_LH tablo yazıldı.
-
-                            if (result1)
-                            {
-
-                                if (urunBarkod.barkod_FRL_RRL_Count() == 0)
-                                {
-                                    cGenel.frmMain.setlemeDongusu();//(v2.0'da eklendi.)
-                                }
-                                cGenel.genelUyariAlarm("Dolly tanıtma başarılı\n Kapı barkodlarını okutmaya başlayabilirsiniz!", false, true);
-                                cGenel.kilitKapatTetik = true;
-                            }
-                        }
-                        else if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
-                        {
-
-                            cGenel.genelUyariAlarm("Ürün barkod okutmadan önce dolly tanıtınız!", false, true);
-
-                        }
-                        else
-                        {
-                            cGenel.genelUyariAlarm("Dolly tanıtınız!", false, true);
-
-                        }
-
-                    }
-                    else */
 
                     if (cGenel.nowDeviceID == 0 && data.Length >= 7)
                     {
@@ -300,40 +261,7 @@ namespace ToyotaBoshokuDollyOrientation
                         }
                     }
 
-                  /* if (karkasIslem.gorevDurumIslemYokveyaYapiliyorDollyRH()._ID == 0)//(v1.0 -->urunBarkod.barkod_FRR_RRR_Count() > 0)
-                    {
-
-                        if (data == dolly.dollyBarkodInfo(data)._DollyBarkod)
-                        {
-                            KarkasIslem.RHDollyBarkod = data;
-                            uint dollyNo = dolly.dollyBarkodInfo(KarkasIslem.RHDollyBarkod)._DollyNo;
-                            bool result1 = karkasIslem.gorevOlustur_RH(dollyNo);//Dolly_RH tablo yazıldı.
-
-                            if (result1)
-                            {
-                             
-                                if (urunBarkod.barkod_FRR_RRR_Count() == 0)
-                                {
-                                    cGenel.frmMain.setlemeDongusu();//(v2.0'da eklendi.)
-                                }
-                                cGenel.genelUyariAlarm("Dolly tanıtma başarılı\n Kapı barkodlarını okutmaya başlayabilirsiniz!", false, true);
-                                cGenel.kilitKapatTetik = true;
-                            }
-                        }
-                        else if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
-                        {
-
-                            cGenel.genelUyariAlarm("Ürün barkod okutmadan önce dolly tanıtınız!", false, true);
-
-                        }
-                        else
-                        {
-                            cGenel.genelUyariAlarm("Geçersiz barkod!", false, true);
-
-                        }
-
-                    }
-                   else */
+                 
                    if (cGenel.nowDeviceID == 0 && data.Length >= 7)
                     {
                         if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
