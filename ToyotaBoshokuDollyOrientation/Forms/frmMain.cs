@@ -499,10 +499,11 @@ namespace ToyotaBoshokuDollyOrientation
                     }
                     if (cGenel.sensorSonucu == 1)
                     {
-                        _AREvt.WaitOne(300, true);
+                      //  _AREvt.WaitOne(300, true);
                         lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
                         _AREvt.WaitOne(300, true);
-                        if (lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID, cGenel.jobState2StatusAnimationID, cGenel.jobState2StatusColorID, cLambaKontrol.master))//deviceID
+                       bool steadySonuc= lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID, cGenel.jobState2StatusAnimationID, cGenel.jobState2StatusColorID, cLambaKontrol.master);
+                        if (steadySonuc)//deviceID
                         {
 
 
