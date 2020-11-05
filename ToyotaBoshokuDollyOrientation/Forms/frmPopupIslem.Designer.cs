@@ -43,7 +43,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblOK = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -68,9 +68,10 @@
             this.btnBack.ErrorImage = null;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageActive = null;
-            this.btnBack.Location = new System.Drawing.Point(915, 92);
+            this.btnBack.Location = new System.Drawing.Point(1372, 142);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(116, 95);
+            this.btnBack.Size = new System.Drawing.Size(174, 146);
             this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnBack.TabIndex = 47;
             this.btnBack.TabStop = false;
@@ -86,13 +87,13 @@
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnOK.Enabled = false;
             this.btnOK.ErrorImage = null;
             this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
             this.btnOK.ImageActive = null;
-            this.btnOK.Location = new System.Drawing.Point(3, 498);
+            this.btnOK.Location = new System.Drawing.Point(4, 766);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(154, 104);
+            this.btnOK.Size = new System.Drawing.Size(231, 160);
             this.btnOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnOK.TabIndex = 54;
             this.btnOK.TabStop = false;
@@ -112,9 +113,10 @@
             this.btnRework.ErrorImage = null;
             this.btnRework.Image = ((System.Drawing.Image)(resources.GetObject("btnRework.Image")));
             this.btnRework.ImageActive = null;
-            this.btnRework.Location = new System.Drawing.Point(878, 500);
+            this.btnRework.Location = new System.Drawing.Point(1317, 769);
+            this.btnRework.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRework.Name = "btnRework";
-            this.btnRework.Size = new System.Drawing.Size(154, 104);
+            this.btnRework.Size = new System.Drawing.Size(231, 160);
             this.btnRework.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRework.TabIndex = 55;
             this.btnRework.TabStop = false;
@@ -131,8 +133,9 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1044, 86);
+            this.panel2.Size = new System.Drawing.Size(1566, 132);
             this.panel2.TabIndex = 53;
             // 
             // lblSpec
@@ -142,9 +145,10 @@
             this.lblSpec.FlatAppearance.BorderSize = 5;
             this.lblSpec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSpec.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblSpec.Location = new System.Drawing.Point(901, 12);
+            this.lblSpec.Location = new System.Drawing.Point(1352, 18);
+            this.lblSpec.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblSpec.Name = "lblSpec";
-            this.lblSpec.Size = new System.Drawing.Size(107, 64);
+            this.lblSpec.Size = new System.Drawing.Size(160, 98);
             this.lblSpec.TabIndex = 54;
             this.lblSpec.Text = "??";
             this.lblSpec.UseVisualStyleBackColor = true;
@@ -156,9 +160,10 @@
             this.lblModel.FlatAppearance.BorderSize = 5;
             this.lblModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblModel.Location = new System.Drawing.Point(531, 12);
+            this.lblModel.Location = new System.Drawing.Point(796, 18);
+            this.lblModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(165, 64);
+            this.lblModel.Size = new System.Drawing.Size(248, 98);
             this.lblModel.TabIndex = 53;
             this.lblModel.Text = "????";
             this.lblModel.UseVisualStyleBackColor = true;
@@ -170,9 +175,10 @@
             this.lblTelemail.FlatAppearance.BorderSize = 5;
             this.lblTelemail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTelemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.lblTelemail.Location = new System.Drawing.Point(187, 12);
+            this.lblTelemail.Location = new System.Drawing.Point(280, 18);
+            this.lblTelemail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lblTelemail.Name = "lblTelemail";
-            this.lblTelemail.Size = new System.Drawing.Size(129, 64);
+            this.lblTelemail.Size = new System.Drawing.Size(194, 98);
             this.lblTelemail.TabIndex = 52;
             this.lblTelemail.Text = "???";
             this.lblTelemail.UseVisualStyleBackColor = true;
@@ -184,9 +190,10 @@
             this.button1.FlatAppearance.BorderSize = 5;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.button1.Location = new System.Drawing.Point(27, 12);
+            this.button1.Location = new System.Drawing.Point(40, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 64);
+            this.button1.Size = new System.Drawing.Size(248, 98);
             this.button1.TabIndex = 49;
             this.button1.Text = "Telemail";
             this.button1.UseVisualStyleBackColor = true;
@@ -198,9 +205,10 @@
             this.button3.FlatAppearance.BorderSize = 5;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.button3.Location = new System.Drawing.Point(745, 12);
+            this.button3.Location = new System.Drawing.Point(1118, 18);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 64);
+            this.button3.Size = new System.Drawing.Size(248, 98);
             this.button3.TabIndex = 51;
             this.button3.Text = "Spec";
             this.button3.UseVisualStyleBackColor = true;
@@ -212,27 +220,29 @@
             this.button2.FlatAppearance.BorderSize = 5;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.button2.Location = new System.Drawing.Point(370, 12);
+            this.button2.Location = new System.Drawing.Point(555, 18);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 64);
+            this.button2.Size = new System.Drawing.Size(248, 98);
             this.button2.TabIndex = 50;
             this.button2.Text = "Model";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // bunifuCustomLabel2
+            // lblOK
             // 
-            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuCustomLabel2.Enabled = false;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(12, 453);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(57, 42);
-            this.bunifuCustomLabel2.TabIndex = 56;
-            this.bunifuCustomLabel2.Text = "OK";
-            this.bunifuCustomLabel2.Visible = false;
+            this.lblOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblOK.BackColor = System.Drawing.Color.Transparent;
+            this.lblOK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOK.Enabled = false;
+            this.lblOK.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblOK.ForeColor = System.Drawing.Color.Black;
+            this.lblOK.Location = new System.Drawing.Point(18, 697);
+            this.lblOK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOK.Name = "lblOK";
+            this.lblOK.Size = new System.Drawing.Size(84, 64);
+            this.lblOK.TabIndex = 56;
+            this.lblOK.Text = "OK";
+            this.lblOK.Visible = false;
             // 
             // bunifuCustomLabel3
             // 
@@ -241,9 +251,10 @@
             this.bunifuCustomLabel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(894, 453);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(1341, 697);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(138, 42);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(206, 64);
             this.bunifuCustomLabel3.TabIndex = 57;
             this.bunifuCustomLabel3.Text = "REWORK";
             // 
@@ -254,9 +265,10 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 545);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 455);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(153, 56);
+            this.pictureBox2.Size = new System.Drawing.Size(230, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 58;
             this.pictureBox2.TabStop = false;
@@ -266,9 +278,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.PowderBlue;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 86);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1044, 527);
+            this.pictureBox1.Size = new System.Drawing.Size(1566, 943);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -276,20 +289,21 @@
             // 
             // frmPopupIslem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1044, 613);
-            this.Controls.Add(this.bunifuCustomLabel3);
+            this.ClientSize = new System.Drawing.Size(1566, 943);
             this.Controls.Add(this.btnRework);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.lblOK);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPopupIslem";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -318,7 +332,7 @@
         private System.Windows.Forms.Button lblSpec;
         private System.Windows.Forms.Button lblModel;
         private System.Windows.Forms.Button lblTelemail;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblOK;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuImageButton btnRework;

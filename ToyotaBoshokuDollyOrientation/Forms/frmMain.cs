@@ -77,7 +77,12 @@ namespace ToyotaBoshokuDollyOrientation
         uint OKAlarmTimer;
         private void saat_Tick(object sender, EventArgs e)
         {
-            if (cGenel.frmPickToLight.Visible || cGenel.frmPopupIslem.Visible)
+            if (!(cGenel.frmKullaniciSayfasi.Visible || cGenel.frmModel.Visible
+                ||cGenel.frmParametreler.Visible||cGenel.frmParametreler2.Visible
+                ||cGenel.frmPickToLighParameter.Visible||cGenel.frmStepMotorParametreBakim.Visible||
+                cGenel.frmYeniBarkodTanimla.Visible||cGenel.frmYeniDollyTanımla.Visible
+                ||cGenel.frmUretimKaydi.Visible||cGenel.frmOperatorPanel.Visible
+                ))
             {
                 txtBarkod.Focus();
             }
@@ -539,9 +544,15 @@ namespace ToyotaBoshokuDollyOrientation
                                 uint barkodDurum = barkodIslem.barkod_FRL_RRL_Count();
                                 if (barkodDurum == 0)//durum||
                                 {
-                                    karkasIslem.gorevDurumTamamlandi_LH();
+                                  
                                     //pnlNumarator.Visible = true;
+                                 
+                                    karkasIslem = karkasIslem.karkasDollyNoGetir_LH();
+                                    logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
+                                    karkasIslem.gorevDurumTamamlandi_LH();
+
                                     setlemeDongusu();
+
                                     _AREvt.WaitOne(300, true);
                                     lambaKontrol.lambaDurumDollyBaslangic();
 
@@ -579,10 +590,13 @@ namespace ToyotaBoshokuDollyOrientation
                                 uint barkodDurum = barkodIslem.barkod_FRR_RRR_Count();
                                 if (barkodDurum == 0)
                                 {
+                                    karkasIslem = karkasIslem.karkasDollyNoGetir_RH();
+                                    logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
 
                                     karkasIslem.gorevDurumTamamlandi_RH();
                                     //pnlNumarator.Visible = true;
                                     setlemeDongusu();
+                                  
                                     _AREvt.WaitOne(300, true);
                                     lambaKontrol.lambaDurumDollyBaslangic();
                                     cGenel.lockOnClick = true;
@@ -745,44 +759,44 @@ namespace ToyotaBoshokuDollyOrientation
    
         private void buzzer_Tick(object sender, EventArgs e)
         {
-            if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
-            {
-                lambaKontrol.buzzerDeviceIDRead();
-            }
+        // if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
+        // {
+        //     lambaKontrol.buzzerDeviceIDRead();
+        // }
+        //
+        // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
+        // {
+        //   //  lambaKontrol.buzzerRing(1);
+        //     NGbuzzerAlarmTimer = 0;
+        //     cGenel.alarmVar = true;
+        // }
+        //
+        // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
+        // {
+        //    // lambaKontrol.buzzerRing(0);
+        //     cGenel.alarmVar = false;
+        // }
+        //
+        //
 
-            if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
-            {
-                lambaKontrol.buzzerRing(1);
-                NGbuzzerAlarmTimer = 0;
-                cGenel.alarmVar = true;
-            }
-
-            if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
-            {
-                lambaKontrol.buzzerRing(0);
-                cGenel.alarmVar = false;
-            }
+         //  if (cGenel.xBuzzerByPass == false && alarmTetik == true)
+         //  {
+         //      lambaKontrol.buzzerRing(1);
+         //
+         //      OKAlarmTimer++;
+         //      _AREvt.WaitOne(300, true);
+         //      lambaKontrol.buzzerRingKontrol();
+         //
+         //  }
 
 
-
-            if (cGenel.xBuzzerByPass == false && alarmTetik == true)
-            {
-                lambaKontrol.buzzerRing(1);
-
-                OKAlarmTimer++;
-                _AREvt.WaitOne(300, true);
-                lambaKontrol.buzzerRingKontrol();
-
-            }
-
-
-            if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4 && alarmTetik == true && cLambaKontrol.ringKontol == 1)
-            {
-
-                lambaKontrol.buzzerRing(0);
-                alarmTetik = false;
-
-            }
+          //  if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4 && alarmTetik == true && cLambaKontrol.ringKontol == 1)
+          //  {
+          //
+          //      lambaKontrol.buzzerRing(0);
+          //      alarmTetik = false;
+          //
+          //  }
 
         }
 

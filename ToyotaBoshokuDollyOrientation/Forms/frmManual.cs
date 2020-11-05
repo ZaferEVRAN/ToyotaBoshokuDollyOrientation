@@ -92,6 +92,8 @@ namespace ToyotaBoshokuDollyOrientation
                         barkodIslem urunBarkod = new barkodIslem();
                         urunBarkod.urunBarkodStatusUpdate_FR_LH_99();
                         urunBarkod.urunBarkodStatusUpdate_RR_LH_99();
+                        karkasIslem = karkasIslem.karkasDollyNoGetir_LH();
+                        logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
                         karkasIslem.gorevDurumTamamlandi_LH();
                         cGenel.frmMain.setlemeDongusu();
                         cLambaKontrol lamba = new cLambaKontrol();
@@ -130,6 +132,8 @@ namespace ToyotaBoshokuDollyOrientation
                         barkodIslem urunBarkod = new barkodIslem();
                         urunBarkod.urunBarkodStatusUpdate_FR_RH_99();
                         urunBarkod.urunBarkodStatusUpdate_RR_RH_99();
+                        karkasIslem = karkasIslem.karkasDollyNoGetir_RH();
+                        logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
                         karkasIslem.gorevDurumTamamlandi_RH();
                         cGenel.frmMain.setlemeDongusu();
                         cLambaKontrol lamba = new cLambaKontrol();
@@ -138,7 +142,7 @@ namespace ToyotaBoshokuDollyOrientation
                 }
             }
         }
-
+        log logOlustur = new log();
         private void btnLHDollyKilitKapat_Click(object sender, EventArgs e)
         {
            cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
@@ -153,18 +157,21 @@ namespace ToyotaBoshokuDollyOrientation
                 }
             }
         }
-
+        cLambaKontrol lambaKontrol = new cLambaKontrol();
         private void btnLHDollyResetle_Click(object sender, EventArgs e)
         {
             cGenel.nowDeviceID = 0;
-            cLambaKontrol lambaKontrol = new cLambaKontrol();
-            lambaKontrol.lambaDurumDollyBaslangic();
+         
+            if (cGenel.xByPass==false)
+            {
+                lambaKontrol.lambaDurumDollyBaslangic();
+            }
             cGenel.stepAlarmVar = false;
             cGenel.deviceAlarmVar = false;
             cGenel.motorRun = false;
             KarkasIslem.xLOOP = false;
             frmMain.xKontrol = false;
-            lambaKontrol.buzzerRing(0);
+            //lambaKontrol.buzzerRing(0);
             cGenel.alarmVar = false;
 
             //lambaKontrol.yarimKalanIsıklarGoster();

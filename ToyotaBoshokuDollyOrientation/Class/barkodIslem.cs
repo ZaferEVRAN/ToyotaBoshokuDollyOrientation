@@ -1695,8 +1695,8 @@ namespace ToyotaBoshokuDollyOrientation
 
         public uint TotalOKCount_LH(DateTime time)
         {
-            string zaman1 = string.Format("{0} 00:00:00.000",time.Date) ;
-            string zaman2 = string.Format("{0} 23:59:00.000", time.Date);
+            string zaman1 = string.Format("{0} 00:00:00.000",time.ToShortDateString()) ;
+            string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();

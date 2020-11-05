@@ -75,11 +75,14 @@ namespace ToyotaBoshokuDollyOrientation
         public cLambaKontrol()
         {
          PLCDurumu = PLCDurumlari.KULLANILAMAZ;
-        
-         if (Connect())
-         {
-             PLCDurumu = PLCDurumlari.UYGUN;
-         }
+
+            if (cGenel.xByPass==false)
+            {
+                if (Connect())
+                {
+                    PLCDurumu = PLCDurumlari.UYGUN;
+                }
+            }
 
         }
 
@@ -277,7 +280,7 @@ namespace ToyotaBoshokuDollyOrientation
             // return deviceID;
         }
 
-        public  void buzzerRing(ushort status)
+       /* public  void buzzerRing(ushort status)
         {
             try
             {
@@ -344,7 +347,7 @@ namespace ToyotaBoshokuDollyOrientation
                 }
             }
             
-        }
+        }*/
 
         //lamba bul
         public ushort deviceIDBul_LH(uint dollyRafi, string yonu)

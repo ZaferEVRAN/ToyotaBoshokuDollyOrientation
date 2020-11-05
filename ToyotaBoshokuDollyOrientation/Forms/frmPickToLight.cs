@@ -28,7 +28,7 @@ namespace ToyotaBoshokuDollyOrientation
             this.BeginInvoke(new delDurumIzleme(durumIzleme), new object[] { });
         }
         List<uint> list;
-        Button btn;
+       
         private void durumIzleme()
         {
             

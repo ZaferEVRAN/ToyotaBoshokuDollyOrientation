@@ -73,7 +73,7 @@ namespace ToyotaBoshokuDollyOrientation
             ///100AX417
             if (data.Trim() != null && cGenel.nowDeviceID == 0)
             {
-                data = data.Trim();           
+                data = data.Trim();
                 cGenel.frmMain.lblBarkod.Text = data;
                 float TeleMail = 0;
                 string DoorSpec = "";//X467
@@ -166,7 +166,7 @@ namespace ToyotaBoshokuDollyOrientation
 
                     if (cGenel.nowDeviceID == 0 && data.Length >= 7)
                     {
-                       
+
 
                         if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
                         {
@@ -176,12 +176,21 @@ namespace ToyotaBoshokuDollyOrientation
                                 if (cGenel.YonBilgisi == cGenel.FR_LH)
                                 {
                                     barkodPopupIslem_LH(DoorSpec);
-                                    cGenel.frmPopupIslem.globalOK();
+                                    if (cGenel.xByPass==false)
+                                    {
+                                        cGenel.frmPopupIslem.globalOK();
+                                    }
+                                 
+
                                 }
                                 else if (cGenel.YonBilgisi == cGenel.RR_LH)
                                 {
                                     barkodPopupIslem_LH(DoorSpec);
-                                    cGenel.frmPopupIslem.globalOK();
+                                    if (cGenel.xByPass == false)
+                                    {
+                                        cGenel.frmPopupIslem.globalOK();
+                                    }
+
                                 }
                                 else
                                 {
@@ -261,8 +270,8 @@ namespace ToyotaBoshokuDollyOrientation
                         }
                     }
 
-                 
-                   if (cGenel.nowDeviceID == 0 && data.Length >= 7)
+
+                    if (cGenel.nowDeviceID == 0 && data.Length >= 7)
                     {
                         if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
                         {
@@ -273,14 +282,24 @@ namespace ToyotaBoshokuDollyOrientation
                                 {
 
                                     barkodPopupIslem_RH(DoorSpec);
-                                   cGenel.frmPopupIslem.globalOK();
-                                   
+
+                                    if (cGenel.xByPass == false)
+                                    {
+                                        cGenel.frmPopupIslem.globalOK();
+                                    }
+
+
                                 }
                                 else if (cGenel.YonBilgisi == cGenel.RR_RH)
                                 {
 
                                     barkodPopupIslem_RH(DoorSpec);
-                                    cGenel.frmPopupIslem.globalOK();
+
+                                    if (cGenel.xByPass == false)
+                                    {
+                                        cGenel.frmPopupIslem.globalOK();
+                                    }
+
                                 }
                                 else
                                 {
@@ -296,13 +315,16 @@ namespace ToyotaBoshokuDollyOrientation
                         else
                         {
                             cGenel.genelUyariAlarm("Okutulan Telemail bulunamadı!", false, true);
-                        }   
+                        }
+                        if (cGenel.xByPass == false)
+                        {
+                            cGenel.frmMain.globalLambaYakmaBarkodOkutulunca();
+                        }
 
-                        cGenel.frmMain.globalLambaYakmaBarkodOkutulunca();
                     }
                 }
 
-        
+
             }
 
 

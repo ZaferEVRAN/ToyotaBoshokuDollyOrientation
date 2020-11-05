@@ -2261,5 +2261,87 @@ namespace ToyotaBoshokuDollyOrientation
 
             return result;
         }
+
+        public KarkasIslem karkasDollyNoGetir_LH()
+        {
+            KarkasIslem gorevInfo = new KarkasIslem();
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("select * from LH_KARKAS where STATUS=1", con);
+            SqlDataReader dr = null;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    gorevInfo._ID = Convert.ToUInt32(dr["ID"]);
+                    gorevInfo._DOLLYNO = Convert.ToUInt32(dr["DOLLYNO"]);
+                   
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                mesajlar.hata(ex);
+            }
+            finally
+            {
+
+                con.Close();
+                con.Dispose();
+            }
+
+            return gorevInfo;
+
+        }
+
+        public KarkasIslem karkasDollyNoGetir_RH()
+        {
+            KarkasIslem gorevInfo = new KarkasIslem();
+            cGenel gnl = new cGenel();
+            SqlConnection con = new SqlConnection(gnl.conString);
+            SqlCommand cmd = new SqlCommand("select * from RH_KARKAS where STATUS=1", con);
+            SqlDataReader dr = null;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    gorevInfo._ID = Convert.ToUInt32(dr["ID"]);
+                    gorevInfo._DOLLYNO = Convert.ToUInt32(dr["DOLLYNO"]);
+           
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                mesajlar.hata(ex);
+            }
+            finally
+            {
+
+                con.Close();
+                con.Dispose();
+            }
+
+            return gorevInfo;
+
+        }
     }
 }
