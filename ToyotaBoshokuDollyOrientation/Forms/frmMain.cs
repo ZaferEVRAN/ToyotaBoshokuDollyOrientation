@@ -78,10 +78,10 @@ namespace ToyotaBoshokuDollyOrientation
         private void saat_Tick(object sender, EventArgs e)
         {
             if (!(cGenel.frmKullaniciSayfasi.Visible || cGenel.frmModel.Visible
-                ||cGenel.frmParametreler.Visible||cGenel.frmParametreler2.Visible
-                ||cGenel.frmPickToLighParameter.Visible||cGenel.frmStepMotorParametreBakim.Visible||
-                cGenel.frmYeniBarkodTanimla.Visible||cGenel.frmYeniDollyTanımla.Visible
-                ||cGenel.frmUretimKaydi.Visible||cGenel.frmOperatorPanel.Visible
+                || cGenel.frmParametreler.Visible || cGenel.frmParametreler2.Visible
+                || cGenel.frmPickToLighParameter.Visible || cGenel.frmStepMotorParametreBakim.Visible ||
+                cGenel.frmYeniBarkodTanimla.Visible || cGenel.frmYeniDollyTanımla.Visible
+                || cGenel.frmUretimKaydi.Visible || cGenel.frmOperatorPanel.Visible
                 ))
             {
                 txtBarkod.Focus();
@@ -504,10 +504,10 @@ namespace ToyotaBoshokuDollyOrientation
                     }
                     if (cGenel.sensorSonucu == 1)
                     {
-                      //  _AREvt.WaitOne(300, true);
+                        //  _AREvt.WaitOne(300, true);
                         lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
                         _AREvt.WaitOne(300, true);
-                       bool steadySonuc= lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID, cGenel.jobState2StatusAnimationID, cGenel.jobState2StatusColorID, cLambaKontrol.master);
+                        bool steadySonuc = lambaKontrol.lamba.lambaJobIlgiliIsikSteadyYakKontrol(cGenel.nowDeviceID, cGenel.jobState2StatusAnimationID, cGenel.jobState2StatusColorID, cLambaKontrol.master);
                         if (steadySonuc)//deviceID
                         {
 
@@ -515,7 +515,7 @@ namespace ToyotaBoshokuDollyOrientation
                             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
                             {
 
-                             
+
 
                                 cGenel.gorevID = karkasIslem.gorevSorgula_LH((byte)gorevDurumlari.gorevYapiliyor)._ID;
 
@@ -544,9 +544,9 @@ namespace ToyotaBoshokuDollyOrientation
                                 uint barkodDurum = barkodIslem.barkod_FRL_RRL_Count();
                                 if (barkodDurum == 0)//durum||
                                 {
-                                  
+
                                     //pnlNumarator.Visible = true;
-                                 
+
                                     karkasIslem = karkasIslem.karkasDollyNoGetir_LH();
                                     logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
                                     karkasIslem.gorevDurumTamamlandi_LH();
@@ -564,7 +564,7 @@ namespace ToyotaBoshokuDollyOrientation
                             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
                             {
 
-                            
+
 
 
                                 cGenel.gorevID = karkasIslem.gorevSorgula_RH((byte)gorevDurumlari.gorevYapiliyor)._ID;
@@ -596,7 +596,7 @@ namespace ToyotaBoshokuDollyOrientation
                                     karkasIslem.gorevDurumTamamlandi_RH();
                                     //pnlNumarator.Visible = true;
                                     setlemeDongusu();
-                                  
+
                                     _AREvt.WaitOne(300, true);
                                     lambaKontrol.lambaDurumDollyBaslangic();
                                     cGenel.lockOnClick = true;
@@ -611,20 +611,22 @@ namespace ToyotaBoshokuDollyOrientation
 
 
                             xKontrol = false;
-                         
-                           // if (Properties.Settings.Default.OKBuzzer==true)
-                           // {
-                           //     alarmTetik = true;
-                           //     OKAlarmTimer = 0;
-                           // }
+
+                            // if (Properties.Settings.Default.OKBuzzer==true)
+                            // {
+                            //     alarmTetik = true;
+                            //     OKAlarmTimer = 0;
+                            // }
 
                             KarkasIslem.xLOOP = false;
 
                             cGenel.sensorSonucu = 0;
                             cGenel.nowDeviceID = 0;
+
+                             cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                             cGenel.frmPickToLight.DurumIzleme();
                             cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
-                            // cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                            // cGenel.frmPickToLight.DurumIzleme();
+
 
 
 
@@ -756,47 +758,47 @@ namespace ToyotaBoshokuDollyOrientation
             }
 
         }
-   
+
         private void buzzer_Tick(object sender, EventArgs e)
         {
-        // if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
-        // {
-        //     lambaKontrol.buzzerDeviceIDRead();
-        // }
-        //
-        // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
-        // {
-        //   //  lambaKontrol.buzzerRing(1);
-        //     NGbuzzerAlarmTimer = 0;
-        //     cGenel.alarmVar = true;
-        // }
-        //
-        // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
-        // {
-        //    // lambaKontrol.buzzerRing(0);
-        //     cGenel.alarmVar = false;
-        // }
-        //
-        //
+            // if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
+            // {
+            //     lambaKontrol.buzzerDeviceIDRead();
+            // }
+            //
+            // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
+            // {
+            //   //  lambaKontrol.buzzerRing(1);
+            //     NGbuzzerAlarmTimer = 0;
+            //     cGenel.alarmVar = true;
+            // }
+            //
+            // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
+            // {
+            //    // lambaKontrol.buzzerRing(0);
+            //     cGenel.alarmVar = false;
+            // }
+            //
+            //
 
-         //  if (cGenel.xBuzzerByPass == false && alarmTetik == true)
-         //  {
-         //      lambaKontrol.buzzerRing(1);
-         //
-         //      OKAlarmTimer++;
-         //      _AREvt.WaitOne(300, true);
-         //      lambaKontrol.buzzerRingKontrol();
-         //
-         //  }
+            //  if (cGenel.xBuzzerByPass == false && alarmTetik == true)
+            //  {
+            //      lambaKontrol.buzzerRing(1);
+            //
+            //      OKAlarmTimer++;
+            //      _AREvt.WaitOne(300, true);
+            //      lambaKontrol.buzzerRingKontrol();
+            //
+            //  }
 
 
-          //  if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4 && alarmTetik == true && cLambaKontrol.ringKontol == 1)
-          //  {
-          //
-          //      lambaKontrol.buzzerRing(0);
-          //      alarmTetik = false;
-          //
-          //  }
+            //  if (cGenel.xBuzzerByPass == false && OKAlarmTimer >= 4 && alarmTetik == true && cLambaKontrol.ringKontol == 1)
+            //  {
+            //
+            //      lambaKontrol.buzzerRing(0);
+            //      alarmTetik = false;
+            //
+            //  }
 
         }
 

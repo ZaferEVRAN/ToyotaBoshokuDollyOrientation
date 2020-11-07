@@ -3,13 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Makina_Adi" Type="System.String" Scope="User">
-      <Value Profile="(Default)">LH</Value>
+      <Value Profile="(Default)">RH</Value>
     </Setting>
     <Setting Name="comPortStepMotor" Type="System.String" Scope="User">
       <Value Profile="(Default)">COM1</Value>
-    </Setting>
-    <Setting Name="OKBuzzer" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

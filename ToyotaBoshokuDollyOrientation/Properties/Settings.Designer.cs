@@ -25,7 +25,7 @@ namespace ToyotaBoshokuDollyOrientation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("LH")]
+        [global::System.Configuration.DefaultSettingValueAttribute("RH")]
         public string Makina_Adi {
             get {
                 return ((string)(this["Makina_Adi"]));
@@ -44,18 +44,6 @@ namespace ToyotaBoshokuDollyOrientation.Properties {
             }
             set {
                 this["comPortStepMotor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool OKBuzzer {
-            get {
-                return ((bool)(this["OKBuzzer"]));
-            }
-            set {
-                this["OKBuzzer"] = value;
             }
         }
     }
