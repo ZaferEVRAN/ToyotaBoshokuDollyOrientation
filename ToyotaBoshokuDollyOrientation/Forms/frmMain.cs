@@ -623,8 +623,8 @@ namespace ToyotaBoshokuDollyOrientation
                             cGenel.sensorSonucu = 0;
                             cGenel.nowDeviceID = 0;
 
-                             cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                             cGenel.frmPickToLight.DurumIzleme();
+                             //cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                             //cGenel.frmPickToLight.DurumIzleme();
                             cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
 
 
