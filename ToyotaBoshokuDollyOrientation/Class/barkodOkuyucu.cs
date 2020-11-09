@@ -195,17 +195,26 @@ namespace ToyotaBoshokuDollyOrientation
                                 else
                                 {
                                     cGenel.genelUyariAlarm("Yön veya hat bilgisi tanımlama hatası!", false, true);
+                                    cGenel.nowDeviceID = 0;
+                                    cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                    cGenel.frmPickToLight.DurumIzleme();
                                 }
 
                             }
                             else
                             {
                                 cGenel.genelUyariAlarm("Telemail numaraları ve yön sırasında atlama yapılamaz!", false, true);
+                                cGenel.nowDeviceID = 0;
+                                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                cGenel.frmPickToLight.DurumIzleme();
                             }
                         }
                         else
                         {
                             cGenel.genelUyariAlarm("Okutulan barkod ataması yapılmamıştır!", false, true);
+                            cGenel.nowDeviceID = 0;
+                            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                            cGenel.frmPickToLight.DurumIzleme();
                         }
 
 
@@ -304,17 +313,26 @@ namespace ToyotaBoshokuDollyOrientation
                                 else
                                 {
                                     cGenel.genelUyariAlarm("Yön veya hat bilgisi tanımlama hatası!", false, true);
+                                    cGenel.nowDeviceID = 0;
+                                    cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                    cGenel.frmPickToLight.DurumIzleme();
                                 }
 
                             }
                             else
                             {
                                 cGenel.genelUyariAlarm("Telemail numaraları ve yön sırasında atlama yapılamaz!", false, true);
+                                cGenel.nowDeviceID = 0;
+                                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                cGenel.frmPickToLight.DurumIzleme();
                             }
                         }
                         else
                         {
                             cGenel.genelUyariAlarm("Okutulan Telemail bulunamadı!", false, true);
+                            cGenel.nowDeviceID = 0;
+                            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                            cGenel.frmPickToLight.DurumIzleme();
                         }
                         if (cGenel.xByPass == false)
                         {
@@ -355,6 +373,9 @@ namespace ToyotaBoshokuDollyOrientation
             {
                 cGenel.genelUyariAlarm("Dublicate barkod işlemi yapılamaz.!", false, true);
                 cGenel.frmMain.formKapat();
+                cGenel.nowDeviceID = 0;
+                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                cGenel.frmPickToLight.DurumIzleme();
             }
 
         }
