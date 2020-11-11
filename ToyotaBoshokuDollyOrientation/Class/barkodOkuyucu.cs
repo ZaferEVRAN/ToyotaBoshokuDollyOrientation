@@ -180,8 +180,8 @@ namespace ToyotaBoshokuDollyOrientation
                                     {
                                         cGenel.frmPopupIslem.globalOK();
                                     }
-                                 
 
+                                    cGenel.geriSayimDegeri = 45;
                                 }
                                 else if (cGenel.YonBilgisi == cGenel.RR_LH)
                                 {
@@ -190,7 +190,7 @@ namespace ToyotaBoshokuDollyOrientation
                                     {
                                         cGenel.frmPopupIslem.globalOK();
                                     }
-
+                                    cGenel.geriSayimDegeri = 30;
                                 }
                                 else
                                 {
@@ -296,7 +296,7 @@ namespace ToyotaBoshokuDollyOrientation
                                     {
                                         cGenel.frmPopupIslem.globalOK();
                                     }
-
+                                    cGenel.geriSayimDegeri = 45;
 
                                 }
                                 else if (cGenel.YonBilgisi == cGenel.RR_RH)
@@ -308,7 +308,7 @@ namespace ToyotaBoshokuDollyOrientation
                                     {
                                         cGenel.frmPopupIslem.globalOK();
                                     }
-
+                                    cGenel.geriSayimDegeri = 30;
                                 }
                                 else
                                 {

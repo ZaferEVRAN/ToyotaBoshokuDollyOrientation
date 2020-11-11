@@ -389,5 +389,9 @@ namespace ToyotaBoshokuDollyOrientation
         public static string loopInfoMain;
 
         public static uint gorevID;
+
+        public static bool geriSayimTetik;
+        public static int geriSayimDegeri;
+
     }
 }

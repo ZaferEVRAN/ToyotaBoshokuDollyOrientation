@@ -367,5 +367,15 @@ namespace ToyotaBoshokuDollyOrientation
         {
 
         }
+
+        private void timerGeriSayim_Tick(object sender, EventArgs e)
+        {
+           
+                lblGeriSayimSayaci.Text = cGenel.geriSayimDegeri.ToString();
+                cGenel.geriSayimDegeri = cGenel.geriSayimDegeri - 1;
+             
+            
+           
+        }
     }
 }

@@ -1701,7 +1701,7 @@ namespace ToyotaBoshokuDollyOrientation
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LOG where LINE='LH' AND OK_REWORK='OK' AND TIME>@zaman1 AND TIME<=@zaman2", con);
             SqlDataReader dr = null;
             cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
             cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
@@ -1728,34 +1728,34 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Close();
                 con.Dispose();
             }
-            SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
-            SqlDataReader dr2 = null;
-            cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
-            cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
-            try
-            {
-                if (con2.State == ConnectionState.Closed)
-                {
-                    con2.Open();
-                }
-                dr2 = cmd2.ExecuteReader();
-                while (dr2.Read())
-                {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
-                }
-                sonuc = sonuc + sonuc2;
-            }
-            catch (Exception ex)
-            {
-                mesajlar.hata(ex);
-
-            }
-            finally
-            {
-                con2.Close();
-                con2.Dispose();
-            }
+            //SqlConnection con2 = new SqlConnection(gnl.conString);
+            //SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            //SqlDataReader dr2 = null;
+            //cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+            //cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
+            //try
+            //{
+            //    if (con2.State == ConnectionState.Closed)
+            //    {
+            //        con2.Open();
+            //    }
+            //    dr2 = cmd2.ExecuteReader();
+            //    while (dr2.Read())
+            //    {
+            //        sonuc2 = Convert.ToUInt16(dr2[""]);
+            //    }
+            //    sonuc = sonuc + sonuc2;
+            //}
+            //catch (Exception ex)
+            //{
+            //    mesajlar.hata(ex);
+            //
+            //}
+            //finally
+            //{
+            //    con2.Close();
+            //    con2.Dispose();
+            //}
             return sonuc;
         }
 
@@ -1767,7 +1767,7 @@ namespace ToyotaBoshokuDollyOrientation
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LOG where LINE='RH' AND OK_REWORK='OK' AND TIME>@zaman1 AND TIME<=@zaman2", con);
             cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
             cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
@@ -1794,34 +1794,34 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Close();
                 con.Dispose();
             }
-            SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
-            cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
-            cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
-            SqlDataReader dr2 = null;
-            try
-            {
-                if (con2.State == ConnectionState.Closed)
-                {
-                    con2.Open();
-                }
-                dr2 = cmd2.ExecuteReader();
-                while (dr2.Read())
-                {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
-                }
-                sonuc = sonuc + sonuc2;
-            }
-            catch (Exception ex)
-            {
-                mesajlar.hata(ex);
-
-            }
-            finally
-            {
-                con2.Close();
-                con2.Dispose();
-            }
+           //SqlConnection con2 = new SqlConnection(gnl.conString);
+           //SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=2 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+           //cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
+           //cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
+           //SqlDataReader dr2 = null;
+           //try
+           //{
+           //    if (con2.State == ConnectionState.Closed)
+           //    {
+           //        con2.Open();
+           //    }
+           //    dr2 = cmd2.ExecuteReader();
+           //    while (dr2.Read())
+           //    {
+           //        sonuc2 = Convert.ToUInt16(dr2[""]);
+           //    }
+           //    sonuc = sonuc + sonuc2;
+           //}
+           //catch (Exception ex)
+           //{
+           //    mesajlar.hata(ex);
+           //
+           //}
+           //finally
+           //{
+           //    con2.Close();
+           //    con2.Dispose();
+           //}
             return sonuc;
         }
 
@@ -1908,6 +1908,7 @@ namespace ToyotaBoshokuDollyOrientation
             string zaman1 = string.Format("{0} 00:00:00.000", time.ToShortDateString());
             string zaman2 = string.Format("{0} 23:59:00.000", time.ToShortDateString());
             uint sonuc = 0;
+            uint sonuc1 = 0;
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
@@ -1924,7 +1925,7 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc1 = Convert.ToUInt16(dr[""]);
                 }
 
             }
@@ -1954,7 +1955,7 @@ namespace ToyotaBoshokuDollyOrientation
                 {
                     sonuc2 = Convert.ToUInt16(dr2[""]);
                 }
-                sonuc = sonuc + sonuc2;
+             
             }
             catch (Exception ex)
             {
@@ -1966,6 +1967,7 @@ namespace ToyotaBoshokuDollyOrientation
                 con2.Close();
                 con2.Dispose();
             }
+            sonuc = sonuc1 + sonuc2;
             return sonuc;
         }
 
@@ -2071,7 +2073,7 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
             
-            return sonuc;
+            return sonuc*2;
         }
 
         public uint TotalURETIMCount_RH(DateTime time)
@@ -2110,7 +2112,7 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
           
-            return sonuc;
+            return sonuc*2;
         }
     }
 }
