@@ -62,10 +62,9 @@
             this.btnOncekiSayfa.ErrorImage = null;
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageActive = null;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(1418, 771);
-            this.btnOncekiSayfa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(711, 501);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
-            this.btnOncekiSayfa.Size = new System.Drawing.Size(153, 103);
+            this.btnOncekiSayfa.Size = new System.Drawing.Size(102, 67);
             this.btnOncekiSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnOncekiSayfa.TabIndex = 284;
             this.btnOncekiSayfa.TabStop = false;
@@ -83,10 +82,9 @@
             this.btnUpdate.ErrorImage = null;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageActive = null;
-            this.btnUpdate.Location = new System.Drawing.Point(1080, 102);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(626, 100);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(122, 75);
+            this.btnUpdate.Size = new System.Drawing.Size(81, 49);
             this.btnUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnUpdate.TabIndex = 293;
             this.btnUpdate.TabStop = false;
@@ -98,9 +96,10 @@
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(278, 102);
+            this.dateTimePicker1.Location = new System.Drawing.Point(91, 100);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(795, 75);
+            this.dateTimePicker1.Size = new System.Drawing.Size(531, 53);
             this.dateTimePicker1.TabIndex = 294;
             // 
             // button1
@@ -108,9 +107,10 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.PowderBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button1.Location = new System.Drawing.Point(377, 12);
+            this.button1.Location = new System.Drawing.Point(157, 42);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(696, 83);
+            this.button1.Size = new System.Drawing.Size(464, 54);
             this.button1.TabIndex = 295;
             this.button1.Text = "Gün Sonu Kaydı";
             this.button1.UseVisualStyleBackColor = false;
@@ -120,9 +120,10 @@
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.BackColor = System.Drawing.Color.PowderBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button2.Location = new System.Drawing.Point(39, 190);
+            this.button2.Location = new System.Drawing.Point(79, 157);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(696, 83);
+            this.button2.Size = new System.Drawing.Size(318, 54);
             this.button2.TabIndex = 296;
             this.button2.Text = "Total OK";
             this.button2.UseVisualStyleBackColor = false;
@@ -132,9 +133,10 @@
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button3.BackColor = System.Drawing.Color.PowderBlue;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button3.Location = new System.Drawing.Point(39, 293);
+            this.button3.Location = new System.Drawing.Point(79, 225);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(696, 83);
+            this.button3.Size = new System.Drawing.Size(318, 54);
             this.button3.TabIndex = 297;
             this.button3.Text = "Total REWORK";
             this.button3.UseVisualStyleBackColor = false;
@@ -144,9 +146,10 @@
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button4.BackColor = System.Drawing.Color.PowderBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button4.Location = new System.Drawing.Point(39, 491);
+            this.button4.Location = new System.Drawing.Point(79, 354);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(696, 83);
+            this.button4.Size = new System.Drawing.Size(318, 54);
             this.button4.TabIndex = 298;
             this.button4.Text = "Total Dolly Manual";
             this.button4.UseVisualStyleBackColor = false;
@@ -156,9 +159,10 @@
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.BackColor = System.Drawing.Color.PowderBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button5.Location = new System.Drawing.Point(39, 392);
+            this.button5.Location = new System.Drawing.Point(79, 290);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(696, 83);
+            this.button5.Size = new System.Drawing.Size(318, 54);
             this.button5.TabIndex = 299;
             this.button5.Text = "Total Üretim";
             this.button5.UseVisualStyleBackColor = false;
@@ -168,9 +172,10 @@
             this.lblTotalOK.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalOK.BackColor = System.Drawing.Color.PowderBlue;
             this.lblTotalOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblTotalOK.Location = new System.Drawing.Point(785, 190);
+            this.lblTotalOK.Location = new System.Drawing.Point(429, 157);
+            this.lblTotalOK.Margin = new System.Windows.Forms.Padding(2);
             this.lblTotalOK.Name = "lblTotalOK";
-            this.lblTotalOK.Size = new System.Drawing.Size(696, 83);
+            this.lblTotalOK.Size = new System.Drawing.Size(288, 54);
             this.lblTotalOK.TabIndex = 300;
             this.lblTotalOK.Text = "?";
             this.lblTotalOK.UseVisualStyleBackColor = false;
@@ -180,9 +185,10 @@
             this.lblTotalRework.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalRework.BackColor = System.Drawing.Color.PowderBlue;
             this.lblTotalRework.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblTotalRework.Location = new System.Drawing.Point(785, 293);
+            this.lblTotalRework.Location = new System.Drawing.Point(429, 224);
+            this.lblTotalRework.Margin = new System.Windows.Forms.Padding(2);
             this.lblTotalRework.Name = "lblTotalRework";
-            this.lblTotalRework.Size = new System.Drawing.Size(696, 83);
+            this.lblTotalRework.Size = new System.Drawing.Size(288, 54);
             this.lblTotalRework.TabIndex = 301;
             this.lblTotalRework.Text = "?";
             this.lblTotalRework.UseVisualStyleBackColor = false;
@@ -192,9 +198,10 @@
             this.lblManualIslemAdedi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblManualIslemAdedi.BackColor = System.Drawing.Color.PowderBlue;
             this.lblManualIslemAdedi.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblManualIslemAdedi.Location = new System.Drawing.Point(785, 492);
+            this.lblManualIslemAdedi.Location = new System.Drawing.Point(429, 354);
+            this.lblManualIslemAdedi.Margin = new System.Windows.Forms.Padding(2);
             this.lblManualIslemAdedi.Name = "lblManualIslemAdedi";
-            this.lblManualIslemAdedi.Size = new System.Drawing.Size(696, 83);
+            this.lblManualIslemAdedi.Size = new System.Drawing.Size(288, 54);
             this.lblManualIslemAdedi.TabIndex = 302;
             this.lblManualIslemAdedi.Text = "?";
             this.lblManualIslemAdedi.UseVisualStyleBackColor = false;
@@ -204,19 +211,20 @@
             this.lblTotalUretim.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalUretim.BackColor = System.Drawing.Color.PowderBlue;
             this.lblTotalUretim.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblTotalUretim.Location = new System.Drawing.Point(785, 392);
+            this.lblTotalUretim.Location = new System.Drawing.Point(429, 289);
+            this.lblTotalUretim.Margin = new System.Windows.Forms.Padding(2);
             this.lblTotalUretim.Name = "lblTotalUretim";
-            this.lblTotalUretim.Size = new System.Drawing.Size(696, 83);
+            this.lblTotalUretim.Size = new System.Drawing.Size(288, 54);
             this.lblTotalUretim.TabIndex = 303;
             this.lblTotalUretim.Text = "?";
             this.lblTotalUretim.UseVisualStyleBackColor = false;
             // 
             // frmUretimKaydi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1584, 888);
+            this.ClientSize = new System.Drawing.Size(822, 577);
             this.Controls.Add(this.lblTotalUretim);
             this.Controls.Add(this.lblManualIslemAdedi);
             this.Controls.Add(this.lblTotalRework);
@@ -230,6 +238,7 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnOncekiSayfa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUretimKaydi";
             this.Text = "frmUretimKaydi";
             this.Load += new System.EventHandler(this.frmUretimKaydi_Load);

@@ -280,19 +280,19 @@ namespace ToyotaBoshokuDollyOrientation
             // return deviceID;
         }
 
-       /* public  void buzzerRing(ushort status)
+        public  void buzzerRing(ushort status)
         {
             try
             {
                  master.WriteSingleRegister(1, 503, status);
-                //cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.WriteSingleRegister(0, status);
+                cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.WriteSingleRegister(0, status);
             }
             catch (Exception ex)
             {
 
-                 Connect();
-               //cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Disconnect();
-               //cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Connect();
+              
+               cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Disconnect();
+               cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Connect();
             }
 
         }
@@ -347,7 +347,7 @@ namespace ToyotaBoshokuDollyOrientation
                 }
             }
             
-        }*/
+        }
 
         //lamba bul
         public ushort deviceIDBul_LH(uint dollyRafi, string yonu)

@@ -761,25 +761,25 @@ namespace ToyotaBoshokuDollyOrientation
 
         private void buzzer_Tick(object sender, EventArgs e)
         {
-            // if (cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
-            // {
-            //     lambaKontrol.buzzerDeviceIDRead();
-            // }
-            //
-            // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
-            // {
-            //   //  lambaKontrol.buzzerRing(1);
-            //     NGbuzzerAlarmTimer = 0;
-            //     cGenel.alarmVar = true;
-            // }
-            //
-            // if (cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
-            // {
-            //    // lambaKontrol.buzzerRing(0);
-            //     cGenel.alarmVar = false;
-            // }
-            //
-            //
+             if (cGenel.xByPass==false&& cGenel.xBuzzerByPass == false && cGenel.nowDeviceID > 0)
+             {
+                 lambaKontrol.buzzerDeviceIDRead();
+             }
+            
+             if (cGenel.xByPass == false && cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] != cGenel.nowDeviceID && cGenel.deviceIDSensor[0] > 0 && cGenel.nowDeviceID > 0 && cGenel.alarmVar == false)
+             {
+                 lambaKontrol.buzzerRing(1);
+                 NGbuzzerAlarmTimer = 0;
+                 cGenel.alarmVar = true;
+             }
+            
+             if (cGenel.xByPass == false && cGenel.xBuzzerByPass == false && cGenel.deviceIDSensor[0] == 0 && NGbuzzerAlarmTimer >= cGenel.buzzerMispickSuresi && cGenel.alarmVar == true)///PARAMETREYE bağlanacak
+             {
+                 lambaKontrol.buzzerRing(0);
+                 cGenel.alarmVar = false;
+             }
+            
+            
 
             //  if (cGenel.xBuzzerByPass == false && alarmTetik == true)
             //  {

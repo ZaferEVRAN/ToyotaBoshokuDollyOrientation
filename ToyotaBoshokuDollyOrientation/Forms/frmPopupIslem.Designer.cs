@@ -47,6 +47,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblGeriSayimSayaci = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.timerGeriSayim = new System.Windows.Forms.Timer(this.components);
+            this.pBGeriSayim = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRework)).BeginInit();
@@ -241,13 +242,12 @@
             // 
             this.lblGeriSayimSayaci.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGeriSayimSayaci.BackColor = System.Drawing.Color.Transparent;
-            this.lblGeriSayimSayaci.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGeriSayimSayaci.Enabled = false;
-            this.lblGeriSayimSayaci.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblGeriSayimSayaci.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold);
             this.lblGeriSayimSayaci.ForeColor = System.Drawing.Color.Black;
-            this.lblGeriSayimSayaci.Location = new System.Drawing.Point(605, 67);
+            this.lblGeriSayimSayaci.Location = new System.Drawing.Point(575, 110);
             this.lblGeriSayimSayaci.Name = "lblGeriSayimSayaci";
-            this.lblGeriSayimSayaci.Size = new System.Drawing.Size(73, 66);
+            this.lblGeriSayimSayaci.Size = new System.Drawing.Size(68, 65);
             this.lblGeriSayimSayaci.TabIndex = 58;
             this.lblGeriSayimSayaci.Text = "?";
             this.lblGeriSayimSayaci.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,6 +258,29 @@
             this.timerGeriSayim.Interval = 1000;
             this.timerGeriSayim.Tick += new System.EventHandler(this.timerGeriSayim_Tick);
             // 
+            // pBGeriSayim
+            // 
+            this.pBGeriSayim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBGeriSayim.animated = false;
+            this.pBGeriSayim.animationIterval = 5;
+            this.pBGeriSayim.animationSpeed = 300;
+            this.pBGeriSayim.BackColor = System.Drawing.Color.PowderBlue;
+            this.pBGeriSayim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBGeriSayim.BackgroundImage")));
+            this.pBGeriSayim.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.pBGeriSayim.ForeColor = System.Drawing.Color.SeaGreen;
+            this.pBGeriSayim.LabelVisible = false;
+            this.pBGeriSayim.LineProgressThickness = 8;
+            this.pBGeriSayim.LineThickness = 10;
+            this.pBGeriSayim.Location = new System.Drawing.Point(528, 69);
+            this.pBGeriSayim.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.pBGeriSayim.MaxValue = 100;
+            this.pBGeriSayim.Name = "pBGeriSayim";
+            this.pBGeriSayim.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.pBGeriSayim.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.pBGeriSayim.Size = new System.Drawing.Size(150, 150);
+            this.pBGeriSayim.TabIndex = 59;
+            this.pBGeriSayim.Value = 2;
+            // 
             // frmPopupIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +289,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(686, 497);
             this.Controls.Add(this.lblGeriSayimSayaci);
+            this.Controls.Add(this.pBGeriSayim);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.btnRework);
             this.Controls.Add(this.lblOK);
@@ -310,5 +334,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnOK;
         private Bunifu.Framework.UI.BunifuCustomLabel lblGeriSayimSayaci;
         private System.Windows.Forms.Timer timerGeriSayim;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar pBGeriSayim;
     }
 }
