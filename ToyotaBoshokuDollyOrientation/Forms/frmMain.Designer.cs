@@ -277,7 +277,8 @@
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(38, 20);
             this.bunifuCustomLabel12.TabIndex = 47;
-            this.bunifuCustomLabel12.Text = "v3.0";
+            this.bunifuCustomLabel12.Text = "v3.2";
+            this.bunifuCustomLabel12.Click += new System.EventHandler(this.bunifuCustomLabel12_Click);
             // 
             // pnlAltBilgi
             // 
@@ -351,17 +352,11 @@
             this.btnKarkasByPassAktif.BorderRadius = 0;
             this.btnKarkasByPassAktif.ButtonText = "Karkas Aktif";
             this.btnKarkasByPassAktif.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKarkasByPassAktif.DisabledColor = System.Drawing.Color.Gray;
             this.btnKarkasByPassAktif.Iconcolor = System.Drawing.Color.Transparent;
             this.btnKarkasByPassAktif.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnKarkasByPassAktif.Iconimage")));
             this.btnKarkasByPassAktif.Iconimage_right = null;
             this.btnKarkasByPassAktif.Iconimage_right_Selected = null;
             this.btnKarkasByPassAktif.Iconimage_Selected = null;
-            this.btnKarkasByPassAktif.IconMarginLeft = 0;
-            this.btnKarkasByPassAktif.IconMarginRight = 0;
-            this.btnKarkasByPassAktif.IconRightVisible = true;
-            this.btnKarkasByPassAktif.IconRightZoom = 0D;
-            this.btnKarkasByPassAktif.IconVisible = true;
             this.btnKarkasByPassAktif.IconZoom = 90D;
             this.btnKarkasByPassAktif.IsTab = false;
             this.btnKarkasByPassAktif.Location = new System.Drawing.Point(540, 4);
@@ -373,8 +368,6 @@
             this.btnKarkasByPassAktif.selected = false;
             this.btnKarkasByPassAktif.Size = new System.Drawing.Size(127, 31);
             this.btnKarkasByPassAktif.TabIndex = 136;
-            this.btnKarkasByPassAktif.Text = "Karkas Aktif";
-            this.btnKarkasByPassAktif.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKarkasByPassAktif.Textcolor = System.Drawing.Color.White;
             this.btnKarkasByPassAktif.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -386,17 +379,11 @@
             this.btnKarkasByPassPasif.BorderRadius = 0;
             this.btnKarkasByPassPasif.ButtonText = "Karkas Pasif";
             this.btnKarkasByPassPasif.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKarkasByPassPasif.DisabledColor = System.Drawing.Color.Gray;
             this.btnKarkasByPassPasif.Iconcolor = System.Drawing.Color.Transparent;
             this.btnKarkasByPassPasif.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnKarkasByPassPasif.Iconimage")));
             this.btnKarkasByPassPasif.Iconimage_right = null;
             this.btnKarkasByPassPasif.Iconimage_right_Selected = null;
             this.btnKarkasByPassPasif.Iconimage_Selected = null;
-            this.btnKarkasByPassPasif.IconMarginLeft = 0;
-            this.btnKarkasByPassPasif.IconMarginRight = 0;
-            this.btnKarkasByPassPasif.IconRightVisible = true;
-            this.btnKarkasByPassPasif.IconRightZoom = 0D;
-            this.btnKarkasByPassPasif.IconVisible = true;
             this.btnKarkasByPassPasif.IconZoom = 90D;
             this.btnKarkasByPassPasif.IsTab = false;
             this.btnKarkasByPassPasif.Location = new System.Drawing.Point(540, 5);
@@ -408,8 +395,6 @@
             this.btnKarkasByPassPasif.selected = false;
             this.btnKarkasByPassPasif.Size = new System.Drawing.Size(127, 31);
             this.btnKarkasByPassPasif.TabIndex = 137;
-            this.btnKarkasByPassPasif.Text = "Karkas Pasif";
-            this.btnKarkasByPassPasif.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKarkasByPassPasif.Textcolor = System.Drawing.Color.White;
             this.btnKarkasByPassPasif.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -421,17 +406,11 @@
             this.btnKilitAcik.BorderRadius = 0;
             this.btnKilitAcik.ButtonText = "Kilit Açık";
             this.btnKilitAcik.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKilitAcik.DisabledColor = System.Drawing.Color.Gray;
             this.btnKilitAcik.Iconcolor = System.Drawing.Color.Transparent;
             this.btnKilitAcik.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnKilitAcik.Iconimage")));
             this.btnKilitAcik.Iconimage_right = null;
             this.btnKilitAcik.Iconimage_right_Selected = null;
             this.btnKilitAcik.Iconimage_Selected = null;
-            this.btnKilitAcik.IconMarginLeft = 0;
-            this.btnKilitAcik.IconMarginRight = 0;
-            this.btnKilitAcik.IconRightVisible = true;
-            this.btnKilitAcik.IconRightZoom = 0D;
-            this.btnKilitAcik.IconVisible = true;
             this.btnKilitAcik.IconZoom = 90D;
             this.btnKilitAcik.IsTab = false;
             this.btnKilitAcik.Location = new System.Drawing.Point(407, 4);
@@ -443,8 +422,6 @@
             this.btnKilitAcik.selected = false;
             this.btnKilitAcik.Size = new System.Drawing.Size(127, 31);
             this.btnKilitAcik.TabIndex = 134;
-            this.btnKilitAcik.Text = "Kilit Açık";
-            this.btnKilitAcik.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKilitAcik.Textcolor = System.Drawing.Color.White;
             this.btnKilitAcik.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -456,17 +433,11 @@
             this.btnKilitKapali.BorderRadius = 0;
             this.btnKilitKapali.ButtonText = "Kilit Kapalı";
             this.btnKilitKapali.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKilitKapali.DisabledColor = System.Drawing.Color.Gray;
             this.btnKilitKapali.Iconcolor = System.Drawing.Color.Transparent;
             this.btnKilitKapali.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnKilitKapali.Iconimage")));
             this.btnKilitKapali.Iconimage_right = null;
             this.btnKilitKapali.Iconimage_right_Selected = null;
             this.btnKilitKapali.Iconimage_Selected = null;
-            this.btnKilitKapali.IconMarginLeft = 0;
-            this.btnKilitKapali.IconMarginRight = 0;
-            this.btnKilitKapali.IconRightVisible = true;
-            this.btnKilitKapali.IconRightZoom = 0D;
-            this.btnKilitKapali.IconVisible = true;
             this.btnKilitKapali.IconZoom = 90D;
             this.btnKilitKapali.IsTab = false;
             this.btnKilitKapali.Location = new System.Drawing.Point(407, 4);
@@ -478,8 +449,6 @@
             this.btnKilitKapali.selected = false;
             this.btnKilitKapali.Size = new System.Drawing.Size(127, 31);
             this.btnKilitKapali.TabIndex = 135;
-            this.btnKilitKapali.Text = "Kilit Kapalı";
-            this.btnKilitKapali.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKilitKapali.Textcolor = System.Drawing.Color.White;
             this.btnKilitKapali.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -501,17 +470,11 @@
             this.btnKilitMekanizmasıHazir.BorderRadius = 0;
             this.btnKilitMekanizmasıHazir.ButtonText = "Kilit Hazır";
             this.btnKilitMekanizmasıHazir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKilitMekanizmasıHazir.DisabledColor = System.Drawing.Color.Gray;
             this.btnKilitMekanizmasıHazir.Iconcolor = System.Drawing.Color.Transparent;
             this.btnKilitMekanizmasıHazir.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnKilitMekanizmasıHazir.Iconimage")));
             this.btnKilitMekanizmasıHazir.Iconimage_right = null;
             this.btnKilitMekanizmasıHazir.Iconimage_right_Selected = null;
             this.btnKilitMekanizmasıHazir.Iconimage_Selected = null;
-            this.btnKilitMekanizmasıHazir.IconMarginLeft = 0;
-            this.btnKilitMekanizmasıHazir.IconMarginRight = 0;
-            this.btnKilitMekanizmasıHazir.IconRightVisible = true;
-            this.btnKilitMekanizmasıHazir.IconRightZoom = 0D;
-            this.btnKilitMekanizmasıHazir.IconVisible = true;
             this.btnKilitMekanizmasıHazir.IconZoom = 90D;
             this.btnKilitMekanizmasıHazir.IsTab = false;
             this.btnKilitMekanizmasıHazir.Location = new System.Drawing.Point(274, 3);
@@ -523,8 +486,6 @@
             this.btnKilitMekanizmasıHazir.selected = false;
             this.btnKilitMekanizmasıHazir.Size = new System.Drawing.Size(127, 31);
             this.btnKilitMekanizmasıHazir.TabIndex = 132;
-            this.btnKilitMekanizmasıHazir.Text = "Kilit Hazır";
-            this.btnKilitMekanizmasıHazir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKilitMekanizmasıHazir.Textcolor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -536,17 +497,11 @@
             this.btnIsiklarHazir.BorderRadius = 0;
             this.btnIsiklarHazir.ButtonText = "Işıklar Hazır";
             this.btnIsiklarHazir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIsiklarHazir.DisabledColor = System.Drawing.Color.Gray;
             this.btnIsiklarHazir.Iconcolor = System.Drawing.Color.Transparent;
             this.btnIsiklarHazir.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnIsiklarHazir.Iconimage")));
             this.btnIsiklarHazir.Iconimage_right = null;
             this.btnIsiklarHazir.Iconimage_right_Selected = null;
             this.btnIsiklarHazir.Iconimage_Selected = null;
-            this.btnIsiklarHazir.IconMarginLeft = 0;
-            this.btnIsiklarHazir.IconMarginRight = 0;
-            this.btnIsiklarHazir.IconRightVisible = true;
-            this.btnIsiklarHazir.IconRightZoom = 0D;
-            this.btnIsiklarHazir.IconVisible = true;
             this.btnIsiklarHazir.IconZoom = 90D;
             this.btnIsiklarHazir.IsTab = false;
             this.btnIsiklarHazir.Location = new System.Drawing.Point(141, 4);
@@ -558,8 +513,6 @@
             this.btnIsiklarHazir.selected = false;
             this.btnIsiklarHazir.Size = new System.Drawing.Size(127, 31);
             this.btnIsiklarHazir.TabIndex = 125;
-            this.btnIsiklarHazir.Text = "Işıklar Hazır";
-            this.btnIsiklarHazir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIsiklarHazir.Textcolor = System.Drawing.Color.White;
             this.btnIsiklarHazir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -571,17 +524,11 @@
             this.btnServerHazir.BorderRadius = 0;
             this.btnServerHazir.ButtonText = "Server Hazır";
             this.btnServerHazir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnServerHazir.DisabledColor = System.Drawing.Color.Gray;
             this.btnServerHazir.Iconcolor = System.Drawing.Color.Transparent;
             this.btnServerHazir.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnServerHazir.Iconimage")));
             this.btnServerHazir.Iconimage_right = null;
             this.btnServerHazir.Iconimage_right_Selected = null;
             this.btnServerHazir.Iconimage_Selected = null;
-            this.btnServerHazir.IconMarginLeft = 0;
-            this.btnServerHazir.IconMarginRight = 0;
-            this.btnServerHazir.IconRightVisible = true;
-            this.btnServerHazir.IconRightZoom = 0D;
-            this.btnServerHazir.IconVisible = true;
             this.btnServerHazir.IconZoom = 90D;
             this.btnServerHazir.IsTab = false;
             this.btnServerHazir.Location = new System.Drawing.Point(8, 4);
@@ -593,8 +540,6 @@
             this.btnServerHazir.selected = false;
             this.btnServerHazir.Size = new System.Drawing.Size(127, 31);
             this.btnServerHazir.TabIndex = 123;
-            this.btnServerHazir.Text = "Server Hazır";
-            this.btnServerHazir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServerHazir.Textcolor = System.Drawing.Color.White;
             this.btnServerHazir.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -606,17 +551,11 @@
             this.btnServerHazirDegil.BorderRadius = 0;
             this.btnServerHazirDegil.ButtonText = "Server Hazır Değil";
             this.btnServerHazirDegil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnServerHazirDegil.DisabledColor = System.Drawing.Color.Gray;
             this.btnServerHazirDegil.Iconcolor = System.Drawing.Color.Transparent;
             this.btnServerHazirDegil.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnServerHazirDegil.Iconimage")));
             this.btnServerHazirDegil.Iconimage_right = null;
             this.btnServerHazirDegil.Iconimage_right_Selected = null;
             this.btnServerHazirDegil.Iconimage_Selected = null;
-            this.btnServerHazirDegil.IconMarginLeft = 0;
-            this.btnServerHazirDegil.IconMarginRight = 0;
-            this.btnServerHazirDegil.IconRightVisible = true;
-            this.btnServerHazirDegil.IconRightZoom = 0D;
-            this.btnServerHazirDegil.IconVisible = true;
             this.btnServerHazirDegil.IconZoom = 90D;
             this.btnServerHazirDegil.IsTab = false;
             this.btnServerHazirDegil.Location = new System.Drawing.Point(8, 3);
@@ -628,8 +567,6 @@
             this.btnServerHazirDegil.selected = false;
             this.btnServerHazirDegil.Size = new System.Drawing.Size(127, 31);
             this.btnServerHazirDegil.TabIndex = 124;
-            this.btnServerHazirDegil.Text = "Server Hazır Değil";
-            this.btnServerHazirDegil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServerHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnServerHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -641,17 +578,11 @@
             this.btnIsiklarHazirDegil.BorderRadius = 0;
             this.btnIsiklarHazirDegil.ButtonText = "Işıklar Hazır Değil";
             this.btnIsiklarHazirDegil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIsiklarHazirDegil.DisabledColor = System.Drawing.Color.Gray;
             this.btnIsiklarHazirDegil.Iconcolor = System.Drawing.Color.Transparent;
             this.btnIsiklarHazirDegil.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnIsiklarHazirDegil.Iconimage")));
             this.btnIsiklarHazirDegil.Iconimage_right = null;
             this.btnIsiklarHazirDegil.Iconimage_right_Selected = null;
             this.btnIsiklarHazirDegil.Iconimage_Selected = null;
-            this.btnIsiklarHazirDegil.IconMarginLeft = 0;
-            this.btnIsiklarHazirDegil.IconMarginRight = 0;
-            this.btnIsiklarHazirDegil.IconRightVisible = true;
-            this.btnIsiklarHazirDegil.IconRightZoom = 0D;
-            this.btnIsiklarHazirDegil.IconVisible = true;
             this.btnIsiklarHazirDegil.IconZoom = 90D;
             this.btnIsiklarHazirDegil.IsTab = false;
             this.btnIsiklarHazirDegil.Location = new System.Drawing.Point(141, 4);
@@ -663,8 +594,6 @@
             this.btnIsiklarHazirDegil.selected = false;
             this.btnIsiklarHazirDegil.Size = new System.Drawing.Size(127, 31);
             this.btnIsiklarHazirDegil.TabIndex = 126;
-            this.btnIsiklarHazirDegil.Text = "Işıklar Hazır Değil";
-            this.btnIsiklarHazirDegil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIsiklarHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnIsiklarHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -676,17 +605,11 @@
             this.btnKilitMekanizmasıHazirDegil.BorderRadius = 0;
             this.btnKilitMekanizmasıHazirDegil.ButtonText = "Kilit Hazır Değil";
             this.btnKilitMekanizmasıHazirDegil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKilitMekanizmasıHazirDegil.DisabledColor = System.Drawing.Color.Gray;
             this.btnKilitMekanizmasıHazirDegil.Iconcolor = System.Drawing.Color.Transparent;
             this.btnKilitMekanizmasıHazirDegil.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnKilitMekanizmasıHazirDegil.Iconimage")));
             this.btnKilitMekanizmasıHazirDegil.Iconimage_right = null;
             this.btnKilitMekanizmasıHazirDegil.Iconimage_right_Selected = null;
             this.btnKilitMekanizmasıHazirDegil.Iconimage_Selected = null;
-            this.btnKilitMekanizmasıHazirDegil.IconMarginLeft = 0;
-            this.btnKilitMekanizmasıHazirDegil.IconMarginRight = 0;
-            this.btnKilitMekanizmasıHazirDegil.IconRightVisible = true;
-            this.btnKilitMekanizmasıHazirDegil.IconRightZoom = 0D;
-            this.btnKilitMekanizmasıHazirDegil.IconVisible = true;
             this.btnKilitMekanizmasıHazirDegil.IconZoom = 90D;
             this.btnKilitMekanizmasıHazirDegil.IsTab = false;
             this.btnKilitMekanizmasıHazirDegil.Location = new System.Drawing.Point(274, 4);
@@ -698,8 +621,6 @@
             this.btnKilitMekanizmasıHazirDegil.selected = false;
             this.btnKilitMekanizmasıHazirDegil.Size = new System.Drawing.Size(127, 31);
             this.btnKilitMekanizmasıHazirDegil.TabIndex = 132;
-            this.btnKilitMekanizmasıHazirDegil.Text = "Kilit Hazır Değil";
-            this.btnKilitMekanizmasıHazirDegil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKilitMekanizmasıHazirDegil.Textcolor = System.Drawing.Color.White;
             this.btnKilitMekanizmasıHazirDegil.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 

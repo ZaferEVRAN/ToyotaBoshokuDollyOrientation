@@ -25,7 +25,7 @@ namespace ToyotaBoshokuDollyOrientation.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("LH")]
+        [global::System.Configuration.DefaultSettingValueAttribute("RH")]
         public string Makina_Adi {
             get {
                 return ((string)(this["Makina_Adi"]));

@@ -372,7 +372,7 @@ namespace ToyotaBoshokuDollyOrientation
         {
 
             lblGeriSayimSayaci.Text = cGenel.geriSayimDegeri.ToString();
-            if (cGenel.YonBilgisi==cGenel.FR_LH|| cGenel.YonBilgisi == cGenel.FR_RH)
+            if (cGenel.geriSayimKapi=="front")
             {
                 pBGeriSayim.MaxValue = 45;
                 pBGeriSayim.ProgressColor = Color.PowderBlue;
@@ -389,7 +389,7 @@ namespace ToyotaBoshokuDollyOrientation
                     pBGeriSayim.ProgressBackColor = Color.Red;
                 }
             }
-            else if (cGenel.YonBilgisi == cGenel.RR_LH || cGenel.YonBilgisi == cGenel.RR_RH)
+            else if (cGenel.geriSayimKapi == "rear")
             {
                 pBGeriSayim.MaxValue = 30;
                 pBGeriSayim.ProgressColor = Color.PowderBlue;

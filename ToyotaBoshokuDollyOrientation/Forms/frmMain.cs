@@ -891,6 +891,11 @@ namespace ToyotaBoshokuDollyOrientation
                 }
             }
         }
+
+        private void bunifuCustomLabel12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
