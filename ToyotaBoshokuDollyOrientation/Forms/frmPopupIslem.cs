@@ -203,8 +203,8 @@ namespace ToyotaBoshokuDollyOrientation
 
             }
             //this.Hide();
-            //cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-            //cGenel.frmPickToLight.DurumIzleme();
+            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+            cGenel.frmPickToLight.DurumIzleme();
 
         }
         static AutoResetEvent _AREvt;
