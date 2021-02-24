@@ -52,6 +52,9 @@ namespace ToyotaBoshokuDollyOrientation
         private void btnOK_Click(object sender, EventArgs e)
         {
             globalOK();
+            //this.Hide();
+            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+            cGenel.frmPickToLight.DurumIzleme();
         }
 
         public void globalOK()
@@ -202,9 +205,7 @@ namespace ToyotaBoshokuDollyOrientation
                 }
 
             }
-            //this.Hide();
-            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-            cGenel.frmPickToLight.DurumIzleme();
+            
 
         }
         static AutoResetEvent _AREvt;
