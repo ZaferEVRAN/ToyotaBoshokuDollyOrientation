@@ -12,13 +12,14 @@ namespace ToyotaBoshokuDollyOrientation
 
     class cistemciKontrol_StepMotor
     {
+        /*
         public static PLCDurumlari PLCDurumu { get; private set; }
 
     
-        public static ModbusClient slaveModbusRTUStepMotor;
+      //  public static ModbusClient slaveModbusRTUStepMotor;
      
 
-        public PLCDurumlari stepMotorIstemciyiOlustur()
+         public PLCDurumlari stepMotorIstemciyiOlustur()
         {
             PLCDurumlari durum = PLCDurumlari.KULLANILAMAZ;
             try
@@ -47,6 +48,7 @@ namespace ToyotaBoshokuDollyOrientation
             return durum;
         }
         bool yazmaBasarili;
+
         public void kilitAc()
         {
             try
@@ -106,11 +108,13 @@ namespace ToyotaBoshokuDollyOrientation
                 yazmaBasarili = false;
             }
         }
+
+
         bool[] sensor = new bool[2];
         bool[] status = new bool[2];
         public void kilitMekanizmaSensorOku()
         {
-
+            
             try
             {
                 sensor = slaveModbusRTUStepMotor.ReadDiscreteInputs(0, 2);
@@ -130,12 +134,13 @@ namespace ToyotaBoshokuDollyOrientation
                 slaveModbusRTUStepMotor.Connect();
                 cGenel.haberlesmeMesajModbusRTU = ex.Message;
             }
+            
 
         }
 
         static AutoResetEvent _AREvt;
         public void kilitMekanizmaDongusu()
-        {
+        {/*
             _AREvt = new AutoResetEvent(false);
             var t = Task.Run(() =>
             {
@@ -231,7 +236,12 @@ namespace ToyotaBoshokuDollyOrientation
 
                 }
             });
+            
         }
+    */
+
+
+        
     }
 }
     

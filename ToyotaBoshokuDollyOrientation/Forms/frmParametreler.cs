@@ -109,7 +109,7 @@ namespace ToyotaBoshokuDollyOrientation
                 cGenel.genelUyari("İşlem başarısız.!", false);
             }
         }
-
+        error_log log = new error_log();
         private void rbKarkasBypassAktif_Click(object sender, EventArgs e)
         {
             bool sonuc=false;
@@ -124,6 +124,7 @@ namespace ToyotaBoshokuDollyOrientation
             if (sonuc)
             {
                 cGenel.genelUyari("Karkas By-Pass Aktif", false);
+                log.error_log_kayit("Karkas By-Pass Aktif");
                 param.parametreleriAta();
             }
             else
@@ -146,6 +147,7 @@ namespace ToyotaBoshokuDollyOrientation
             if (sonuc)
             {
                 cGenel.genelUyari("Karkas By-Pass Pasif", false);
+                log.error_log_kayit("Karkas By-Pass Pasif");
                 param.parametreleriAta();
             }
             else

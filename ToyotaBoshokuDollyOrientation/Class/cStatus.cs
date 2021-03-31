@@ -135,7 +135,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesaj.hata(ex);
+                mesaj.hata(ex,"");
             }
             finally
             {
@@ -174,7 +174,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesaj.hata(ex);
+                mesaj.hata(ex,"");
             }
             finally
             {
@@ -190,7 +190,7 @@ namespace ToyotaBoshokuDollyOrientation
 
         public void statusColorAta()
         {
-            //cGenel.lockStateValue= Convert.ToUInt16(StatusQuery(cGenel.LOCK_STATE));
+            //cGenel.lockStateValue= Convert.ToUInt32(StatusQuery(cGenel.LOCK_STATE));
             cGenel.waitStateAnimationID = Convert.ToUInt16(StatusQuery(cGenel.WAIT_STATE_ANIMATION_ID));
             cGenel.waitStateColorID = Convert.ToUInt16(StatusQuery(cGenel.WAIT_STATE_COLOR_ID));
             cGenel.mispickStateAnimationID = Convert.ToUInt16(StatusQuery(cGenel.MISPICK_STATE_ANIMATION_ID));

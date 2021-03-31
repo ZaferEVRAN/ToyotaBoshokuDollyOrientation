@@ -556,9 +556,9 @@
             this.groupBox1.Controls.Add(this.rbDublicateIslemAcik);
             this.groupBox1.Controls.Add(this.rbDublicateIslemKapali);
             this.groupBox1.Location = new System.Drawing.Point(254, 51);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(253, 41);
             this.groupBox1.TabIndex = 279;
             this.groupBox1.TabStop = false;
@@ -574,9 +574,9 @@
             this.groupBox2.Controls.Add(this.rbKarkasBypassAktif);
             this.groupBox2.Controls.Add(this.rbKarkasBypassPasif);
             this.groupBox2.Location = new System.Drawing.Point(254, 103);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(253, 41);
             this.groupBox2.TabIndex = 280;
             this.groupBox2.TabStop = false;
@@ -586,8 +586,8 @@
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.BackColor = System.Drawing.Color.PowderBlue;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button2.Location = new System.Drawing.Point(24, 51);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(24, 58);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 41);
             this.button2.TabIndex = 297;
@@ -599,8 +599,8 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.PowderBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.button1.Location = new System.Drawing.Point(24, 103);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(24, 107);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 41);
             this.button1.TabIndex = 298;
@@ -613,7 +613,7 @@
             this.button3.BackColor = System.Drawing.Color.PowderBlue;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.button3.Location = new System.Drawing.Point(24, 148);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(419, 42);
             this.button3.TabIndex = 299;
@@ -626,7 +626,7 @@
             this.button4.BackColor = System.Drawing.Color.PowderBlue;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.button4.Location = new System.Drawing.Point(24, 194);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(419, 42);
             this.button4.TabIndex = 300;
@@ -639,7 +639,7 @@
             this.button5.BackColor = System.Drawing.Color.PowderBlue;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.button5.Location = new System.Drawing.Point(24, 240);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(419, 42);
             this.button5.TabIndex = 301;
@@ -652,7 +652,7 @@
             this.button6.BackColor = System.Drawing.Color.PowderBlue;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.button6.Location = new System.Drawing.Point(24, 287);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(419, 42);
             this.button6.TabIndex = 302;

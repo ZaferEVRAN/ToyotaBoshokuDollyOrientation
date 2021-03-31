@@ -62,7 +62,7 @@
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnBack.BackColor = System.Drawing.Color.White;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBack.ErrorImage = null;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
@@ -227,7 +227,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.PowderBlue;
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -260,32 +260,28 @@
             // 
             // pBGeriSayim
             // 
-          this.pBGeriSayim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-          //this.pBGeriSayim.animated = false;
-          //this.pBGeriSayim.animationIterval = 5;
-          //this.pBGeriSayim.animationSpeed = 300;
-          this.pBGeriSayim.BackColor = System.Drawing.Color.PowderBlue;
-          this.pBGeriSayim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBGeriSayim.BackgroundImage")));
-          this.pBGeriSayim.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-          this.pBGeriSayim.ForeColor = System.Drawing.Color.SeaGreen;
-          this.pBGeriSayim.LabelVisible = false;
-          //this.pBGeriSayim.LineProgressThickness = 8;
-          this.pBGeriSayim.LineThickness = 10;
-          this.pBGeriSayim.Location = new System.Drawing.Point(528, 69);
-          this.pBGeriSayim.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-          this.pBGeriSayim.MaxValue = 100;
-          this.pBGeriSayim.Name = "pBGeriSayim";
-          this.pBGeriSayim.ProgressBackColor = System.Drawing.Color.Gainsboro;
-          this.pBGeriSayim.ProgressColor = System.Drawing.Color.SeaGreen;
-          this.pBGeriSayim.Size = new System.Drawing.Size(150, 150);
-          this.pBGeriSayim.TabIndex = 59;
-          this.pBGeriSayim.Value = 2;
+            this.pBGeriSayim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBGeriSayim.BackColor = System.Drawing.Color.White;
+            this.pBGeriSayim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBGeriSayim.BackgroundImage")));
+            this.pBGeriSayim.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.pBGeriSayim.ForeColor = System.Drawing.Color.SeaGreen;
+            this.pBGeriSayim.LabelVisible = false;
+            this.pBGeriSayim.LineThickness = 10;
+            this.pBGeriSayim.Location = new System.Drawing.Point(528, 69);
+            this.pBGeriSayim.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.pBGeriSayim.MaxValue = 100;
+            this.pBGeriSayim.Name = "pBGeriSayim";
+            this.pBGeriSayim.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.pBGeriSayim.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.pBGeriSayim.Size = new System.Drawing.Size(150, 150);
+            this.pBGeriSayim.TabIndex = 59;
+            this.pBGeriSayim.Value = 2;
             // 
             // frmPopupIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(686, 497);
             this.Controls.Add(this.lblGeriSayimSayaci);

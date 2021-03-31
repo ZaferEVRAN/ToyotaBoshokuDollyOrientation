@@ -29,8 +29,8 @@ namespace ToyotaBoshokuDollyOrientation
             {
                 lamb.activeDeviceID();
 
-                cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
-                step.kilitMekanizmaSensorOku();
+              //  cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
+              //  step.kilitMekanizmaSensorOku();
                  if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
                  {
                      btnRenk(cGenel.deviceIDSensor[0]);

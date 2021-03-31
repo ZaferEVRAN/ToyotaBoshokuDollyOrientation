@@ -18,6 +18,7 @@ namespace ToyotaBoshokuDollyOrientation
         {
             InitializeComponent();
         }
+        error_log errorLog = new error_log();
         models model = new models();
         public void sayfaYukle()
         {
@@ -31,8 +32,6 @@ namespace ToyotaBoshokuDollyOrientation
             string barkod = string.Format("XXX{0}{1}", cGenel.ModelKodu, cGenel.TBTDOORSpecKodu);
 
             //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Image = spec.speckInfoSearch(barkod).bitmap;
-
             if (cGenel.xByPass == true)
             {
                 btnOK.Visible = true;
@@ -43,6 +42,10 @@ namespace ToyotaBoshokuDollyOrientation
                 btnOK.Visible = false;
                 lblOK.Visible = false;
             }
+            errorLog.error_log_kayit("Sayfa yükleme yapıldı.");
+            pictureBox1.Image = spec.speckInfoSearch(barkod).bitmap;
+            errorLog.error_log_kayit("Resim yükleme yapıldı.");
+
         }
         SPECK_INFO spec = new SPECK_INFO();
         cLambaKontrol lambaKontrol = new cLambaKontrol();
@@ -51,19 +54,26 @@ namespace ToyotaBoshokuDollyOrientation
         KarkasIslem karkasIslem = new KarkasIslem();
         private void btnOK_Click(object sender, EventArgs e)
         {
+            //errorLog.error_log_kayit("OK buton basıldı.");
             globalOK();
             //this.Hide();
+            errorLog.error_log_kayit("Dolly ışık blink setlendi.");
             cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+            errorLog.error_log_kayit("Picktolight ekran aktif");
             cGenel.frmPickToLight.DurumIzleme();
+            errorLog.error_log_kayit("Picktolight durum izleme fonksiyon çalıştı.");
+
         }
 
         public void globalOK()
         {
+
+
             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
             {
                 uint dollyRafSirasi;
                 karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_LH();
-                cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
+                // cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
                 if (cGenel.urunBarkodKarkasDurum == true)
                 {
                     int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
@@ -88,17 +98,22 @@ namespace ToyotaBoshokuDollyOrientation
                 }
                 if (cGenel.xByPass == false)
                 {
-                    bool sonuc = lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
+                    
+                      bool sonuc = lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
 
-                    if (sonuc)
-                    {
-                        KarkasIslem.xLOOP = true;
-
-                        if (cGenel.nowDeviceID == 40)
-                        {
-                            //cGenel.kilitKapatTetik = true;
-                        }
-                    }
+                      if (sonuc)
+                      {
+                          errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarılı.");
+                          KarkasIslem.xLOOP = true;
+                          frmMain.xKontrol = true;
+                        
+                      }
+                      else
+                      {
+                          cGenel.nowDeviceID = 0;
+                          errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarısız.");
+                      }
+                      
 
                 }
                 else if (cGenel.xByPass == true)
@@ -136,7 +151,7 @@ namespace ToyotaBoshokuDollyOrientation
             {
                 uint dollyRafSirasi;
                 karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_RH();
-                cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
+                //cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
                 if (cGenel.urunBarkodKarkasDurum == true)
                 {
                     int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
@@ -162,16 +177,23 @@ namespace ToyotaBoshokuDollyOrientation
 
                 if (cGenel.xByPass == false)
                 {
+                   
                     bool sonuc = lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
 
-                    if (sonuc)
-                    {
-                        KarkasIslem.xLOOP = true;
-                        if (cGenel.nowDeviceID == 31)
-                        {
-                            //  cGenel.kilitKapatTetik = true;
-                        }
+                     if (sonuc)
+                     {
+                         errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarılı.");
+                         KarkasIslem.xLOOP = true;
+                        frmMain.xKontrol = true;
                     }
+                     else
+                     {
+                        //cGenel.nowDeviceID = 0;
+                        KarkasIslem.xLOOP = true;
+                        frmMain.xKontrol = false;
+                        errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarısız.");
+                     }
+                     
                 }
                 else if (cGenel.xByPass == true)
                 {
@@ -205,19 +227,21 @@ namespace ToyotaBoshokuDollyOrientation
                 }
 
             }
-            
+
 
         }
         static AutoResetEvent _AREvt;
         private void btnRework_Click(object sender, EventArgs e)
         {
+            errorLog.error_log_kayit("rework buton aktif");
+
             _AREvt = new AutoResetEvent(false);
             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
             {
-
+                KarkasIslem.xLOOP = false;
                 uint dollyRafSirasi;
                 karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_LH();
-                cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
+                // cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
                 if (cGenel.urunBarkodKarkasDurum == true)
                 {
                     int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
@@ -268,13 +292,22 @@ namespace ToyotaBoshokuDollyOrientation
                 KarkasIslem.LHDollyBarkod = "999";
                 logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_LH, cGenel.gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.LHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "REWORK", cGenel._OpenSessionUSERNAME);
 
-                KarkasIslem.xLOOP = false;
+            
 
                 if (cGenel.xByPass == false)
                 {
                     _AREvt.WaitOne(300, true);
                     bool sonuc2 = lambaKontrol.lambaJobIlgiliIsikSteadyYakSariRework(cGenel.nowDeviceID);
+                    if (sonuc2)
+                    {
+                        errorLog.error_log_kayit("lambaJobIlgiliIsikSteadyYakSariRework başarılı.");
 
+                    }
+                    else
+                    {
+                        errorLog.error_log_kayit("lambaJobIlgiliIsikSteadyYakSariRework başarısız.");
+
+                    }
                 }
 
 
@@ -284,9 +317,11 @@ namespace ToyotaBoshokuDollyOrientation
             }
             else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
             {
+                KarkasIslem.xLOOP = false;
                 uint dollyRafSirasi;
                 // uint _dollyRafSirasi = urunBarkod.barkodInfoSequence_RH(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, cGenel.YonBilgisi);
                 // ushort _deviceID = lambaKontrol.deviceIDBul_RH(_dollyRafSirasi, cGenel.YonBilgisi);
+                //ürünün durumu bakılır 
                 karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_RH();
                 bool urunBarkodDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
                 if (urunBarkodDurum == true)
@@ -338,18 +373,30 @@ namespace ToyotaBoshokuDollyOrientation
                 }
                 KarkasIslem.RHDollyBarkod = "999";
                 logOlustur.logOlustur(cGenel.BarkodID, cGenel.MAKINE_ADI_RH, cGenel.gorevID, cGenel.DoorBarcode, cGenel.ModelKodu, cGenel.SpecKodu, cGenel.Type, cGenel.Model, KarkasIslem.RHDollyBarkod, dollyRafSirasi.ToString(), cGenel.YonBilgisi, cGenel.SetCount, "REWORK", cGenel._OpenSessionUSERNAME);
-                KarkasIslem.xLOOP = false;
+         
                 if (cGenel.xByPass == false)
                 {
                     _AREvt.WaitOne(300, true);
                     bool sonuc2 = lambaKontrol.lambaJobIlgiliIsikSteadyYakSariRework(cGenel.nowDeviceID);
-
+                    if (sonuc2)
+                    {
+                        errorLog.error_log_kayit("lambaJobIlgiliIsikSteadyYakSariRework başarılı.");
+                    }
+                    else
+                    {
+                        errorLog.error_log_kayit("lambaJobIlgiliIsikSteadyYakSariRework başarısız.");
+                    }
                 }
                 cGenel.nowDeviceID = 0;
             }
+            errorLog.error_log_kayit("rework adım form gizle");
             this.Hide();
+            errorLog.error_log_kayit("rework adım frmPicktolight form aç");
             cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+            errorLog.error_log_kayit("rework adım durum izleme foksiyon başlangıç");
             cGenel.frmPickToLight.DurumIzleme();
+            errorLog.error_log_kayit("rework adım durum izleme fonsiyon bitiş");
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -372,43 +419,50 @@ namespace ToyotaBoshokuDollyOrientation
         private void timerGeriSayim_Tick(object sender, EventArgs e)
         {
 
-            lblGeriSayimSayaci.Text = cGenel.geriSayimDegeri.ToString();
-            if (cGenel.geriSayimKapi=="front")
+            try
             {
-                pBGeriSayim.MaxValue = 45;
-                pBGeriSayim.ProgressColor = Color.PowderBlue;
-                if (cGenel.geriSayimDegeri <= 45&&cGenel.geriSayimDegeri>=30)
+                lblGeriSayimSayaci.Text = cGenel.geriSayimDegeri.ToString();
+                if (cGenel.geriSayimKapi == "front")
                 {
-                    pBGeriSayim.ProgressBackColor = Color.Green;
+                    pBGeriSayim.MaxValue = 45;
+                    pBGeriSayim.ProgressColor = Color.PowderBlue;
+                    if (cGenel.geriSayimDegeri <= 45 && cGenel.geriSayimDegeri >= 30)
+                    {
+                        pBGeriSayim.ProgressBackColor = Color.Green;
+                    }
+                    else if (cGenel.geriSayimDegeri <= 30 && cGenel.geriSayimDegeri >= 15)
+                    {
+                        pBGeriSayim.ProgressBackColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        pBGeriSayim.ProgressBackColor = Color.Red;
+                    }
                 }
-                else if (cGenel.geriSayimDegeri <= 30 && cGenel.geriSayimDegeri >= 15)
+                else if (cGenel.geriSayimKapi == "rear")
                 {
-                    pBGeriSayim.ProgressBackColor = Color.Yellow;
+                    pBGeriSayim.MaxValue = 30;
+                    pBGeriSayim.ProgressColor = Color.PowderBlue;
+                    if (cGenel.geriSayimDegeri <= 30 && cGenel.geriSayimDegeri >= 20)
+                    {
+                        pBGeriSayim.ProgressBackColor = Color.Green;
+                    }
+                    else if (cGenel.geriSayimDegeri <= 20 && cGenel.geriSayimDegeri >= 10)
+                    {
+                        pBGeriSayim.ProgressBackColor = Color.Yellow;
+                    }
+                    else
+                    {
+                        pBGeriSayim.ProgressBackColor = Color.Red;
+                    }
                 }
-                else
-                {
-                    pBGeriSayim.ProgressBackColor = Color.Red;
-                }
+                pBGeriSayim.Value = cGenel.geriSayimDegeri;
+                cGenel.geriSayimDegeri = cGenel.geriSayimDegeri - 1;
             }
-            else if (cGenel.geriSayimKapi == "rear")
+            catch (Exception)
             {
-                pBGeriSayim.MaxValue = 30;
-                pBGeriSayim.ProgressColor = Color.PowderBlue;
-                if (cGenel.geriSayimDegeri <= 30 && cGenel.geriSayimDegeri >= 20)
-                {
-                    pBGeriSayim.ProgressBackColor = Color.Green;
-                }
-                else if (cGenel.geriSayimDegeri <= 20 && cGenel.geriSayimDegeri >= 10)
-                {
-                   pBGeriSayim.ProgressBackColor = Color.Yellow;
-                }
-                else
-                {
-                    pBGeriSayim.ProgressBackColor = Color.Red;
-                }
+
             }
-            pBGeriSayim.Value = cGenel.geriSayimDegeri;
-            cGenel.geriSayimDegeri = cGenel.geriSayimDegeri - 1;
 
 
 

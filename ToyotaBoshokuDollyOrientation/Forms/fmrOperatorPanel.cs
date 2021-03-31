@@ -67,7 +67,7 @@ namespace ToyotaBoshokuDollyOrientation.Forms
 
         private void txtTelemailNo_Click(object sender, EventArgs e)
         {
-            pnlNumarator.Visible = true;
+            //pnlNumarator.Visible = true;
         }
 
         private void btnTemizle_Click(object sender, EventArgs e)
@@ -207,5 +207,18 @@ namespace ToyotaBoshokuDollyOrientation.Forms
         {
             cGenel.frmMain.ViewForm(cGenel.frmAnasayfa);
         }
+
+        private void btnBarkodKlavye_Click(object sender, EventArgs e)
+        {
+            pnlNumarator.Visible = true;
+        }
+
+       
+        private void focus_Tick(object sender, EventArgs e)
+        {
+            
+
+
+         }
     }
 }

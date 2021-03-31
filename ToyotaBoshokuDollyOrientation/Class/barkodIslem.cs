@@ -70,7 +70,7 @@ namespace ToyotaBoshokuDollyOrientation
                 catch (Exception ex)
                 {
 
-                    mesajlar.hata(ex);
+                    mesajlar.hata(ex,"");
                 }
                 finally
                 {
@@ -114,7 +114,7 @@ namespace ToyotaBoshokuDollyOrientation
                 catch (Exception ex)
                 {
 
-                    mesajlar.hata(ex);
+                    mesajlar.hata(ex,"");
                 }
                 finally
                 {
@@ -169,7 +169,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -207,7 +207,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -237,13 +237,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr=cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             
             }
             finally
@@ -263,13 +263,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -297,13 +297,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -323,13 +323,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -357,13 +357,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -383,13 +383,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -417,13 +417,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -443,13 +443,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -477,13 +477,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -503,13 +503,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -537,13 +537,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -563,13 +563,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -605,7 +605,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -639,7 +639,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -672,7 +672,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -705,7 +705,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -754,7 +754,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -786,7 +786,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -819,7 +819,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -852,7 +852,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -885,7 +885,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -930,7 +930,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -963,7 +963,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -996,7 +996,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1102,7 +1102,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
              
             }
             finally
@@ -1131,7 +1131,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1161,7 +1161,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1191,7 +1191,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1314,7 +1314,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1343,7 +1343,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1373,7 +1373,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1401,7 +1401,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1440,7 +1440,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1481,7 +1481,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1494,12 +1494,12 @@ namespace ToyotaBoshokuDollyOrientation
 
         }
 
-        public bool urunBarkodStatusUpdate_FR_LH_99()
+        public bool urunBarkodStatusUpdate_FR_LH_98()
         {
             bool sonuc = false;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update LH_BARKODS set FRL_STATUS=99 where FRL_STATUS=1 ", con);
+            SqlCommand cmd = new SqlCommand("update LH_BARKODS set FRL_STATUS=98 where FRL_STATUS=1 OR FRL_STATUS=0", con);
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -1510,7 +1510,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1521,12 +1521,12 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public bool urunBarkodStatusUpdate_RR_LH_99()
+        public bool urunBarkodStatusUpdate_RR_LH_98()
         {
             bool sonuc = false;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update LH_BARKODS set RRL_STATUS=99 where  RRL_STATUS=1 ", con);
+            SqlCommand cmd = new SqlCommand("update LH_BARKODS set RRL_STATUS=98 where  RRL_STATUS=1 OR RRL_STATUS=0 ", con);
 
             try
             {
@@ -1538,7 +1538,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1549,12 +1549,12 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public bool urunBarkodStatusUpdate_FR_RH_99()
+        public bool urunBarkodStatusUpdate_FR_RH_98()
         {
             bool sonuc = false;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update RH_BARKODS set FRR_STATUS=99 where FRR_STATUS=1 ", con);
+            SqlCommand cmd = new SqlCommand("update RH_BARKODS set FRR_STATUS=98 where FRR_STATUS=1 OR FRR_STATUS=0 ", con);
             try
             {
                 if (con.State == ConnectionState.Closed)
@@ -1565,7 +1565,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1576,12 +1576,12 @@ namespace ToyotaBoshokuDollyOrientation
             return sonuc;
         }
 
-        public bool urunBarkodStatusUpdate_RR_RH_99()
+        public bool urunBarkodStatusUpdate_RR_RH_98()
         {
             bool sonuc = false;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update RH_BARKODS set RRR_STATUS=99 where  RRR_STATUS=1 ", con);
+            SqlCommand cmd = new SqlCommand("update RH_BARKODS set RRR_STATUS=98 where  RRR_STATUS=1  OR   RRR_STATUS=0", con);
 
             try
             {
@@ -1593,7 +1593,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1621,7 +1621,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1650,7 +1650,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1714,13 +1714,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1742,13 +1742,13 @@ namespace ToyotaBoshokuDollyOrientation
             //    dr2 = cmd2.ExecuteReader();
             //    while (dr2.Read())
             //    {
-            //        sonuc2 = Convert.ToUInt16(dr2[""]);
+            //        sonuc2 = Convert.ToUInt32(dr2[""]);
             //    }
             //    sonuc = sonuc + sonuc2;
             //}
             //catch (Exception ex)
             //{
-            //    mesajlar.hata(ex);
+            //    mesajlar.hata(ex,"");
             //
             //}
             //finally
@@ -1780,13 +1780,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1808,13 +1808,13 @@ namespace ToyotaBoshokuDollyOrientation
            //    dr2 = cmd2.ExecuteReader();
            //    while (dr2.Read())
            //    {
-           //        sonuc2 = Convert.ToUInt16(dr2[""]);
+           //        sonuc2 = Convert.ToUInt32(dr2[""]);
            //    }
            //    sonuc = sonuc + sonuc2;
            //}
            //catch (Exception ex)
            //{
-           //    mesajlar.hata(ex);
+           //    mesajlar.hata(ex,"");
            //
            //}
            //finally
@@ -1846,13 +1846,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1885,13 +1885,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1912,7 +1912,7 @@ namespace ToyotaBoshokuDollyOrientation
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2 ", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from LH_BARKODS where FRL_STATUS=98 AND TIME>@zaman1 AND TIME<=@zaman2 ", con);
             cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
             cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
@@ -1925,13 +1925,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc1 = Convert.ToUInt16(dr[""]);
+                    sonuc1 = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1940,7 +1940,7 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
             SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from LH_BARKODS where  RRL_STATUS=98 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
             cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
             cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr2 = null;
@@ -1953,13 +1953,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
              
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -1979,7 +1979,7 @@ namespace ToyotaBoshokuDollyOrientation
             uint sonuc2 = 0;
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2 ", con);
+            SqlCommand cmd = new SqlCommand("select COUNT(*) from RH_BARKODS where FRR_STATUS=98 AND TIME>@zaman1 AND TIME<=@zaman2 ", con);
             cmd.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
             cmd.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr = null;
@@ -1992,13 +1992,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -2007,7 +2007,7 @@ namespace ToyotaBoshokuDollyOrientation
                 con.Dispose();
             }
             SqlConnection con2 = new SqlConnection(gnl.conString);
-            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=99 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
+            SqlCommand cmd2 = new SqlCommand("select COUNT(*) from RH_BARKODS where  RRR_STATUS=98 AND TIME>@zaman1 AND TIME<=@zaman2", con2);
             cmd2.Parameters.Add("@zaman1", SqlDbType.DateTime).Value = zaman1;
             cmd2.Parameters.Add("@zaman2", SqlDbType.DateTime).Value = zaman2;
             SqlDataReader dr2 = null;
@@ -2020,13 +2020,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr2 = cmd2.ExecuteReader();
                 while (dr2.Read())
                 {
-                    sonuc2 = Convert.ToUInt16(dr2[""]);
+                    sonuc2 = Convert.ToUInt32(dr2[""]);
                 }
                 sonuc = sonuc + sonuc2;
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -2058,13 +2058,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally
@@ -2097,13 +2097,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    sonuc = Convert.ToUInt16(dr[""]);
+                    sonuc = Convert.ToUInt32(dr[""]);
                 }
 
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
 
             }
             finally

@@ -34,7 +34,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -66,7 +66,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -96,7 +96,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -137,7 +137,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -175,7 +175,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {

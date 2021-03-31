@@ -215,6 +215,7 @@
     <Compile Include="Class\barkodIslem.cs" />
     <Compile Include="Class\cDollys.cs" />
     <Compile Include="Class\colorConvert.cs" />
+    <Compile Include="Class\error_log.cs" />
     <Compile Include="Class\KarkasIslem.cs" />
     <Compile Include="Class\cGenel.cs" />
     <Compile Include="Class\cistemciKontrol_StepMotor.cs" />
@@ -391,6 +392,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKullaniciSayfasi.resx">
       <DependentUpon>frmKullaniciSayfasi.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmManual.resx">
       <DependentUpon>frmManual.cs</DependentUpon>

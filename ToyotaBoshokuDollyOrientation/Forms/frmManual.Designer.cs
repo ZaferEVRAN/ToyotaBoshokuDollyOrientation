@@ -78,6 +78,7 @@
             // 
             this.btnLHDollyKilitAc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHDollyKilitAc.BackColor = System.Drawing.Color.Red;
+            this.btnLHDollyKilitAc.Enabled = false;
             this.btnLHDollyKilitAc.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLHDollyKilitAc.FlatAppearance.BorderSize = 5;
             this.btnLHDollyKilitAc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -194,6 +195,7 @@
             // 
             this.btnLHDollyKilitKapat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHDollyKilitKapat.BackColor = System.Drawing.Color.Green;
+            this.btnLHDollyKilitKapat.Enabled = false;
             this.btnLHDollyKilitKapat.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLHDollyKilitKapat.FlatAppearance.BorderSize = 5;
             this.btnLHDollyKilitKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -245,6 +247,7 @@
             // 
             this.btnStepMotorParametreleri.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnStepMotorParametreleri.BackColor = System.Drawing.Color.Red;
+            this.btnStepMotorParametreleri.Enabled = false;
             this.btnStepMotorParametreleri.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStepMotorParametreleri.FlatAppearance.BorderSize = 5;
             this.btnStepMotorParametreleri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

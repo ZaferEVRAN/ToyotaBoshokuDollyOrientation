@@ -43,7 +43,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -77,7 +77,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -107,7 +107,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -118,12 +118,14 @@ namespace ToyotaBoshokuDollyOrientation
 
             return sonuc;
         }
-
+        MemoryStream ms;
+        SPECK_INFO info;
+        cGenel gnl;
         public SPECK_INFO speckInfoSearch(string _barkod)
         {
-            MemoryStream ms = new MemoryStream();
-            SPECK_INFO info = new SPECK_INFO();
-            cGenel gnl = new cGenel();
+             ms = new MemoryStream();
+             info = new SPECK_INFO();
+             gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
             SqlCommand cmd = new SqlCommand("select * from SPECK_INFO where Barkod=@Barkod", con);
             cmd.Parameters.Add("@Barkod", SqlDbType.NVarChar).Value = _barkod;
@@ -148,13 +150,13 @@ namespace ToyotaBoshokuDollyOrientation
                 {
                     ms.Write(info._Resim, 0, info._Resim.Length);              
                     info.bitmap = new Bitmap(ms);
-                    colorConvert resim = new colorConvert();
-                    info.bitmap = resim.resimCevir(info.bitmap, info._Model);
+                 //colorConvert resim = new colorConvert();
+                 //info.bitmap = resim.resimCevir(info.bitmap, info._Model);
                 }
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -186,7 +188,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {

@@ -68,7 +68,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "barkodsNewAddDolly");
             }
             finally
             {
@@ -104,7 +104,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "barkodsUpdateDolly");
             }
             finally
             {
@@ -137,7 +137,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "barkodsDeleteDolly");
             }
             finally
             {
@@ -179,7 +179,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "barkodsListDolly");
             }
             finally
             {
@@ -220,7 +220,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "dollyIDInfo");
             }
             finally
             {
@@ -262,7 +262,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "dollyBarkodInfo");
             }
             finally
             {

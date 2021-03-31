@@ -9,9 +9,9 @@ namespace ToyotaBoshokuDollyOrientation
     class cMesajlar
     {
 
-        public void hata(Exception hata)
+        public void hata(Exception hata,string fonksiyon)
         {
-            MessageBox.Show(hata.Message, "Hata Oluştu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(hata.Message, string.Format("Hata Oluştu!-{0}",fonksiyon), MessageBoxButtons.OK, MessageBoxIcon.Error);
             
         }
 

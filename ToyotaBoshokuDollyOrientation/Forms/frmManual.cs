@@ -61,8 +61,8 @@ namespace ToyotaBoshokuDollyOrientation
         private void btnLHDollyKilitAc_Click(object sender, EventArgs e)
         {
             barkodIslem barkod = new barkodIslem();
-            cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
-            step.kilitMekanizmaSensorOku();
+           // cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
+           // step.kilitMekanizmaSensorOku();
             if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
             {
                 uint barkodDurum = barkod.barkod_FRL_RRL_Count();
@@ -70,15 +70,15 @@ namespace ToyotaBoshokuDollyOrientation
                 if (barkodDurum == 0 && cGenel.motorRun == false && cGenel.stepAlarmVar == false)
                 {
                     cGenel.lockOnClick = true;
-                    step.kilitMekanizmaDongusu();
+                   // step.kilitMekanizmaDongusu();
                 }
                 else if (barkod.barkod_FRL_RRL_Count_0() > 0 && cGenel.motorRun == false && cGenel.stepAlarmVar == false)
                 {
                     bool sonuc = cGenel.genelUyari("Üretim barkod listenizde işlem görmemiş ürün(ler) var.! Kilidi açmak istiyor musunuz?", true);
                     if (sonuc)
                     {
-                        cGenel.lockOnClick = true;
-                        step.kilitMekanizmaDongusu();
+                       // cGenel.lockOnClick = true;
+                       // step.kilitMekanizmaDongusu();
                     }
                 }
                 else if (barkod.barkod_FRL_RRL_Count_1() > 0 && cGenel.motorRun == false && cGenel.stepAlarmVar == false)
@@ -86,12 +86,12 @@ namespace ToyotaBoshokuDollyOrientation
                     bool sonuc = cGenel.genelUyari("Üretim barkod listenizde rework ürün(ler) var.! Kilit açmanız durumunda Rework işlem(ler)ini manual takip etmek durumundasınız.!", true);
                     if (sonuc)
                     {
-                        cGenel.lockOnClick = true;
-                        step.kilitMekanizmaDongusu();
+                       // cGenel.lockOnClick = true;
+                     // step.kilitMekanizmaDongusu();
                         KarkasIslem karkasIslem = new KarkasIslem();
                         barkodIslem urunBarkod = new barkodIslem();
-                        urunBarkod.urunBarkodStatusUpdate_FR_LH_99();
-                        urunBarkod.urunBarkodStatusUpdate_RR_LH_99();
+                        urunBarkod.urunBarkodStatusUpdate_FR_LH_98();
+                        urunBarkod.urunBarkodStatusUpdate_RR_LH_98();
                         karkasIslem = karkasIslem.karkasDollyNoGetir_LH();
                         logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
                         karkasIslem.gorevDurumTamamlandi_LH();
@@ -109,7 +109,7 @@ namespace ToyotaBoshokuDollyOrientation
                 if (barkodDurum == 0 && cGenel.motorRun == false && cGenel.stepAlarmVar == false)
                 {
                     cGenel.lockOnClick = true;
-                    step.kilitMekanizmaDongusu();
+                    //step.kilitMekanizmaDongusu();
                 }
                 else if (barkod.barkod_FRR_RRR_Count_0() > 0 && cGenel.motorRun == false && cGenel.stepAlarmVar == false)
                 {
@@ -118,7 +118,7 @@ namespace ToyotaBoshokuDollyOrientation
                     if (sonuc)
                     {
                         cGenel.lockOnClick = true;
-                        step.kilitMekanizmaDongusu();
+                       // step.kilitMekanizmaDongusu();
                     }
                 }
                 else if (barkod.barkod_FRR_RRR_Count_1() > 0 && cGenel.motorRun == false && cGenel.stepAlarmVar == false)
@@ -127,11 +127,11 @@ namespace ToyotaBoshokuDollyOrientation
                     if (sonuc)
                     {
                         cGenel.lockOnClick = true;
-                        step.kilitMekanizmaDongusu();
+                       // step.kilitMekanizmaDongusu();
                         KarkasIslem karkasIslem = new KarkasIslem();
                         barkodIslem urunBarkod = new barkodIslem();
-                        urunBarkod.urunBarkodStatusUpdate_FR_RH_99();
-                        urunBarkod.urunBarkodStatusUpdate_RR_RH_99();
+                        urunBarkod.urunBarkodStatusUpdate_FR_RH_98();
+                        urunBarkod.urunBarkodStatusUpdate_RR_RH_98();
                         karkasIslem = karkasIslem.karkasDollyNoGetir_RH();
                         logOlustur.logDollyNoGuncelle(karkasIslem._DOLLYNO, karkasIslem._ID);
                         karkasIslem.gorevDurumTamamlandi_RH();
@@ -145,27 +145,25 @@ namespace ToyotaBoshokuDollyOrientation
         log logOlustur = new log();
         private void btnLHDollyKilitKapat_Click(object sender, EventArgs e)
         {
-           cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
-            step.kilitMekanizmaSensorOku();
+          //cistemciKontrol_StepMotor step = new cistemciKontrol_StepMotor();
+          // step.kilitMekanizmaSensorOku();
             if (cGenel.motorRun == false && cGenel.stepAlarmVar == false)
             {
                 if (cGenel.lockOffSensor==true)
                 {
                     cGenel.lockOffClick = true;
 
-                    step.kilitMekanizmaDongusu();
+                  //  step.kilitMekanizmaDongusu();
                 }
             }
         }
-        cLambaKontrol lambaKontrol = new cLambaKontrol();
+        cLambaKontrol lambaKontrol ;
         private void btnLHDollyResetle_Click(object sender, EventArgs e)
         {
+            lambaKontrol = new cLambaKontrol();
             cGenel.nowDeviceID = 0;
          
-            if (cGenel.xByPass==false)
-            {
-                lambaKontrol.lambaDurumDollyBaslangic();
-            }
+          
             cGenel.stepAlarmVar = false;
             cGenel.deviceAlarmVar = false;
             cGenel.motorRun = false;
@@ -173,7 +171,10 @@ namespace ToyotaBoshokuDollyOrientation
             frmMain.xKontrol = false;
             //lambaKontrol.buzzerRing(0);
             cGenel.alarmVar = false;
-
+            if (cGenel.xByPass == false)
+            {
+                lambaKontrol.lambaDurumDollyBaslangic();
+            }
             //lambaKontrol.yarimKalanIsıklarGoster();
 
 
@@ -251,6 +252,11 @@ namespace ToyotaBoshokuDollyOrientation
         private void btnOperatorPanel_Click(object sender, EventArgs e)
         {
             cGenel.frmMain.ViewForm(cGenel.frmOperatorPanel);
+        }
+
+        private void btnAdminPanel_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

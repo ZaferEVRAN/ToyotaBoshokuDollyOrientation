@@ -48,6 +48,7 @@
             this.btnSonTBTOku = new System.Windows.Forms.Button();
             this.btnBaslat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBarkodKlavye = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtTelemailNo = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -64,10 +65,12 @@
             this.btn2 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.btnNumaratorKapat = new Bunifu.Framework.UI.BunifuImageButton();
+            this.focus = new System.Windows.Forms.Timer(this.components);
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGeri)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBarkodKlavye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.pnlNumarator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNumaratorKapat)).BeginInit();
@@ -77,31 +80,27 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.PowderBlue;
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox4.Location = new System.Drawing.Point(0, 165);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Location = new System.Drawing.Point(0, 107);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox4.Size = new System.Drawing.Size(42, 510);
+            this.groupBox4.Size = new System.Drawing.Size(28, 332);
             this.groupBox4.TabIndex = 231;
             this.groupBox4.TabStop = false;
             // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(4, 80);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.progressBar1.Location = new System.Drawing.Point(3, 52);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1470, 35);
+            this.progressBar1.Size = new System.Drawing.Size(980, 23);
             this.progressBar1.TabIndex = 108;
             // 
             // rbIslemYapilmayanBarkodlar
             // 
             this.rbIslemYapilmayanBarkodlar.AutoSize = true;
             this.rbIslemYapilmayanBarkodlar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbIslemYapilmayanBarkodlar.Location = new System.Drawing.Point(764, 26);
-            this.rbIslemYapilmayanBarkodlar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbIslemYapilmayanBarkodlar.Location = new System.Drawing.Point(509, 17);
             this.rbIslemYapilmayanBarkodlar.Name = "rbIslemYapilmayanBarkodlar";
-            this.rbIslemYapilmayanBarkodlar.Size = new System.Drawing.Size(431, 41);
+            this.rbIslemYapilmayanBarkodlar.Size = new System.Drawing.Size(291, 29);
             this.rbIslemYapilmayanBarkodlar.TabIndex = 89;
             this.rbIslemYapilmayanBarkodlar.TabStop = true;
             this.rbIslemYapilmayanBarkodlar.Text = "İşlem yapılmayan barkodlar";
@@ -113,10 +112,9 @@
             // 
             this.rbButunBarkodlar.AutoSize = true;
             this.rbButunBarkodlar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbButunBarkodlar.Location = new System.Drawing.Point(9, 26);
-            this.rbButunBarkodlar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbButunBarkodlar.Location = new System.Drawing.Point(6, 17);
             this.rbButunBarkodlar.Name = "rbButunBarkodlar";
-            this.rbButunBarkodlar.Size = new System.Drawing.Size(267, 41);
+            this.rbButunBarkodlar.Size = new System.Drawing.Size(180, 29);
             this.rbButunBarkodlar.TabIndex = 90;
             this.rbButunBarkodlar.TabStop = true;
             this.rbButunBarkodlar.Text = "bütün barkodlar";
@@ -127,10 +125,9 @@
             // 
             this.rbIslemYapilanBarkodlar.AutoSize = true;
             this.rbIslemYapilanBarkodlar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbIslemYapilanBarkodlar.Location = new System.Drawing.Point(330, 29);
-            this.rbIslemYapilanBarkodlar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rbIslemYapilanBarkodlar.Location = new System.Drawing.Point(220, 19);
             this.rbIslemYapilanBarkodlar.Name = "rbIslemYapilanBarkodlar";
-            this.rbIslemYapilanBarkodlar.Size = new System.Drawing.Size(371, 41);
+            this.rbIslemYapilanBarkodlar.Size = new System.Drawing.Size(251, 29);
             this.rbIslemYapilanBarkodlar.TabIndex = 88;
             this.rbIslemYapilanBarkodlar.TabStop = true;
             this.rbIslemYapilanBarkodlar.Text = "İşlem yapılan barkodlar";
@@ -146,11 +143,9 @@
             this.groupBox3.Controls.Add(this.btnGeri);
             this.groupBox3.Controls.Add(this.rbIslemYapilanBarkodlar);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(4, -5);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Location = new System.Drawing.Point(3, -3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(1640, 129);
+            this.groupBox3.Size = new System.Drawing.Size(1093, 84);
             this.groupBox3.TabIndex = 216;
             this.groupBox3.TabStop = false;
             // 
@@ -164,10 +159,9 @@
             this.btnGeri.ErrorImage = null;
             this.btnGeri.Image = ((System.Drawing.Image)(resources.GetObject("btnGeri.Image")));
             this.btnGeri.ImageActive = null;
-            this.btnGeri.Location = new System.Drawing.Point(1483, 17);
-            this.btnGeri.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGeri.Location = new System.Drawing.Point(989, 11);
             this.btnGeri.Name = "btnGeri";
-            this.btnGeri.Size = new System.Drawing.Size(153, 103);
+            this.btnGeri.Size = new System.Drawing.Size(102, 67);
             this.btnGeri.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnGeri.TabIndex = 106;
             this.btnGeri.TabStop = false;
@@ -179,11 +173,9 @@
             // 
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 675);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(0, 439);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(1648, 129);
+            this.groupBox2.Size = new System.Drawing.Size(1099, 84);
             this.groupBox2.TabIndex = 230;
             this.groupBox2.TabStop = false;
             // 
@@ -191,11 +183,9 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.PowderBlue;
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox5.Location = new System.Drawing.Point(1648, 165);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox5.Location = new System.Drawing.Point(1099, 107);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox5.Size = new System.Drawing.Size(32, 639);
+            this.groupBox5.Size = new System.Drawing.Size(21, 416);
             this.groupBox5.TabIndex = 232;
             this.groupBox5.TabStop = false;
             // 
@@ -208,10 +198,9 @@
             // 
             this.btnSonTBTOku.BackColor = System.Drawing.Color.Yellow;
             this.btnSonTBTOku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSonTBTOku.Location = new System.Drawing.Point(54, 14);
-            this.btnSonTBTOku.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSonTBTOku.Location = new System.Drawing.Point(36, 9);
             this.btnSonTBTOku.Name = "btnSonTBTOku";
-            this.btnSonTBTOku.Size = new System.Drawing.Size(445, 58);
+            this.btnSonTBTOku.Size = new System.Drawing.Size(297, 38);
             this.btnSonTBTOku.TabIndex = 92;
             this.btnSonTBTOku.Text = "BAŞLANACAK TELEMAİL NO:";
             this.btnSonTBTOku.UseVisualStyleBackColor = false;
@@ -220,10 +209,9 @@
             // 
             this.btnBaslat.BackColor = System.Drawing.Color.Green;
             this.btnBaslat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnBaslat.Location = new System.Drawing.Point(318, 78);
-            this.btnBaslat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBaslat.Location = new System.Drawing.Point(212, 51);
             this.btnBaslat.Name = "btnBaslat";
-            this.btnBaslat.Size = new System.Drawing.Size(181, 65);
+            this.btnBaslat.Size = new System.Drawing.Size(121, 42);
             this.btnBaslat.TabIndex = 86;
             this.btnBaslat.Text = "BAŞLAT";
             this.btnBaslat.UseVisualStyleBackColor = false;
@@ -232,27 +220,40 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.PowderBlue;
+            this.groupBox1.Controls.Add(this.btnBarkodKlavye);
             this.groupBox1.Controls.Add(this.btnSonTBTOku);
             this.groupBox1.Controls.Add(this.btnBaslat);
             this.groupBox1.Controls.Add(this.txtTelemailNo);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel10);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1680, 165);
+            this.groupBox1.Size = new System.Drawing.Size(1120, 107);
             this.groupBox1.TabIndex = 229;
             this.groupBox1.TabStop = false;
+            // 
+            // btnBarkodKlavye
+            // 
+            this.btnBarkodKlavye.BackColor = System.Drawing.Color.Transparent;
+            this.btnBarkodKlavye.ErrorImage = null;
+            this.btnBarkodKlavye.Image = ((System.Drawing.Image)(resources.GetObject("btnBarkodKlavye.Image")));
+            this.btnBarkodKlavye.ImageActive = null;
+            this.btnBarkodKlavye.Location = new System.Drawing.Point(339, 56);
+            this.btnBarkodKlavye.Name = "btnBarkodKlavye";
+            this.btnBarkodKlavye.Size = new System.Drawing.Size(70, 37);
+            this.btnBarkodKlavye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBarkodKlavye.TabIndex = 235;
+            this.btnBarkodKlavye.TabStop = false;
+            this.btnBarkodKlavye.Zoom = 10;
+            this.btnBarkodKlavye.Click += new System.EventHandler(this.btnBarkodKlavye_Click);
             // 
             // txtTelemailNo
             // 
             this.txtTelemailNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelemailNo.Location = new System.Drawing.Point(50, 78);
-            this.txtTelemailNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelemailNo.Location = new System.Drawing.Point(33, 51);
             this.txtTelemailNo.Multiline = true;
             this.txtTelemailNo.Name = "txtTelemailNo";
-            this.txtTelemailNo.Size = new System.Drawing.Size(260, 62);
+            this.txtTelemailNo.Size = new System.Drawing.Size(175, 42);
             this.txtTelemailNo.TabIndex = 85;
             this.txtTelemailNo.Click += new System.EventHandler(this.txtTelemailNo_Click);
             // 
@@ -263,10 +264,9 @@
             this.bunifuCustomLabel10.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
             this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(601, 0);
-            this.bunifuCustomLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(401, 0);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(448, 69);
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(304, 46);
             this.bunifuCustomLabel10.TabIndex = 84;
             this.bunifuCustomLabel10.Text = "Operatör Panel";
             // 
@@ -324,8 +324,7 @@
             this.dataGrid.HeaderBackColor = System.Drawing.Color.DarkSlateGray;
             this.dataGrid.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataGrid.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGrid.Location = new System.Drawing.Point(42, 165);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGrid.Location = new System.Drawing.Point(28, 107);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -346,7 +345,7 @@
             this.dataGrid.ShowCellToolTips = false;
             this.dataGrid.ShowEditingIcon = false;
             this.dataGrid.ShowRowErrors = false;
-            this.dataGrid.Size = new System.Drawing.Size(1606, 510);
+            this.dataGrid.Size = new System.Drawing.Size(1071, 332);
             this.dataGrid.StandardTab = true;
             this.dataGrid.TabIndex = 233;
             this.dataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.DarkSlateGray;
@@ -365,10 +364,9 @@
             this.pnlNumarator.Controls.Add(this.btn2);
             this.pnlNumarator.Controls.Add(this.btn1);
             this.pnlNumarator.Controls.Add(this.btnNumaratorKapat);
-            this.pnlNumarator.Location = new System.Drawing.Point(50, 175);
-            this.pnlNumarator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlNumarator.Location = new System.Drawing.Point(33, 114);
             this.pnlNumarator.Name = "pnlNumarator";
-            this.pnlNumarator.Size = new System.Drawing.Size(391, 390);
+            this.pnlNumarator.Size = new System.Drawing.Size(261, 253);
             this.pnlNumarator.TabIndex = 234;
             this.pnlNumarator.Visible = false;
             // 
@@ -378,10 +376,9 @@
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn0.ForeColor = System.Drawing.Color.White;
-            this.btn0.Location = new System.Drawing.Point(32, 310);
-            this.btn0.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn0.Location = new System.Drawing.Point(21, 201);
             this.btn0.Name = "btn0";
-            this.btn0.Size = new System.Drawing.Size(99, 60);
+            this.btn0.Size = new System.Drawing.Size(66, 39);
             this.btn0.TabIndex = 124;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
@@ -392,10 +389,9 @@
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn9.ForeColor = System.Drawing.Color.White;
-            this.btn9.Location = new System.Drawing.Point(248, 241);
-            this.btn9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn9.Location = new System.Drawing.Point(165, 157);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(99, 60);
+            this.btn9.Size = new System.Drawing.Size(66, 39);
             this.btn9.TabIndex = 125;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
@@ -406,10 +402,9 @@
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn8.ForeColor = System.Drawing.Color.White;
-            this.btn8.Location = new System.Drawing.Point(140, 241);
-            this.btn8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn8.Location = new System.Drawing.Point(93, 157);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(99, 60);
+            this.btn8.Size = new System.Drawing.Size(66, 39);
             this.btn8.TabIndex = 126;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
@@ -420,10 +415,9 @@
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn6.ForeColor = System.Drawing.Color.White;
-            this.btn6.Location = new System.Drawing.Point(248, 172);
-            this.btn6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn6.Location = new System.Drawing.Point(165, 112);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(99, 60);
+            this.btn6.Size = new System.Drawing.Size(66, 39);
             this.btn6.TabIndex = 127;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
@@ -434,10 +428,9 @@
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn5.ForeColor = System.Drawing.Color.White;
-            this.btn5.Location = new System.Drawing.Point(140, 172);
-            this.btn5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn5.Location = new System.Drawing.Point(93, 112);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(99, 60);
+            this.btn5.Size = new System.Drawing.Size(66, 39);
             this.btn5.TabIndex = 128;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
@@ -448,10 +441,9 @@
             this.btnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTemizle.ForeColor = System.Drawing.Color.White;
-            this.btnTemizle.Location = new System.Drawing.Point(140, 311);
-            this.btnTemizle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTemizle.Location = new System.Drawing.Point(93, 202);
             this.btnTemizle.Name = "btnTemizle";
-            this.btnTemizle.Size = new System.Drawing.Size(207, 60);
+            this.btnTemizle.Size = new System.Drawing.Size(138, 39);
             this.btnTemizle.TabIndex = 129;
             this.btnTemizle.Text = "Sil";
             this.btnTemizle.UseVisualStyleBackColor = false;
@@ -463,10 +455,9 @@
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn7.ForeColor = System.Drawing.Color.White;
-            this.btn7.Location = new System.Drawing.Point(32, 241);
-            this.btn7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn7.Location = new System.Drawing.Point(21, 157);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(99, 60);
+            this.btn7.Size = new System.Drawing.Size(66, 39);
             this.btn7.TabIndex = 130;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
@@ -477,10 +468,9 @@
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn3.ForeColor = System.Drawing.Color.White;
-            this.btn3.Location = new System.Drawing.Point(248, 103);
-            this.btn3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn3.Location = new System.Drawing.Point(165, 67);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(99, 60);
+            this.btn3.Size = new System.Drawing.Size(66, 39);
             this.btn3.TabIndex = 131;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
@@ -491,10 +481,9 @@
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn4.ForeColor = System.Drawing.Color.White;
-            this.btn4.Location = new System.Drawing.Point(32, 172);
-            this.btn4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn4.Location = new System.Drawing.Point(21, 112);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(99, 60);
+            this.btn4.Size = new System.Drawing.Size(66, 39);
             this.btn4.TabIndex = 132;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
@@ -505,10 +494,9 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn2.ForeColor = System.Drawing.Color.White;
-            this.btn2.Location = new System.Drawing.Point(140, 103);
-            this.btn2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn2.Location = new System.Drawing.Point(93, 67);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(99, 60);
+            this.btn2.Size = new System.Drawing.Size(66, 39);
             this.btn2.TabIndex = 133;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
@@ -519,10 +507,9 @@
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn1.ForeColor = System.Drawing.Color.White;
-            this.btn1.Location = new System.Drawing.Point(32, 103);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn1.Location = new System.Drawing.Point(21, 67);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(99, 60);
+            this.btn1.Size = new System.Drawing.Size(66, 39);
             this.btn1.TabIndex = 134;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
@@ -536,10 +523,9 @@
             this.btnNumaratorKapat.ErrorImage = null;
             this.btnNumaratorKapat.Image = ((System.Drawing.Image)(resources.GetObject("btnNumaratorKapat.Image")));
             this.btnNumaratorKapat.ImageActive = null;
-            this.btnNumaratorKapat.Location = new System.Drawing.Point(296, 31);
-            this.btnNumaratorKapat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNumaratorKapat.Location = new System.Drawing.Point(197, 20);
             this.btnNumaratorKapat.Name = "btnNumaratorKapat";
-            this.btnNumaratorKapat.Size = new System.Drawing.Size(62, 58);
+            this.btnNumaratorKapat.Size = new System.Drawing.Size(41, 38);
             this.btnNumaratorKapat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNumaratorKapat.TabIndex = 123;
             this.btnNumaratorKapat.TabStop = false;
@@ -547,11 +533,17 @@
             this.btnNumaratorKapat.Zoom = 10;
             this.btnNumaratorKapat.Click += new System.EventHandler(this.btnNumaratorKapat_Click);
             // 
+            // focus
+            // 
+            this.focus.Enabled = true;
+            this.focus.Interval = 1000;
+            this.focus.Tick += new System.EventHandler(this.focus_Tick);
+            // 
             // fmrOperatorPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1680, 804);
+            this.ClientSize = new System.Drawing.Size(1120, 523);
             this.Controls.Add(this.pnlNumarator);
             this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.groupBox4);
@@ -559,6 +551,7 @@
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fmrOperatorPanel";
             this.Text = "fmrOperatorPanel";
             this.Load += new System.EventHandler(this.fmrOperatorPanel_Load);
@@ -568,6 +561,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBarkodKlavye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.pnlNumarator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnNumaratorKapat)).EndInit();
@@ -606,5 +600,7 @@
         private System.Windows.Forms.Button btn1;
         private Bunifu.Framework.UI.BunifuImageButton btnNumaratorKapat;
         private System.Windows.Forms.TextBox txtTelemailNo;
+        private Bunifu.Framework.UI.BunifuImageButton btnBarkodKlavye;
+        private System.Windows.Forms.Timer focus;
     }
 }

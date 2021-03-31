@@ -123,9 +123,12 @@
             this.btnLHPickToLight43 = new System.Windows.Forms.Button();
             this.btnLHPickToLight42 = new System.Windows.Forms.Button();
             this.btnLHPickToLight41 = new System.Windows.Forms.Button();
+            this.btnDollyIslemBitir = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.btnOncekiSayfa)).BeginInit();
             this.panel15.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDollyIslemBitir)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOncekiSayfa
@@ -138,7 +141,7 @@
             this.btnOncekiSayfa.ErrorImage = null;
             this.btnOncekiSayfa.Image = ((System.Drawing.Image)(resources.GetObject("btnOncekiSayfa.Image")));
             this.btnOncekiSayfa.ImageActive = null;
-            this.btnOncekiSayfa.Location = new System.Drawing.Point(1021, 480);
+            this.btnOncekiSayfa.Location = new System.Drawing.Point(1021, 510);
             this.btnOncekiSayfa.Name = "btnOncekiSayfa";
             this.btnOncekiSayfa.Size = new System.Drawing.Size(102, 67);
             this.btnOncekiSayfa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -286,7 +289,7 @@
             this.panel15.Controls.Add(this.bunifuCustomLabel7);
             this.panel15.Controls.Add(this.bunifuCustomLabel9);
             this.panel15.Controls.Add(this.bunifuCustomLabel8);
-            this.panel15.Location = new System.Drawing.Point(235, 257);
+            this.panel15.Location = new System.Drawing.Point(235, 246);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(776, 32);
             this.panel15.TabIndex = 172;
@@ -530,7 +533,7 @@
             this.bunifuTileButton39.ImageZoom = 100;
             this.bunifuTileButton39.LabelPosition = 0;
             this.bunifuTileButton39.LabelText = "";
-            this.bunifuTileButton39.Location = new System.Drawing.Point(936, 288);
+            this.bunifuTileButton39.Location = new System.Drawing.Point(936, 277);
             this.bunifuTileButton39.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton39.Name = "bunifuTileButton39";
             this.bunifuTileButton39.Size = new System.Drawing.Size(50, 50);
@@ -550,7 +553,7 @@
             this.bunifuTileButton37.ImageZoom = 100;
             this.bunifuTileButton37.LabelPosition = 0;
             this.bunifuTileButton37.LabelText = "";
-            this.bunifuTileButton37.Location = new System.Drawing.Point(866, 290);
+            this.bunifuTileButton37.Location = new System.Drawing.Point(866, 279);
             this.bunifuTileButton37.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton37.Name = "bunifuTileButton37";
             this.bunifuTileButton37.Size = new System.Drawing.Size(50, 50);
@@ -570,7 +573,7 @@
             this.bunifuTileButton35.ImageZoom = 100;
             this.bunifuTileButton35.LabelPosition = 0;
             this.bunifuTileButton35.LabelText = "";
-            this.bunifuTileButton35.Location = new System.Drawing.Point(781, 290);
+            this.bunifuTileButton35.Location = new System.Drawing.Point(781, 279);
             this.bunifuTileButton35.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton35.Name = "bunifuTileButton35";
             this.bunifuTileButton35.Size = new System.Drawing.Size(50, 50);
@@ -590,7 +593,7 @@
             this.bunifuTileButton33.ImageZoom = 100;
             this.bunifuTileButton33.LabelPosition = 0;
             this.bunifuTileButton33.LabelText = "";
-            this.bunifuTileButton33.Location = new System.Drawing.Point(714, 288);
+            this.bunifuTileButton33.Location = new System.Drawing.Point(714, 277);
             this.bunifuTileButton33.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton33.Name = "bunifuTileButton33";
             this.bunifuTileButton33.Size = new System.Drawing.Size(50, 50);
@@ -610,7 +613,7 @@
             this.bunifuTileButton31.ImageZoom = 100;
             this.bunifuTileButton31.LabelPosition = 0;
             this.bunifuTileButton31.LabelText = "";
-            this.bunifuTileButton31.Location = new System.Drawing.Point(632, 290);
+            this.bunifuTileButton31.Location = new System.Drawing.Point(632, 279);
             this.bunifuTileButton31.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton31.Name = "bunifuTileButton31";
             this.bunifuTileButton31.Size = new System.Drawing.Size(50, 50);
@@ -630,7 +633,7 @@
             this.bunifuTileButton29.ImageZoom = 100;
             this.bunifuTileButton29.LabelPosition = 0;
             this.bunifuTileButton29.LabelText = "";
-            this.bunifuTileButton29.Location = new System.Drawing.Point(560, 288);
+            this.bunifuTileButton29.Location = new System.Drawing.Point(560, 277);
             this.bunifuTileButton29.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton29.Name = "bunifuTileButton29";
             this.bunifuTileButton29.Size = new System.Drawing.Size(50, 50);
@@ -650,7 +653,7 @@
             this.bunifuTileButton27.ImageZoom = 100;
             this.bunifuTileButton27.LabelPosition = 0;
             this.bunifuTileButton27.LabelText = "";
-            this.bunifuTileButton27.Location = new System.Drawing.Point(479, 288);
+            this.bunifuTileButton27.Location = new System.Drawing.Point(479, 277);
             this.bunifuTileButton27.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton27.Name = "bunifuTileButton27";
             this.bunifuTileButton27.Size = new System.Drawing.Size(50, 50);
@@ -670,7 +673,7 @@
             this.bunifuTileButton25.ImageZoom = 100;
             this.bunifuTileButton25.LabelPosition = 0;
             this.bunifuTileButton25.LabelText = "";
-            this.bunifuTileButton25.Location = new System.Drawing.Point(413, 288);
+            this.bunifuTileButton25.Location = new System.Drawing.Point(413, 277);
             this.bunifuTileButton25.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton25.Name = "bunifuTileButton25";
             this.bunifuTileButton25.Size = new System.Drawing.Size(50, 50);
@@ -690,7 +693,7 @@
             this.bunifuTileButton23.ImageZoom = 100;
             this.bunifuTileButton23.LabelPosition = 0;
             this.bunifuTileButton23.LabelText = "";
-            this.bunifuTileButton23.Location = new System.Drawing.Point(328, 290);
+            this.bunifuTileButton23.Location = new System.Drawing.Point(328, 279);
             this.bunifuTileButton23.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton23.Name = "bunifuTileButton23";
             this.bunifuTileButton23.Size = new System.Drawing.Size(50, 50);
@@ -710,7 +713,7 @@
             this.bunifuTileButton21.ImageZoom = 100;
             this.bunifuTileButton21.LabelPosition = 0;
             this.bunifuTileButton21.LabelText = "";
-            this.bunifuTileButton21.Location = new System.Drawing.Point(260, 288);
+            this.bunifuTileButton21.Location = new System.Drawing.Point(260, 277);
             this.bunifuTileButton21.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton21.Name = "bunifuTileButton21";
             this.bunifuTileButton21.Size = new System.Drawing.Size(50, 50);
@@ -730,7 +733,7 @@
             this.bunifuTileButton19.ImageZoom = 100;
             this.bunifuTileButton19.LabelPosition = 0;
             this.bunifuTileButton19.LabelText = "";
-            this.bunifuTileButton19.Location = new System.Drawing.Point(934, 99);
+            this.bunifuTileButton19.Location = new System.Drawing.Point(934, 88);
             this.bunifuTileButton19.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton19.Name = "bunifuTileButton19";
             this.bunifuTileButton19.Size = new System.Drawing.Size(50, 50);
@@ -750,7 +753,7 @@
             this.bunifuTileButton17.ImageZoom = 100;
             this.bunifuTileButton17.LabelPosition = 0;
             this.bunifuTileButton17.LabelText = "";
-            this.bunifuTileButton17.Location = new System.Drawing.Point(866, 99);
+            this.bunifuTileButton17.Location = new System.Drawing.Point(866, 88);
             this.bunifuTileButton17.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton17.Name = "bunifuTileButton17";
             this.bunifuTileButton17.Size = new System.Drawing.Size(50, 50);
@@ -770,7 +773,7 @@
             this.bunifuTileButton15.ImageZoom = 100;
             this.bunifuTileButton15.LabelPosition = 0;
             this.bunifuTileButton15.LabelText = "";
-            this.bunifuTileButton15.Location = new System.Drawing.Point(783, 99);
+            this.bunifuTileButton15.Location = new System.Drawing.Point(783, 88);
             this.bunifuTileButton15.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton15.Name = "bunifuTileButton15";
             this.bunifuTileButton15.Size = new System.Drawing.Size(50, 50);
@@ -790,7 +793,7 @@
             this.bunifuTileButton13.ImageZoom = 100;
             this.bunifuTileButton13.LabelPosition = 0;
             this.bunifuTileButton13.LabelText = "";
-            this.bunifuTileButton13.Location = new System.Drawing.Point(714, 99);
+            this.bunifuTileButton13.Location = new System.Drawing.Point(714, 88);
             this.bunifuTileButton13.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton13.Name = "bunifuTileButton13";
             this.bunifuTileButton13.Size = new System.Drawing.Size(50, 50);
@@ -810,7 +813,7 @@
             this.bunifuTileButton11.ImageZoom = 100;
             this.bunifuTileButton11.LabelPosition = 0;
             this.bunifuTileButton11.LabelText = "";
-            this.bunifuTileButton11.Location = new System.Drawing.Point(632, 100);
+            this.bunifuTileButton11.Location = new System.Drawing.Point(632, 89);
             this.bunifuTileButton11.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton11.Name = "bunifuTileButton11";
             this.bunifuTileButton11.Size = new System.Drawing.Size(50, 50);
@@ -830,7 +833,7 @@
             this.bunifuTileButton9.ImageZoom = 100;
             this.bunifuTileButton9.LabelPosition = 0;
             this.bunifuTileButton9.LabelText = "";
-            this.bunifuTileButton9.Location = new System.Drawing.Point(560, 100);
+            this.bunifuTileButton9.Location = new System.Drawing.Point(560, 89);
             this.bunifuTileButton9.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton9.Name = "bunifuTileButton9";
             this.bunifuTileButton9.Size = new System.Drawing.Size(50, 50);
@@ -850,7 +853,7 @@
             this.bunifuTileButton7.ImageZoom = 100;
             this.bunifuTileButton7.LabelPosition = 0;
             this.bunifuTileButton7.LabelText = "";
-            this.bunifuTileButton7.Location = new System.Drawing.Point(480, 102);
+            this.bunifuTileButton7.Location = new System.Drawing.Point(480, 91);
             this.bunifuTileButton7.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton7.Name = "bunifuTileButton7";
             this.bunifuTileButton7.Size = new System.Drawing.Size(50, 50);
@@ -870,7 +873,7 @@
             this.bunifuTileButton5.ImageZoom = 100;
             this.bunifuTileButton5.LabelPosition = 0;
             this.bunifuTileButton5.LabelText = "";
-            this.bunifuTileButton5.Location = new System.Drawing.Point(412, 100);
+            this.bunifuTileButton5.Location = new System.Drawing.Point(412, 89);
             this.bunifuTileButton5.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton5.Name = "bunifuTileButton5";
             this.bunifuTileButton5.Size = new System.Drawing.Size(50, 50);
@@ -890,7 +893,7 @@
             this.bunifuTileButton3.ImageZoom = 100;
             this.bunifuTileButton3.LabelPosition = 0;
             this.bunifuTileButton3.LabelText = "";
-            this.bunifuTileButton3.Location = new System.Drawing.Point(332, 102);
+            this.bunifuTileButton3.Location = new System.Drawing.Point(332, 91);
             this.bunifuTileButton3.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton3.Name = "bunifuTileButton3";
             this.bunifuTileButton3.Size = new System.Drawing.Size(50, 50);
@@ -910,7 +913,7 @@
             this.bunifuTileButton2.ImageZoom = 100;
             this.bunifuTileButton2.LabelPosition = 0;
             this.bunifuTileButton2.LabelText = "";
-            this.bunifuTileButton2.Location = new System.Drawing.Point(260, 100);
+            this.bunifuTileButton2.Location = new System.Drawing.Point(260, 89);
             this.bunifuTileButton2.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton2.Name = "bunifuTileButton2";
             this.bunifuTileButton2.Size = new System.Drawing.Size(50, 50);
@@ -920,7 +923,7 @@
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(316, 92);
+            this.panel4.Location = new System.Drawing.Point(316, 81);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 389);
             this.panel4.TabIndex = 170;
@@ -929,7 +932,7 @@
             // 
             this.panel14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel14.BackColor = System.Drawing.Color.Black;
-            this.panel14.Location = new System.Drawing.Point(235, 449);
+            this.panel14.Location = new System.Drawing.Point(235, 438);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(776, 32);
             this.panel14.TabIndex = 173;
@@ -938,7 +941,7 @@
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel13.BackColor = System.Drawing.Color.Black;
-            this.panel13.Location = new System.Drawing.Point(990, 95);
+            this.panel13.Location = new System.Drawing.Point(990, 84);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(21, 386);
             this.panel13.TabIndex = 169;
@@ -947,7 +950,7 @@
             // 
             this.panel12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel12.BackColor = System.Drawing.Color.Black;
-            this.panel12.Location = new System.Drawing.Point(920, 95);
+            this.panel12.Location = new System.Drawing.Point(920, 84);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(10, 385);
             this.panel12.TabIndex = 168;
@@ -956,7 +959,7 @@
             // 
             this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel11.BackColor = System.Drawing.Color.Black;
-            this.panel11.Location = new System.Drawing.Point(839, 95);
+            this.panel11.Location = new System.Drawing.Point(839, 84);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(21, 386);
             this.panel11.TabIndex = 167;
@@ -965,7 +968,7 @@
             // 
             this.panel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel10.BackColor = System.Drawing.Color.Black;
-            this.panel10.Location = new System.Drawing.Point(769, 95);
+            this.panel10.Location = new System.Drawing.Point(769, 84);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(10, 386);
             this.panel10.TabIndex = 166;
@@ -974,7 +977,7 @@
             // 
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.BackColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(688, 95);
+            this.panel9.Location = new System.Drawing.Point(688, 84);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(21, 386);
             this.panel9.TabIndex = 165;
@@ -983,7 +986,7 @@
             // 
             this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel8.BackColor = System.Drawing.Color.Black;
-            this.panel8.Location = new System.Drawing.Point(618, 95);
+            this.panel8.Location = new System.Drawing.Point(618, 84);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 377);
             this.panel8.TabIndex = 164;
@@ -992,7 +995,7 @@
             // 
             this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel7.BackColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(535, 94);
+            this.panel7.Location = new System.Drawing.Point(535, 83);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(21, 386);
             this.panel7.TabIndex = 163;
@@ -1001,7 +1004,7 @@
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(467, 95);
+            this.panel6.Location = new System.Drawing.Point(467, 84);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 383);
             this.panel6.TabIndex = 162;
@@ -1010,7 +1013,7 @@
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(386, 95);
+            this.panel5.Location = new System.Drawing.Point(386, 84);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(21, 383);
             this.panel5.TabIndex = 161;
@@ -1034,7 +1037,7 @@
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
             this.panel3.Controls.Add(this.bunifuCustomLabel1);
-            this.panel3.Location = new System.Drawing.Point(235, 64);
+            this.panel3.Location = new System.Drawing.Point(235, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(776, 32);
             this.panel3.TabIndex = 171;
@@ -1268,7 +1271,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(235, 72);
+            this.panel1.Location = new System.Drawing.Point(235, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(21, 409);
             this.panel1.TabIndex = 160;
@@ -1277,7 +1280,7 @@
             // 
             this.btnLHPickToLight31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight31.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight31.Location = new System.Drawing.Point(256, 96);
+            this.btnLHPickToLight31.Location = new System.Drawing.Point(256, 85);
             this.btnLHPickToLight31.Name = "btnLHPickToLight31";
             this.btnLHPickToLight31.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight31.TabIndex = 222;
@@ -1287,7 +1290,7 @@
             // 
             this.btnLHPickToLight32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight32.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight32.Location = new System.Drawing.Point(326, 96);
+            this.btnLHPickToLight32.Location = new System.Drawing.Point(326, 85);
             this.btnLHPickToLight32.Name = "btnLHPickToLight32";
             this.btnLHPickToLight32.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight32.TabIndex = 223;
@@ -1297,7 +1300,7 @@
             // 
             this.btnLHPickToLight33.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight33.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight33.Location = new System.Drawing.Point(408, 96);
+            this.btnLHPickToLight33.Location = new System.Drawing.Point(408, 85);
             this.btnLHPickToLight33.Name = "btnLHPickToLight33";
             this.btnLHPickToLight33.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight33.TabIndex = 224;
@@ -1307,7 +1310,7 @@
             // 
             this.btnLHPickToLight34.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight34.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight34.Location = new System.Drawing.Point(475, 96);
+            this.btnLHPickToLight34.Location = new System.Drawing.Point(475, 85);
             this.btnLHPickToLight34.Name = "btnLHPickToLight34";
             this.btnLHPickToLight34.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight34.TabIndex = 225;
@@ -1317,7 +1320,7 @@
             // 
             this.btnLHPickToLight35.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight35.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight35.Location = new System.Drawing.Point(557, 97);
+            this.btnLHPickToLight35.Location = new System.Drawing.Point(557, 86);
             this.btnLHPickToLight35.Name = "btnLHPickToLight35";
             this.btnLHPickToLight35.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight35.TabIndex = 226;
@@ -1327,7 +1330,7 @@
             // 
             this.btnLHPickToLight36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight36.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight36.Location = new System.Drawing.Point(628, 98);
+            this.btnLHPickToLight36.Location = new System.Drawing.Point(628, 87);
             this.btnLHPickToLight36.Name = "btnLHPickToLight36";
             this.btnLHPickToLight36.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight36.TabIndex = 227;
@@ -1337,7 +1340,7 @@
             // 
             this.btnLHPickToLight37.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight37.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight37.Location = new System.Drawing.Point(709, 96);
+            this.btnLHPickToLight37.Location = new System.Drawing.Point(709, 85);
             this.btnLHPickToLight37.Name = "btnLHPickToLight37";
             this.btnLHPickToLight37.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight37.TabIndex = 228;
@@ -1347,7 +1350,7 @@
             // 
             this.btnLHPickToLight38.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight38.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight38.Location = new System.Drawing.Point(779, 97);
+            this.btnLHPickToLight38.Location = new System.Drawing.Point(779, 86);
             this.btnLHPickToLight38.Name = "btnLHPickToLight38";
             this.btnLHPickToLight38.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight38.TabIndex = 229;
@@ -1357,7 +1360,7 @@
             // 
             this.btnLHPickToLight39.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight39.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight39.Location = new System.Drawing.Point(861, 96);
+            this.btnLHPickToLight39.Location = new System.Drawing.Point(861, 85);
             this.btnLHPickToLight39.Name = "btnLHPickToLight39";
             this.btnLHPickToLight39.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight39.TabIndex = 230;
@@ -1367,7 +1370,7 @@
             // 
             this.btnLHPickToLight40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight40.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight40.Location = new System.Drawing.Point(929, 96);
+            this.btnLHPickToLight40.Location = new System.Drawing.Point(929, 85);
             this.btnLHPickToLight40.Name = "btnLHPickToLight40";
             this.btnLHPickToLight40.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight40.TabIndex = 231;
@@ -1377,7 +1380,7 @@
             // 
             this.btnLHPickToLight50.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight50.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight50.Location = new System.Drawing.Point(929, 289);
+            this.btnLHPickToLight50.Location = new System.Drawing.Point(929, 278);
             this.btnLHPickToLight50.Name = "btnLHPickToLight50";
             this.btnLHPickToLight50.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight50.TabIndex = 241;
@@ -1387,7 +1390,7 @@
             // 
             this.btnLHPickToLight49.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight49.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight49.Location = new System.Drawing.Point(861, 289);
+            this.btnLHPickToLight49.Location = new System.Drawing.Point(861, 278);
             this.btnLHPickToLight49.Name = "btnLHPickToLight49";
             this.btnLHPickToLight49.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight49.TabIndex = 240;
@@ -1397,7 +1400,7 @@
             // 
             this.btnLHPickToLight48.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight48.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight48.Location = new System.Drawing.Point(779, 290);
+            this.btnLHPickToLight48.Location = new System.Drawing.Point(779, 279);
             this.btnLHPickToLight48.Name = "btnLHPickToLight48";
             this.btnLHPickToLight48.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight48.TabIndex = 239;
@@ -1407,7 +1410,7 @@
             // 
             this.btnLHPickToLight47.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight47.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight47.Location = new System.Drawing.Point(709, 289);
+            this.btnLHPickToLight47.Location = new System.Drawing.Point(709, 278);
             this.btnLHPickToLight47.Name = "btnLHPickToLight47";
             this.btnLHPickToLight47.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight47.TabIndex = 238;
@@ -1417,7 +1420,7 @@
             // 
             this.btnLHPickToLight46.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight46.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight46.Location = new System.Drawing.Point(628, 291);
+            this.btnLHPickToLight46.Location = new System.Drawing.Point(628, 280);
             this.btnLHPickToLight46.Name = "btnLHPickToLight46";
             this.btnLHPickToLight46.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight46.TabIndex = 237;
@@ -1427,7 +1430,7 @@
             // 
             this.btnLHPickToLight45.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight45.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight45.Location = new System.Drawing.Point(557, 290);
+            this.btnLHPickToLight45.Location = new System.Drawing.Point(557, 279);
             this.btnLHPickToLight45.Name = "btnLHPickToLight45";
             this.btnLHPickToLight45.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight45.TabIndex = 236;
@@ -1437,7 +1440,7 @@
             // 
             this.btnLHPickToLight44.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight44.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight44.Location = new System.Drawing.Point(475, 289);
+            this.btnLHPickToLight44.Location = new System.Drawing.Point(475, 278);
             this.btnLHPickToLight44.Name = "btnLHPickToLight44";
             this.btnLHPickToLight44.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight44.TabIndex = 235;
@@ -1447,7 +1450,7 @@
             // 
             this.btnLHPickToLight43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight43.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight43.Location = new System.Drawing.Point(408, 289);
+            this.btnLHPickToLight43.Location = new System.Drawing.Point(408, 278);
             this.btnLHPickToLight43.Name = "btnLHPickToLight43";
             this.btnLHPickToLight43.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight43.TabIndex = 234;
@@ -1457,7 +1460,7 @@
             // 
             this.btnLHPickToLight42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight42.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight42.Location = new System.Drawing.Point(326, 289);
+            this.btnLHPickToLight42.Location = new System.Drawing.Point(326, 278);
             this.btnLHPickToLight42.Name = "btnLHPickToLight42";
             this.btnLHPickToLight42.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight42.TabIndex = 233;
@@ -1467,18 +1470,53 @@
             // 
             this.btnLHPickToLight41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLHPickToLight41.BackColor = System.Drawing.Color.White;
-            this.btnLHPickToLight41.Location = new System.Drawing.Point(256, 289);
+            this.btnLHPickToLight41.Location = new System.Drawing.Point(256, 278);
             this.btnLHPickToLight41.Name = "btnLHPickToLight41";
             this.btnLHPickToLight41.Size = new System.Drawing.Size(60, 161);
             this.btnLHPickToLight41.TabIndex = 232;
             this.btnLHPickToLight41.UseVisualStyleBackColor = false;
+            // 
+            // btnDollyIslemBitir
+            // 
+            this.btnDollyIslemBitir.AccessibleDescription = "";
+            this.btnDollyIslemBitir.AccessibleName = "";
+            this.btnDollyIslemBitir.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDollyIslemBitir.BackColor = System.Drawing.Color.Transparent;
+            this.btnDollyIslemBitir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDollyIslemBitir.ErrorImage = null;
+            this.btnDollyIslemBitir.Image = ((System.Drawing.Image)(resources.GetObject("btnDollyIslemBitir.Image")));
+            this.btnDollyIslemBitir.ImageActive = null;
+            this.btnDollyIslemBitir.Location = new System.Drawing.Point(570, 476);
+            this.btnDollyIslemBitir.Name = "btnDollyIslemBitir";
+            this.btnDollyIslemBitir.Size = new System.Drawing.Size(102, 67);
+            this.btnDollyIslemBitir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDollyIslemBitir.TabIndex = 242;
+            this.btnDollyIslemBitir.TabStop = false;
+            this.btnDollyIslemBitir.Tag = "";
+            this.btnDollyIslemBitir.Zoom = 10;
+            this.btnDollyIslemBitir.Click += new System.EventHandler(this.btnDollyIslemBitir_Click);
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(540, 546);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(184, 26);
+            this.bunifuCustomLabel12.TabIndex = 243;
+            this.bunifuCustomLabel12.Text = "Dolly işlem bitir.";
             // 
             // frmPickToLight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1135, 559);
+            this.ClientSize = new System.Drawing.Size(1135, 589);
+            this.Controls.Add(this.bunifuCustomLabel12);
+            this.Controls.Add(this.btnDollyIslemBitir);
             this.Controls.Add(this.bunifuCustomLabel43);
             this.Controls.Add(this.bunifuTileButton44);
             this.Controls.Add(this.bunifuCustomLabel42);
@@ -1550,6 +1588,7 @@
             this.panel15.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDollyIslemBitir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1650,5 +1689,7 @@
         private System.Windows.Forms.Button btnLHPickToLight43;
         private System.Windows.Forms.Button btnLHPickToLight42;
         private System.Windows.Forms.Button btnLHPickToLight41;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        private Bunifu.Framework.UI.BunifuImageButton btnDollyIslemBitir;
     }
 }

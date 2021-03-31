@@ -50,7 +50,7 @@ namespace ToyotaBoshokuDollyOrientation
               }
               catch (Exception ex)
               {
-                  mesajlar.hata(ex);
+                  mesajlar.hata(ex,"");
                   result = false;
               }
               return result;
@@ -67,9 +67,11 @@ namespace ToyotaBoshokuDollyOrientation
 
 
           }*/
+        error_log log = new error_log();
 
         public void si_DataReceived(string data)
         {
+            log.error_log_kayit(string.Format("{0} barkod okutuldu ",data));
             ///100AX417
             if (data.Trim() != null && cGenel.nowDeviceID == 0)
             {
@@ -87,6 +89,252 @@ namespace ToyotaBoshokuDollyOrientation
                         cGenel.YonBilgisi = global.yonBilgisiBul(byte.Parse(data.Substring(data.Length - 1)));//7
                         cGenel.TBTDOORSpecKodu = data.Substring(4, 4);//X417
                         cGenel.DoorBarcode = data;
+                        log.error_log_kayit("barkod pars işlem");
+                        if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
+                        {
+                            karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_LH();
+                            cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
+                            log.error_log_kayit("urunBarkodKarkasDurum çalıştı.");
+                            if (cGenel.urunBarkodKarkasDurum == false && data.Length >= 7)
+                            {
+                                if (cGenel.YonBilgisi == cGenel.FR_LH && data.Length >= 7)
+                                {
+                                    urunBarkod = urunBarkod.barkodeSearch_FRL(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
+                                    DoorSpec = urunBarkod._FRL_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.BarkodID = urunBarkod._ID;
+                                    cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                                else if (cGenel.YonBilgisi == cGenel.RR_LH && data.Length >= 7)
+                                {
+                                    urunBarkod = urunBarkod.barkodeSearch_RRL(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
+                                    DoorSpec = urunBarkod._RRL_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.BarkodID = urunBarkod._ID;
+                                    cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+
+                            }
+                            else if (cGenel.urunBarkodKarkasDurum == true && data.Length >= 7)
+                            {
+
+                                if (cGenel.YonBilgisi == cGenel.FR_LH && data.Length >= 7)
+                                {
+                                    int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
+                                    cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_LH(index);
+                                    cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_LH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
+                                    urunBarkod = urunBarkod.barcodInfoID_LH(cGenel.BarkodID);
+                                    DoorSpec = urunBarkod._FRL_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                                else if (cGenel.YonBilgisi == cGenel.RR_LH && data.Length >= 7)
+                                {
+                                    int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
+                                    cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_LH(index);
+                                    cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_LH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
+                                    urunBarkod = urunBarkod.barcodInfoID_LH(cGenel.BarkodID);
+                                    DoorSpec = urunBarkod._RRL_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                            }
+
+
+                            if (cGenel.nowDeviceID == 0 && data.Length >= 7)
+                            {
+
+
+                                if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
+                                {
+                                    if (karkasIslem.dollyYuklemeSirasiKontrol(cGenel.dollyRafBilgisi, cGenel.YonBilgisi) == true)
+                                    {
+
+                                        if (cGenel.YonBilgisi == cGenel.FR_LH)
+                                        {
+                                            barkodPopupIslem_LH(DoorSpec);
+                                            log.error_log_kayit("sayfa yükleme fonksiyon çalıştı.");
+                                            if (cGenel.xByPass == false)
+                                            {
+                                                cGenel.frmPopupIslem.globalOK();
+                                                log.error_log_kayit("glabal ok fonksiyon çalıştı.");
+                                            }
+                                            cGenel.geriSayimKapi = "front";
+                                            cGenel.geriSayimDegeri = 45;
+
+                                        }
+                                        else if (cGenel.YonBilgisi == cGenel.RR_LH)
+                                        {
+                                            barkodPopupIslem_LH(DoorSpec);
+                                            log.error_log_kayit("sayfa yükleme fonksiyon çalıştı.");
+                                            if (cGenel.xByPass == false)
+                                            {
+                                                cGenel.frmPopupIslem.globalOK();
+                                                log.error_log_kayit("glabal ok fonksiyon çalıştı.");
+                                            }
+                                            cGenel.geriSayimKapi = "rear";
+                                            cGenel.geriSayimDegeri = 30;
+
+                                        }
+                                        else
+                                        {
+                                            cGenel.genelUyariAlarm("Yön veya hat bilgisi tanımlama hatası!", false, true);
+                                            cGenel.nowDeviceID = 0;
+                                            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                            cGenel.frmPickToLight.DurumIzleme();
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        cGenel.genelUyariAlarm("Telemail numaraları ve yön sırasında atlama yapılamaz!", false, true);
+                                        cGenel.nowDeviceID = 0;
+                                        cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                        cGenel.frmPickToLight.DurumIzleme();
+                                    }
+                                }
+                                else
+                                {
+                                    cGenel.genelUyariAlarm("Okutulan barkod spec kodu ile sistem spec kodu eşleşmedi!", false, true);
+                                    cGenel.nowDeviceID = 0;
+                                    cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                    cGenel.frmPickToLight.DurumIzleme();
+                                }
+
+
+                            }
+
+                        }
+
+                        else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+                        {
+
+                            karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_RH();
+                            cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
+
+                            if (cGenel.urunBarkodKarkasDurum == false && data.Length >= 7)
+                            {
+                                if (cGenel.YonBilgisi == cGenel.FR_RH)
+                                {
+                                    urunBarkod = urunBarkod.barkodeSearch_FRR(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
+                                    DoorSpec = urunBarkod._FRR_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.BarkodID = urunBarkod._ID;
+                                    cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                                else if (cGenel.YonBilgisi == cGenel.RR_RH)
+                                {
+                                    urunBarkod = urunBarkod.barkodeSearch_RRR(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
+                                    DoorSpec = urunBarkod._RRR_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.BarkodID = urunBarkod._ID;
+                                    cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                            }
+                            else if (cGenel.urunBarkodKarkasDurum == true && data.Length >= 7)
+                            {
+
+
+                                if (cGenel.YonBilgisi == cGenel.FR_RH)
+                                {
+                                    int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
+                                    cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_RH(index);
+                                    cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_RH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
+                                    urunBarkod = urunBarkod.barcodInfoID_RH(cGenel.BarkodID);
+                                    DoorSpec = urunBarkod._FRR_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                                else if (cGenel.YonBilgisi == cGenel.RR_RH)
+                                {
+                                    int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
+                                    cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_RH(index);
+                                    cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_RH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
+                                    urunBarkod = urunBarkod.barcodInfoID_RH(cGenel.BarkodID);
+                                    DoorSpec = urunBarkod._RRR_BARCODE;
+                                    TeleMail = urunBarkod._TRIMNO;
+
+                                    cGenel.Type = urunBarkod._TYPE;
+                                    cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
+                                }
+                            }
+
+
+                            if (cGenel.nowDeviceID == 0 && data.Length >= 7)
+                            {
+                                if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
+                                {
+                                    if (karkasIslem.dollyYuklemeSirasiKontrol(cGenel.dollyRafBilgisi, cGenel.YonBilgisi) == true)
+                                    {
+
+                                        if (cGenel.YonBilgisi == cGenel.FR_RH)
+                                        {
+
+                                            barkodPopupIslem_RH(DoorSpec);
+                                            log.error_log_kayit("sayfa yükleme fonksiyon çalıştı.");
+                                            if (cGenel.xByPass == false)
+                                            {
+                                                cGenel.frmPopupIslem.globalOK();
+                                                log.error_log_kayit("glabal ok fonksiyon çalıştı.");
+                                            }
+                                            cGenel.geriSayimKapi = "front";
+                                            cGenel.geriSayimDegeri = 45;
+
+
+                                        }
+                                        else if (cGenel.YonBilgisi == cGenel.RR_RH)
+                                        {
+
+                                            barkodPopupIslem_RH(DoorSpec);
+                                            log.error_log_kayit("sayfa yükleme fonksiyon çalıştı.");
+                                            if (cGenel.xByPass == false)
+                                            {
+                                                cGenel.frmPopupIslem.globalOK();
+                                                log.error_log_kayit("glabal ok fonksiyon çalıştı.");
+                                            }
+                                            cGenel.geriSayimKapi = "rear";
+                                            cGenel.geriSayimDegeri = 30;
+                                        }
+                                        else
+                                        {
+                                            cGenel.genelUyariAlarm("Yön veya hat bilgisi tanımlama hatası!", false, true);
+                                            cGenel.nowDeviceID = 0;
+                                            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                            cGenel.frmPickToLight.DurumIzleme();
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        cGenel.genelUyariAlarm("Telemail numaraları ve yön sırasında atlama yapılamaz!", false, true);
+                                        cGenel.nowDeviceID = 0;
+                                        cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                        cGenel.frmPickToLight.DurumIzleme();
+                                    }
+                                }
+                                else
+                                {
+                                    cGenel.genelUyariAlarm("Okutulan barkod spec kodu ile sistem spec kodu eşleşmedi!", false, true);
+                                    cGenel.nowDeviceID = 0;
+                                    cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
+                                    cGenel.frmPickToLight.DurumIzleme();
+                                }
+                              
+
+                            }
+                        }
+
                     }
                     else
                     {
@@ -96,7 +344,7 @@ namespace ToyotaBoshokuDollyOrientation
                         cGenel.YonBilgisi = "";
                         cGenel.DoorBarcode = "";
                     }
-
+           
                 }
                 catch (Exception)
                 {
@@ -107,247 +355,7 @@ namespace ToyotaBoshokuDollyOrientation
                     cGenel.DoorBarcode = "";
 
                 }
-                if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
-                {
-                    karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_LH();
-                    cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
-
-                    if (cGenel.urunBarkodKarkasDurum == false && data.Length >= 7)
-                    {
-                        if (cGenel.YonBilgisi == cGenel.FR_LH && data.Length >= 7)
-                        {
-                            urunBarkod = urunBarkod.barkodeSearch_FRL(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
-                            DoorSpec = urunBarkod._FRL_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.BarkodID = urunBarkod._ID;
-                            cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                        else if (cGenel.YonBilgisi == cGenel.RR_LH && data.Length >= 7)
-                        {
-                            urunBarkod = urunBarkod.barkodeSearch_RRL(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
-                            DoorSpec = urunBarkod._RRL_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.BarkodID = urunBarkod._ID;
-                            cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-
-                    }
-                    else if (cGenel.urunBarkodKarkasDurum == true && data.Length >= 7)
-                    {
-
-                        if (cGenel.YonBilgisi == cGenel.FR_LH && data.Length >= 7)
-                        {
-                            int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
-                            cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_LH(index);
-                            cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_LH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
-                            urunBarkod = urunBarkod.barcodInfoID_LH(cGenel.BarkodID);
-                            DoorSpec = urunBarkod._FRL_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                        else if (cGenel.YonBilgisi == cGenel.RR_LH && data.Length >= 7)
-                        {
-                            int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
-                            cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_LH(index);
-                            cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_LH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
-                            urunBarkod = urunBarkod.barcodInfoID_LH(cGenel.BarkodID);
-                            DoorSpec = urunBarkod._RRL_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                    }
-
-
-                    if (cGenel.nowDeviceID == 0 && data.Length >= 7)
-                    {
-
-
-                        if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
-                        {
-                            if (karkasIslem.dollyYuklemeSirasiKontrol(cGenel.dollyRafBilgisi, cGenel.YonBilgisi) == true)
-                            {
-
-                                if (cGenel.YonBilgisi == cGenel.FR_LH)
-                                {
-                                    barkodPopupIslem_LH(DoorSpec);
-                                    if (cGenel.xByPass==false)
-                                    {
-                                        cGenel.frmPopupIslem.globalOK();
-                                    }
-                                    cGenel.geriSayimKapi = "front";
-                                    cGenel.geriSayimDegeri = 45;
-                                    
-                                }
-                                else if (cGenel.YonBilgisi == cGenel.RR_LH)
-                                {
-                                    barkodPopupIslem_LH(DoorSpec);
-                                    if (cGenel.xByPass == false)
-                                    {
-                                        cGenel.frmPopupIslem.globalOK();
-                                    }
-                                    cGenel.geriSayimKapi = "rear";
-                                    cGenel.geriSayimDegeri = 30;
-                                   
-                                }
-                                else
-                                {
-                                    cGenel.genelUyariAlarm("Yön veya hat bilgisi tanımlama hatası!", false, true);
-                                    cGenel.nowDeviceID = 0;
-                                    cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                                    cGenel.frmPickToLight.DurumIzleme();
-                                }
-
-                            }
-                            else
-                            {
-                                cGenel.genelUyariAlarm("Telemail numaraları ve yön sırasında atlama yapılamaz!", false, true);
-                                cGenel.nowDeviceID = 0;
-                                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                                cGenel.frmPickToLight.DurumIzleme();
-                            }
-                        }
-                        else
-                        {
-                            cGenel.genelUyariAlarm("Okutulan barkod ataması yapılmamıştır!", false, true);
-                            cGenel.nowDeviceID = 0;
-                            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                            cGenel.frmPickToLight.DurumIzleme();
-                        }
-
-
-                    }
-
-                }
-                else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
-                {
-
-                    karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_RH();
-                    cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
-
-                    if (cGenel.urunBarkodKarkasDurum == false && data.Length >= 7)
-                    {
-                        if (cGenel.YonBilgisi == cGenel.FR_RH)
-                        {
-                            urunBarkod = urunBarkod.barkodeSearch_FRR(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
-                            DoorSpec = urunBarkod._FRR_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.BarkodID = urunBarkod._ID;
-                            cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                        else if (cGenel.YonBilgisi == cGenel.RR_RH)
-                        {
-                            urunBarkod = urunBarkod.barkodeSearch_RRR(cGenel.TeleMailSirasi, cGenel.TBTDOORSpecKodu, 0);
-                            DoorSpec = urunBarkod._RRR_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.BarkodID = urunBarkod._ID;
-                            cGenel.dollyRafBilgisi = urunBarkod._SEQUENCE;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                    }
-                    else if (cGenel.urunBarkodKarkasDurum == true && data.Length >= 7)
-                    {
-
-
-                        if (cGenel.YonBilgisi == cGenel.FR_RH)
-                        {
-                            int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
-                            cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_RH(index);
-                            cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_RH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
-                            urunBarkod = urunBarkod.barcodInfoID_RH(cGenel.BarkodID);
-                            DoorSpec = urunBarkod._FRR_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                        else if (cGenel.YonBilgisi == cGenel.RR_RH)
-                        {
-                            int index = karkasIslem.listBARKOD.FindIndex(s => s == cGenel.DoorBarcode);
-                            cGenel.dollyRafBilgisi = karkasIslem.dollyRafSirasiSearch_RH(index);
-                            cGenel.BarkodID = karkasIslem.urunBarkodIDSearch_RH(cGenel.dollyRafBilgisi, cGenel.YonBilgisi);
-                            urunBarkod = urunBarkod.barcodInfoID_RH(cGenel.BarkodID);
-                            DoorSpec = urunBarkod._RRR_BARCODE;
-                            TeleMail = urunBarkod._TRIMNO;
-
-                            cGenel.Type = urunBarkod._TYPE;
-                            cGenel.Model = model.speckInfoSearch(cGenel.ModelKodu)._MODELADI;
-                        }
-                    }
-
-
-                    if (cGenel.nowDeviceID == 0 && data.Length >= 7)
-                    {
-                        if (cGenel.TBTDOORSpecKodu == DoorSpec && cGenel.TeleMailSirasi == TeleMail)
-                        {
-                            if (karkasIslem.dollyYuklemeSirasiKontrol(cGenel.dollyRafBilgisi, cGenel.YonBilgisi) == true)
-                            {
-
-                                if (cGenel.YonBilgisi == cGenel.FR_RH)
-                                {
-
-                                    barkodPopupIslem_RH(DoorSpec);
-
-                                    if (cGenel.xByPass == false)
-                                    {
-                                        cGenel.frmPopupIslem.globalOK();
-                                    }
-                                    cGenel.geriSayimKapi = "front";
-                                    cGenel.geriSayimDegeri = 45;
-                               
-
-                                }
-                                else if (cGenel.YonBilgisi == cGenel.RR_RH)
-                                {
-
-                                    barkodPopupIslem_RH(DoorSpec);
-
-                                    if (cGenel.xByPass == false)
-                                    {
-                                        cGenel.frmPopupIslem.globalOK();
-                                    }
-                                    cGenel.geriSayimKapi = "rear";
-                                    cGenel.geriSayimDegeri = 30;
-                                }
-                                else
-                                {
-                                    cGenel.genelUyariAlarm("Yön veya hat bilgisi tanımlama hatası!", false, true);
-                                    cGenel.nowDeviceID = 0;
-                                    cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                                    cGenel.frmPickToLight.DurumIzleme();
-                                }
-
-                            }
-                            else
-                            {
-                                cGenel.genelUyariAlarm("Telemail numaraları ve yön sırasında atlama yapılamaz!", false, true);
-                                cGenel.nowDeviceID = 0;
-                                cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                                cGenel.frmPickToLight.DurumIzleme();
-                            }
-                        }
-                        else
-                        {
-                            cGenel.genelUyariAlarm("Okutulan Telemail bulunamadı!", false, true);
-                            cGenel.nowDeviceID = 0;
-                            cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                            cGenel.frmPickToLight.DurumIzleme();
-                        }
-                        if (cGenel.xByPass == false)
-                        {
-                            cGenel.frmMain.globalLambaYakmaBarkodOkutulunca();
-                        }
-
-                    }
-                }
-
+            
 
             }
 

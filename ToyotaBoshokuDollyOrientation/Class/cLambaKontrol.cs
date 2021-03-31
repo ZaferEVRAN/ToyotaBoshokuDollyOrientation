@@ -52,7 +52,7 @@ namespace ToyotaBoshokuDollyOrientation
 
         DateTime dtDisconnect = new DateTime();
         DateTime dtNow = new DateTime();
-        bool NetworkIsOk = false;
+        bool NetworkIsOk;
 
         [DllImport("WININET", CharSet = CharSet.Auto)]
         static extern bool InternetGetConnectedState(ref InternetConnectionState lpdwFlags, int dwReserved);
@@ -72,11 +72,11 @@ namespace ToyotaBoshokuDollyOrientation
 
         }
 
-        public cLambaKontrol()
+        public void lambaKontrolConnect()
         {
-         PLCDurumu = PLCDurumlari.KULLANILAMAZ;
-
-            if (cGenel.xByPass==false)
+            // PLCDurumu = PLCDurumlari.KULLANILAMAZ;
+            client = new TcpClient();
+            if (cGenel.xByPass==false&&client.Connected==false)
             {
                 if (Connect())
                 {
@@ -85,7 +85,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
 
         }
-
+        error_log error_kayit = new error_log();
         public bool Connect()
         {
 
@@ -99,11 +99,12 @@ namespace ToyotaBoshokuDollyOrientation
                 {
                     client = new TcpClient();
                     IAsyncResult asyncResult = client.BeginConnect(cGenel.conDXM_IP, 502, null, null);
-                    asyncResult.AsyncWaitHandle.WaitOne(3000, true); //wait for 3 sec
+                    asyncResult.AsyncWaitHandle.WaitOne(1000, true); //wait for 3 sec
                     if (!asyncResult.IsCompleted)
                     {
                         client.Close();
                         cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Cannot connect to server.");
+                        error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                         return false;
                     }
                     // create Modbus TCP Master by the tcpclient
@@ -112,12 +113,14 @@ namespace ToyotaBoshokuDollyOrientation
                     master.Transport.WaitToRetryMilliseconds = 50;
                     master.Transport.ReadTimeout = 1500;
                     cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connect to server.");
+                    error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                     return true;
                 }
                 catch (Exception ex)
                 {
                     cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connect process " + ex.StackTrace +
                    "==>" + ex.Message);
+                    error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                     return false;
                 }
             }
@@ -140,11 +143,12 @@ namespace ToyotaBoshokuDollyOrientation
                    {
                        client = new TcpClient();
                        IAsyncResult asyncResult = client.BeginConnect(cGenel.conDXM_IP, 502, null, null);
-                       asyncResult.AsyncWaitHandle.WaitOne(3000, true); //wait for 3 sec
+                       asyncResult.AsyncWaitHandle.WaitOne(1000, true); //wait for 3 sec
                        if (!asyncResult.IsCompleted)
                        {
                            client.Close();
-                           cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Cannot connect to server.");
+                           cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Cannot connect to server.(task)");
+                           error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                            return false;
                        }
                        // create Modbus TCP Master by the tcpclient
@@ -153,13 +157,15 @@ namespace ToyotaBoshokuDollyOrientation
                        master.Transport.ReadTimeout = 1500;
                        master.Transport.WaitToRetryMilliseconds = 50;
                  
-                       cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connect to server.");
+                       cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connect to server.(task)");
+                       error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                        return true;
                    }
                    catch (Exception ex)
                    {
-                       cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connect process " + ex.StackTrace +
+                       cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connect process (task) " + ex.StackTrace +
                       "==>" + ex.Message);
+                       error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                        return false;
                    }
                }
@@ -172,6 +178,7 @@ namespace ToyotaBoshokuDollyOrientation
         }
 
         ushort[] sensor = new ushort[1];
+        ushort[] value = new ushort[4];
         public async void sensorOkuma(ushort deviceID)
         {
             //start timer1, timer1.Interval = 1000 ms
@@ -181,7 +188,7 @@ namespace ToyotaBoshokuDollyOrientation
                 {
                     #region Master to Slave
                     //read AI, AO, DI, DO
-                    ushort[] value = new ushort[4];
+                  
                     value[0] = deviceID;//device ID
                     value[1] = 0;//okuma
                     value[2] = 7942;//başlangıç register
@@ -193,6 +200,7 @@ namespace ToyotaBoshokuDollyOrientation
                     if (sensor[0]>0)
                     {
                         cGenel.sensorSonucu = sensor[0];
+                        error_kayit.error_log_kayit("sensör aktif");
                     }
            
                     //cGenel.CommonDeviceID = sensor[0];
@@ -206,16 +214,19 @@ namespace ToyotaBoshokuDollyOrientation
                     if ((dtNow - dtDisconnect) > TimeSpan.FromSeconds(10))
                     {
                         cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Start connecting");
+                        error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                         NetworkIsOk = await ConnectTask();
                         if (!NetworkIsOk)
                         {
                             cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Connecting fail. Wait for retry");
+                            error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                             dtDisconnect = DateTime.Now;
                         }
                     }
                     else
                     {
                         cGenel.haberlesmeMesaj = (DateTime.Now.ToString() + ":DXM Wait for retry connecting");
+                        error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                     }
                 }
             }
@@ -226,6 +237,7 @@ namespace ToyotaBoshokuDollyOrientation
                     //set NetworkIsOk to false and retry connecting
                     NetworkIsOk = false;
                     cGenel.haberlesmeMesaj = (ex.Message);
+                    error_kayit.error_log_kayit(cGenel.haberlesmeMesaj);
                     dtDisconnect = DateTime.Now;
                 }
             }
@@ -282,7 +294,7 @@ namespace ToyotaBoshokuDollyOrientation
 
         public  void buzzerRing(ushort status)
         {
-            try
+          /*  try
             {
                  master.WriteSingleRegister(1, 503, status);
                 cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.WriteSingleRegister(0, status);
@@ -294,6 +306,7 @@ namespace ToyotaBoshokuDollyOrientation
                cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Disconnect();
                cistemciKontrol_StepMotor.slaveModbusRTUStepMotor.Connect();
             }
+            */
 
         }
 

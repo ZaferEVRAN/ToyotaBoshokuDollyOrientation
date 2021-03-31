@@ -180,8 +180,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevOlustur_LH");
             }
             finally
             {
@@ -223,7 +222,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevOlustur_RH");
             }
             finally
             {
@@ -256,7 +255,8 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+
+                mesajlar.hata(ex, "gorevGuncelle_LH");
             }
             finally
             {
@@ -289,7 +289,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevGuncelle_RH");
             }
             finally
             {
@@ -389,7 +389,8 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+
+                mesajlar.hata(ex, "gorevSorgula_LH");
             }
             finally
             {
@@ -490,7 +491,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevSorgula_RH");
             }
             finally
             {
@@ -525,7 +526,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevDurumGuncelle_LH");
             }
             finally
             {
@@ -559,7 +560,8 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+
+                mesajlar.hata(ex, "gorevDurumGuncelle_RH");
             }
             finally
             {
@@ -599,7 +601,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevDurumIslemYokveyaYapiliyorDollyLH");
             }
             finally
             {
@@ -640,7 +642,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "gorevDurumIslemYokveyaYapiliyorDollyRH");
             }
             finally
             {
@@ -673,26 +675,26 @@ namespace ToyotaBoshokuDollyOrientation
                 {
 
                     
-                     gorevInfo._FR_LH_1                     =Convert.ToUInt16(dr["FR_LH_1"]);
-                     gorevInfo._RR_LH_1                     =Convert.ToUInt16(dr["RR_LH_1"]);
-                     gorevInfo._FR_LH_2                     =Convert.ToUInt16(dr["FR_LH_2"]);
-                     gorevInfo._RR_LH_2                     =Convert.ToUInt16(dr["RR_LH_2"]);
-                     gorevInfo._FR_LH_3                     =Convert.ToUInt16(dr["FR_LH_3"]);
-                     gorevInfo._RR_LH_3                     =Convert.ToUInt16(dr["RR_LH_3"]);
-                     gorevInfo._FR_LH_4                     =Convert.ToUInt16(dr["FR_LH_4"]);
-                     gorevInfo._RR_LH_4                     =Convert.ToUInt16(dr["RR_LH_4"]);
-                     gorevInfo._FR_LH_5                     =Convert.ToUInt16(dr["FR_LH_5"]);
-                     gorevInfo._RR_LH_5                     =Convert.ToUInt16(dr["RR_LH_5"]);
-                     gorevInfo._FR_LH_6                     =Convert.ToUInt16(dr["FR_LH_6"]);
-                     gorevInfo._RR_LH_6                     =Convert.ToUInt16(dr["RR_LH_6"]);        
-                     gorevInfo._FR_LH_7                     =Convert.ToUInt16(dr["FR_LH_7"]);       
-                     gorevInfo._RR_LH_7                     =Convert.ToUInt16(dr["RR_LH_7"]);         
-                     gorevInfo._FR_LH_8                     =Convert.ToUInt16(dr["FR_LH_8"]);  
-                     gorevInfo._RR_LH_8                     =Convert.ToUInt16(dr["RR_LH_8"]);        
-                     gorevInfo._FR_LH_9                     =Convert.ToUInt16(dr["FR_LH_9"]);   
-                     gorevInfo._RR_LH_9                     =Convert.ToUInt16(dr["RR_LH_9"]);
-                     gorevInfo._FR_LH_10                    =Convert.ToUInt16(dr["FR_LH_10"]);
-                     gorevInfo._RR_LH_10                    =Convert.ToUInt16(dr["RR_LH_10"]);
+                     gorevInfo._FR_LH_1                     =Convert.ToUInt32(dr["FR_LH_1"]);
+                     gorevInfo._RR_LH_1                     =Convert.ToUInt32(dr["RR_LH_1"]);
+                     gorevInfo._FR_LH_2                     =Convert.ToUInt32(dr["FR_LH_2"]);
+                     gorevInfo._RR_LH_2                     =Convert.ToUInt32(dr["RR_LH_2"]);
+                     gorevInfo._FR_LH_3                     =Convert.ToUInt32(dr["FR_LH_3"]);
+                     gorevInfo._RR_LH_3                     =Convert.ToUInt32(dr["RR_LH_3"]);
+                     gorevInfo._FR_LH_4                     =Convert.ToUInt32(dr["FR_LH_4"]);
+                     gorevInfo._RR_LH_4                     =Convert.ToUInt32(dr["RR_LH_4"]);
+                     gorevInfo._FR_LH_5                     =Convert.ToUInt32(dr["FR_LH_5"]);
+                     gorevInfo._RR_LH_5                     =Convert.ToUInt32(dr["RR_LH_5"]);
+                     gorevInfo._FR_LH_6                     =Convert.ToUInt32(dr["FR_LH_6"]);
+                     gorevInfo._RR_LH_6                     =Convert.ToUInt32(dr["RR_LH_6"]);        
+                     gorevInfo._FR_LH_7                     =Convert.ToUInt32(dr["FR_LH_7"]);       
+                     gorevInfo._RR_LH_7                     =Convert.ToUInt32(dr["RR_LH_7"]);         
+                     gorevInfo._FR_LH_8                     =Convert.ToUInt32(dr["FR_LH_8"]);  
+                     gorevInfo._RR_LH_8                     =Convert.ToUInt32(dr["RR_LH_8"]);        
+                     gorevInfo._FR_LH_9                     =Convert.ToUInt32(dr["FR_LH_9"]);   
+                     gorevInfo._RR_LH_9                     =Convert.ToUInt32(dr["RR_LH_9"]);
+                     gorevInfo._FR_LH_10                    =Convert.ToUInt32(dr["FR_LH_10"]);
+                     gorevInfo._RR_LH_10                    =Convert.ToUInt32(dr["RR_LH_10"]);
 
 
 
@@ -763,26 +765,26 @@ namespace ToyotaBoshokuDollyOrientation
                 {
 
 
-                    gorevInfo._FR_LH_1 = Convert.ToUInt16(dr["FR_RH_1"]);
-                    gorevInfo._RR_LH_1 = Convert.ToUInt16(dr["RR_RH_1"]);
-                    gorevInfo._FR_LH_2 = Convert.ToUInt16(dr["FR_RH_2"]);
-                    gorevInfo._RR_LH_2 = Convert.ToUInt16(dr["RR_RH_2"]);
-                    gorevInfo._FR_LH_3 = Convert.ToUInt16(dr["FR_RH_3"]);
-                    gorevInfo._RR_LH_3 = Convert.ToUInt16(dr["RR_RH_3"]);
-                    gorevInfo._FR_LH_4 = Convert.ToUInt16(dr["FR_RH_4"]);
-                    gorevInfo._RR_LH_4 = Convert.ToUInt16(dr["RR_RH_4"]);
-                    gorevInfo._FR_LH_5 = Convert.ToUInt16(dr["FR_RH_5"]);
-                    gorevInfo._RR_LH_5 = Convert.ToUInt16(dr["RR_RH_5"]);
-                    gorevInfo._FR_LH_6 = Convert.ToUInt16(dr["FR_RH_6"]);
-                    gorevInfo._RR_LH_6 = Convert.ToUInt16(dr["RR_RH_6"]);
-                    gorevInfo._FR_LH_7 = Convert.ToUInt16(dr["FR_RH_7"]);
-                    gorevInfo._RR_LH_7 = Convert.ToUInt16(dr["RR_RH_7"]);
-                    gorevInfo._FR_LH_8 = Convert.ToUInt16(dr["FR_RH_8"]);
-                    gorevInfo._RR_LH_8 = Convert.ToUInt16(dr["RR_RH_8"]);
-                    gorevInfo._FR_LH_9 = Convert.ToUInt16(dr["FR_RH_9"]);
-                    gorevInfo._RR_LH_9 = Convert.ToUInt16(dr["RR_RH_9"]);
-                    gorevInfo._FR_LH_10 = Convert.ToUInt16(dr["FR_RH_10"]);
-                    gorevInfo._RR_LH_10 = Convert.ToUInt16(dr["RR_RH_10"]);
+                    gorevInfo._FR_LH_1 = Convert.ToUInt32(dr["FR_RH_1"]);
+                    gorevInfo._RR_LH_1 = Convert.ToUInt32(dr["RR_RH_1"]);
+                    gorevInfo._FR_LH_2 = Convert.ToUInt32(dr["FR_RH_2"]);
+                    gorevInfo._RR_LH_2 = Convert.ToUInt32(dr["RR_RH_2"]);
+                    gorevInfo._FR_LH_3 = Convert.ToUInt32(dr["FR_RH_3"]);
+                    gorevInfo._RR_LH_3 = Convert.ToUInt32(dr["RR_RH_3"]);
+                    gorevInfo._FR_LH_4 = Convert.ToUInt32(dr["FR_RH_4"]);
+                    gorevInfo._RR_LH_4 = Convert.ToUInt32(dr["RR_RH_4"]);
+                    gorevInfo._FR_LH_5 = Convert.ToUInt32(dr["FR_RH_5"]);
+                    gorevInfo._RR_LH_5 = Convert.ToUInt32(dr["RR_RH_5"]);
+                    gorevInfo._FR_LH_6 = Convert.ToUInt32(dr["FR_RH_6"]);
+                    gorevInfo._RR_LH_6 = Convert.ToUInt32(dr["RR_RH_6"]);
+                    gorevInfo._FR_LH_7 = Convert.ToUInt32(dr["FR_RH_7"]);
+                    gorevInfo._RR_LH_7 = Convert.ToUInt32(dr["RR_RH_7"]);
+                    gorevInfo._FR_LH_8 = Convert.ToUInt32(dr["FR_RH_8"]);
+                    gorevInfo._RR_LH_8 = Convert.ToUInt32(dr["RR_RH_8"]);
+                    gorevInfo._FR_LH_9 = Convert.ToUInt32(dr["FR_RH_9"]);
+                    gorevInfo._RR_LH_9 = Convert.ToUInt32(dr["RR_RH_9"]);
+                    gorevInfo._FR_LH_10 = Convert.ToUInt32(dr["FR_RH_10"]);
+                    gorevInfo._RR_LH_10 = Convert.ToUInt32(dr["RR_RH_10"]);
 
 
 
@@ -876,7 +878,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1071,7 +1073,7 @@ namespace ToyotaBoshokuDollyOrientation
 
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update LH_KARKAS set STATUS=2, FINISHDATE =@FINISHDATE, FINISHTIME =@FINISHTIME where STATUS=1 ", con);
+            SqlCommand cmd = new SqlCommand("update LH_KARKAS set STATUS=2, FINISHDATE =@FINISHDATE, FINISHTIME =@FINISHTIME where STATUS=1 OR STATUS=0", con);
             cmd.Parameters.Add("@FINISHDATE", SqlDbType.DateTime).Value = DateTime.Now;
             cmd.Parameters.Add("@FINISHTIME", SqlDbType.DateTime).Value = DateTime.Now;
             try
@@ -1086,7 +1088,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1128,7 +1130,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1147,7 +1149,7 @@ namespace ToyotaBoshokuDollyOrientation
 
             cGenel gnl = new cGenel();
             SqlConnection con = new SqlConnection(gnl.conString);
-            SqlCommand cmd = new SqlCommand("update RH_KARKAS set STATUS=2, FINISHDATE =@FINISHDATE, FINISHTIME =@FINISHTIME where STATUS=1 ", con);
+            SqlCommand cmd = new SqlCommand("update RH_KARKAS set STATUS=2, FINISHDATE =@FINISHDATE, FINISHTIME =@FINISHTIME where STATUS=1 OR STATUS=0 ", con);
             cmd.Parameters.Add("@FINISHDATE", SqlDbType.DateTime).Value = DateTime.Now;
             cmd.Parameters.Add("@FINISHTIME", SqlDbType.DateTime).Value = DateTime.Now;
             try
@@ -1162,7 +1164,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1194,26 +1196,26 @@ namespace ToyotaBoshokuDollyOrientation
 
 
 
-                    list.Add(Convert.ToUInt16(dr["FR_LH_1"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_1"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_2"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_2"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_3"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_3"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_4"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_4"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_5"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_5"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_6"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_6"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_7"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_7"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_8"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_8"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_9"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_9"]));
-                    list.Add(Convert.ToUInt16(dr["FR_LH_10"]));
-                    list.Add(Convert.ToUInt16(dr["RR_LH_10"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_1"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_1"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_2"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_2"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_3"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_3"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_4"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_4"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_5"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_5"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_6"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_6"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_7"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_7"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_8"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_8"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_9"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_9"]));
+                    list.Add(Convert.ToUInt32(dr["FR_LH_10"]));
+                    list.Add(Convert.ToUInt32(dr["RR_LH_10"]));
 
 
 
@@ -1222,7 +1224,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1253,26 +1255,26 @@ namespace ToyotaBoshokuDollyOrientation
                 {
 
 
-                    list.Add(Convert.ToUInt16(dr["FR_RH_1"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_1"]));
-                    list.Add(Convert.ToUInt16(dr["FR_RH_2"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_2"]));
-                    list.Add(Convert.ToUInt16(dr["FR_RH_3"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_3"]));
-                    list.Add(Convert.ToUInt16(dr["FR_RH_4"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_4"]));
-                    list.Add(Convert.ToUInt16(dr["FR_RH_5"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_5"]));
-                    list.Add(Convert.ToUInt16(dr["FR_RH_6"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_6"]));  
-                    list.Add(Convert.ToUInt16(dr["FR_RH_7"]));  
-                    list.Add(Convert.ToUInt16(dr["RR_RH_7"]));  
-                    list.Add(Convert.ToUInt16(dr["FR_RH_8"]));  
-                    list.Add(Convert.ToUInt16(dr["RR_RH_8"]));  
-                    list.Add(Convert.ToUInt16(dr["FR_RH_9"]));  
-                    list.Add(Convert.ToUInt16(dr["RR_RH_9"]));
-                    list.Add(Convert.ToUInt16(dr["FR_RH_10"]));
-                    list.Add(Convert.ToUInt16(dr["RR_RH_10"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_1"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_1"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_2"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_2"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_3"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_3"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_4"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_4"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_5"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_5"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_6"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_6"]));  
+                    list.Add(Convert.ToUInt32(dr["FR_RH_7"]));  
+                    list.Add(Convert.ToUInt32(dr["RR_RH_7"]));  
+                    list.Add(Convert.ToUInt32(dr["FR_RH_8"]));  
+                    list.Add(Convert.ToUInt32(dr["RR_RH_8"]));  
+                    list.Add(Convert.ToUInt32(dr["FR_RH_9"]));  
+                    list.Add(Convert.ToUInt32(dr["RR_RH_9"]));
+                    list.Add(Convert.ToUInt32(dr["FR_RH_10"]));
+                    list.Add(Convert.ToUInt32(dr["RR_RH_10"]));
 
 
 
@@ -1281,7 +1283,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1360,7 +1362,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "dollyKarkasBarkodSearch_LH");
             }
             finally
             {
@@ -1439,7 +1441,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "dollyKarkasBarkodSearch_RH");
             }
             finally
             {
@@ -1647,13 +1649,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    result =Convert.ToUInt16(dr[colomnID]);
+                    result =Convert.ToUInt32(dr[colomnID]);
                 }
             }
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "urunBarkodIDSearch_LH");
             }
             finally
             {
@@ -1684,13 +1686,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    result = Convert.ToUInt16(dr[colomnBARKOD]);
+                    result = Convert.ToUInt32(dr[colomnBARKOD]);
                 }
             }
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "urunBarkodSearch_LH");
             }
             finally
             {
@@ -1721,13 +1723,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    result = Convert.ToUInt16(dr[colomnSTATUS]);
+                    result = Convert.ToUInt32(dr[colomnSTATUS]);
                 }
             }
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1757,13 +1759,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    result = Convert.ToUInt16(dr[colomnID]);
+                    result = Convert.ToUInt32(dr[colomnID]);
                 }
             }
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "urunBarkodIDSearch_RH");
             }
             finally
             {
@@ -1794,13 +1796,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    result = Convert.ToUInt16(dr[colomnBARKOD]);
+                    result = Convert.ToUInt32(dr[colomnBARKOD]);
                 }
             }
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex, "urunBarkodSearch_RH");
             }
             finally
             {
@@ -1831,13 +1833,13 @@ namespace ToyotaBoshokuDollyOrientation
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    result = Convert.ToUInt16(dr[colomnSTATUS]);
+                    result = Convert.ToUInt32(dr[colomnSTATUS]);
                 }
             }
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -1848,54 +1850,61 @@ namespace ToyotaBoshokuDollyOrientation
 
             return result;
         }
-
+        cMesajlar mesaj = new cMesajlar();
         public bool dollyYuklemeSirasiKontrol(uint dollyRafSirasi, string yon)
         {
-          
             bool sonuc = false;
-            if (dollyRafSirasi==1&&(yon ==cGenel.FR_LH|| yon == cGenel.FR_RH))
+            try
             {
-                sonuc = true;
-            }
-            else
-            {
-                List<uint> list= new List<uint>();
-                if (cGenel.MAKINE_ADI==cGenel.MAKINE_ADI_LH)
+             
+                if (dollyRafSirasi == 1 && (yon == cGenel.FR_LH || yon == cGenel.FR_RH))
                 {
-                   list = dollyPickToLightIzleme_LH();
-
+                    sonuc = true;
                 }
-                else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+                else
                 {
-                    list = dollyPickToLightIzleme_RH();
-
-                }
-                int index=  dollyKarkasIndexBul(dollyRafSirasi, yon);
-
-                if (index>0)
-                {
-                    for (int i = index; i > 0; i--)
+                    List<uint> list = new List<uint>();
+                    if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_LH)
                     {
-                        ushort sta = Convert.ToUInt16(list[index - 1]);
-                        if (sta == 1 || sta == 2)
-                        {
-                            sonuc = true;
-                        }
-                        else
-                        {
-                            sonuc = false;
-                            break;
-                        }
+                        list = dollyPickToLightIzleme_LH();
+
                     }
+                    else if (cGenel.MAKINE_ADI == cGenel.MAKINE_ADI_RH)
+                    {
+                        list = dollyPickToLightIzleme_RH();
 
+                    }
+                    int index = dollyKarkasIndexBul(dollyRafSirasi, yon);
+
+                    if (index > 0)
+                    {
+                        for (int i = index; i > 0; i--)
+                        {
+                            ushort sta = Convert.ToUInt16(list[index - 1]);
+                            if (sta == 1 || sta == 2)
+                            {
+                                sonuc = true;
+                            }
+                            else
+                            {
+                                sonuc = false;
+                                break;
+                            }
+                        }
+
+                    }
                 }
+
+
+
+
+         
             }
-           
-
-
-
+            catch (Exception ex)
+            {
+                mesaj.hata(ex, "dollyYuklemeSirasiKontrol");
+            }
             return sonuc;
-
         }
 
         //indexBul bul
@@ -2014,7 +2023,7 @@ namespace ToyotaBoshokuDollyOrientation
                   {
 
                       info = new KarkasIslem();
-                      info._DOLLYNO = Convert.ToUInt16(dr["DOLLYNO"]);
+                      info._DOLLYNO = Convert.ToUInt32(dr["DOLLYNO"]);
                       info._STARTDATE = Convert.ToDateTime(dr["STARTDATE"]);
                       info._STARTTIME = (TimeSpan)(dr["STARTTIME"]);
                       info._FR_RH_1_BARKOD = Convert.ToString(dr["FR_RH_1_BARKOD"]);
@@ -2047,7 +2056,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -2079,7 +2088,7 @@ namespace ToyotaBoshokuDollyOrientation
                   {
 
                       info = new KarkasIslem();
-                      info._DOLLYNO = Convert.ToUInt16(dr["DOLLYNO"]);
+                      info._DOLLYNO = Convert.ToUInt32(dr["DOLLYNO"]);
                       info._STARTDATE = Convert.ToDateTime(dr["STARTDATE"]);
                       info._STARTTIME = (TimeSpan)(dr["STARTTIME"]);
                       info._FR_LH_1_BARKOD = Convert.ToString(dr["FR_LH_1_BARKOD"]);
@@ -2111,7 +2120,7 @@ namespace ToyotaBoshokuDollyOrientation
               }
               catch (Exception ex)
               {
-                  mesajlar.hata(ex);
+                  mesajlar.hata(ex,"");
               }
               finally
               {
@@ -2147,7 +2156,7 @@ namespace ToyotaBoshokuDollyOrientation
                   {
 
                       info = new KarkasIslem();
-                      info._DOLLYNO = Convert.ToUInt16(dr["DOLLYNO"]);
+                      info._DOLLYNO = Convert.ToUInt32(dr["DOLLYNO"]);
                       info._STARTDATE = Convert.ToDateTime(dr["STARTDATE"]);
                       info._STARTTIME = (TimeSpan)(dr["STARTTIME"]);
                       info._FR_RH_1_BARKOD = Convert.ToString(dr["FR_RH_1_BARKOD"]);
@@ -2180,7 +2189,7 @@ namespace ToyotaBoshokuDollyOrientation
             }
             catch (Exception ex)
             {
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -2215,7 +2224,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -2250,7 +2259,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -2290,7 +2299,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
@@ -2331,7 +2340,7 @@ namespace ToyotaBoshokuDollyOrientation
             catch (Exception ex)
             {
 
-                mesajlar.hata(ex);
+                mesajlar.hata(ex,"");
             }
             finally
             {
