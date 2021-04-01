@@ -185,6 +185,8 @@ namespace ToyotaBoshokuDollyOrientation
                          errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarılı.");
                          KarkasIslem.xLOOP = true;
                         frmMain.xKontrol = true;
+                        _AREvt.WaitOne(300, true);
+                        cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
                     }
                      else
                      {

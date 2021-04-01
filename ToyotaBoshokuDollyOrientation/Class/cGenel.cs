@@ -55,7 +55,7 @@ namespace ToyotaBoshokuDollyOrientation
        public string conStringTBT = "Data Source=tbtprdsql;Initial Catalog = TBTGALC; User ID = sempasqlro; Password=Dof4sYu";
 
        //   public string conString = @"Data Source=.\SQLEXPRESS;Initial Catalog = ToyotaDDTS; Integrated security=true ";
-     //   public string conStringTBT = @"Data Source=.\SQLEXPRESS;Initial Catalog = ToyotaDDTS; Integrated security=true ";
+       //   public string conStringTBT = @"Data Source=.\SQLEXPRESS;Initial Catalog = ToyotaDDTS; Integrated security=true ";
 
 
         public static bool genelUyari(string str, bool cancelStatus)

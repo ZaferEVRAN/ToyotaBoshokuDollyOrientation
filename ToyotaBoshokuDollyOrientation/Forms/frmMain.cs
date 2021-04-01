@@ -489,16 +489,14 @@ namespace ToyotaBoshokuDollyOrientation
                         bool sonuc = lambaKontrol.lamba.lambaJobIlgiliIsikFlashYakKontrol(cGenel.nowDeviceID, cGenel.jobState1StatusAnimationID, cGenel.jobState1StatusColorID, cLambaKontrol.master);
                         if (sonuc == true)
                         {
-
-                            // _AREvt.WaitOne(300, true);
+                            _AREvt.WaitOne(300, true);
                             cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
                             xKontrol = true;
                             errorLog.error_log_kayit("Flash yak kontrol adım başarılı");
                         }
                         else
                         {
-                            // _AREvt.WaitOne(300, true);
-                            //  lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
+                         
                             errorLog.error_log_kayit("Flash yak kontrol adım başarısız.");
                         }
                     }
@@ -518,6 +516,7 @@ namespace ToyotaBoshokuDollyOrientation
                     {
                         errorLog.error_log_kayit("sensör okuma yapıldı.");
                           _AREvt.WaitOne(300, true);
+
                         lambaKontrol.lambaJobIlgiliIsikSteadyYak(cGenel.nowDeviceID);
                         errorLog.error_log_kayit("lambaJobIlgiliIsikSteadyYak çalıştı.");
                         _AREvt.WaitOne(300, true);
@@ -639,13 +638,15 @@ namespace ToyotaBoshokuDollyOrientation
                             cGenel.sensorSonucu = 0;
                             cGenel.nowDeviceID = 0;
 
-                             //cGenel.frmMain.ViewForm(cGenel.frmPickToLight);
-                             //cGenel.frmPickToLight.DurumIzleme();
-                            cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                    
 
                             errorLog.error_log_kayit("loop bitti.");
                             sensorOkumaYapiliyorLog = false;
 
+                            cGenel.frmPopupIslem.Hide();
+                     
+
+                            cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
 
 
                         }
