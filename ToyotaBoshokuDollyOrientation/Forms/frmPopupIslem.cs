@@ -104,7 +104,9 @@ namespace ToyotaBoshokuDollyOrientation
                       if (sonuc)
                       {
                           errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarılı.");
-                          KarkasIslem.xLOOP = true;
+                        _AREvt.WaitOne(300, true);
+                        cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
+                        KarkasIslem.xLOOP = true;
                           frmMain.xKontrol = true;
                         
                       }
@@ -180,22 +182,21 @@ namespace ToyotaBoshokuDollyOrientation
                    
                     bool sonuc = lambaKontrol.lambaJobIlgiliIsikFlashYak(cGenel.nowDeviceID);
 
-                     if (sonuc)
-                     {
-                         errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarılı.");
-                         KarkasIslem.xLOOP = true;
-                        frmMain.xKontrol = true;
+                    if (sonuc)
+                    {
+                        errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarılı.");
                         _AREvt.WaitOne(300, true);
                         cLambaKontrol.master.WriteSingleRegister(1, 713, 0);
-                    }
-                     else
-                     {
-                        //cGenel.nowDeviceID = 0;
                         KarkasIslem.xLOOP = true;
-                        frmMain.xKontrol = false;
+                        frmMain.xKontrol = true;
+
+                    }
+                    else
+                    {
+                        cGenel.nowDeviceID = 0;
                         errorLog.error_log_kayit("lambaJobIlgiliIsikFlashYak başarısız.");
-                     }
-                     
+                    }
+
                 }
                 else if (cGenel.xByPass == true)
                 {

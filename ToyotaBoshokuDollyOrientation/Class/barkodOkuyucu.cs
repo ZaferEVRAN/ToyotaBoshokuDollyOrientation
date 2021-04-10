@@ -94,7 +94,7 @@ namespace ToyotaBoshokuDollyOrientation
                         {
                             karkasIslem.listBARKOD = karkasIslem.dollyKarkasBarkodSearch_LH();
                             cGenel.urunBarkodKarkasDurum = karkasIslem.listBARKOD.Contains(cGenel.DoorBarcode);
-                            log.error_log_kayit("urunBarkodKarkasDurum çalıştı.");
+                        
                             if (cGenel.urunBarkodKarkasDurum == false && data.Length >= 7)
                             {
                                 if (cGenel.YonBilgisi == cGenel.FR_LH && data.Length >= 7)

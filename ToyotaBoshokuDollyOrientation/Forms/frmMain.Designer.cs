@@ -295,7 +295,7 @@
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
             this.bunifuCustomLabel12.Size = new System.Drawing.Size(38, 20);
             this.bunifuCustomLabel12.TabIndex = 47;
-            this.bunifuCustomLabel12.Text = "v3.8";
+            this.bunifuCustomLabel12.Text = "v3.9";
             this.bunifuCustomLabel12.Click += new System.EventHandler(this.bunifuCustomLabel12_Click);
             // 
             // pnlAltBilgi
